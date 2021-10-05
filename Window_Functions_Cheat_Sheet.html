@@ -1,0 +1,2055 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>SQL Window Function</TITLE>
+<META name="generator" content="BCL easyConverter SDK 5.0.252">
+<META name="author" content="LearnSQL.com">
+<META name="title" content="SQL Window Functions Cheat Sheet (A4)">
+<META name="subject" content="This 2-page A4 SQL Window Functions Cheat Sheet covers the syntax of window functions and a list of window functions.">
+<META name="keywords" content="sql window functions;cheat sheet">
+<STYLE type="text/css">
+
+body {margin-top: 0px;margin-left: 0px;}
+
+#page_1 {position:relative; overflow: hidden;margin: 14px 0px 0px 0px;padding: 0px;border: none;width: 1123px;height: 780px;}
+#page_1 #id1_1 {border:none;margin: 0px 0px 0px 20px;padding: 0px;border:none;width: 1103px;overflow: hidden;}
+#page_1 #id1_2 {border:none;margin: 16px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_1 {float:left;border:none;margin: 2px 0px 0px 0px;padding: 0px;border:none;width: 242px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_2 {float:left;border:none;margin: 2px 0px 0px 0px;padding: 0px;border:none;width: 303px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_3 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 273px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_4 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 281px;overflow: hidden;}
+#page_1 #id1_3 {border:none;margin: 0px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_1 #id1_3 #id1_3_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 692px;overflow: hidden;}
+#page_1 #id1_3 #id1_3_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 236px;overflow: hidden;}
+#page_1 #id1_3 #id1_3_3 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 171px;overflow: hidden;}
+#page_1 #id1_4 {border:none;margin: 0px 0px 0px 31px;padding: 0px;border:none;width: 1038px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_1 {float:left;border:none;margin: 46px 0px 0px 0px;padding: 0px;border:none;width: 242px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_2 {float:left;border:none;margin: 0px 0px 0px 20px;padding: 0px;border:none;width: 91px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_3 {float:left;border:none;margin: 0px 0px 0px 56px;padding: 0px;border:none;width: 88px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_4 {float:left;border:none;margin: 4px 0px 0px 54px;padding: 0px;border:none;width: 117px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_5 {float:left;border:none;margin: 5px 0px 0px 0px;padding: 0px;border:none;width: 119px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_6 {float:left;border:none;margin: 4px 0px 0px 38px;padding: 0px;border:none;width: 80px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_7 {float:left;border:none;margin: 4px 0px 0px 53px;padding: 0px;border:none;width: 80px;overflow: hidden;}
+#page_1 #id1_5 {border:none;margin: 9px 0px 0px 24px;padding: 0px;border:none;width: 1061px;overflow: hidden;}
+#page_1 #id1_5 #id1_5_1 {float:left;border:none;margin: 14px 0px 0px 0px;padding: 0px;border:none;width: 545px;overflow: hidden;}
+#page_1 #id1_5 #id1_5_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 254px;overflow: hidden;}
+#page_1 #id1_5 #id1_5_3 {float:left;border:none;margin: 0px 0px 0px 19px;padding: 0px;border:none;width: 243px;overflow: hidden;}
+#page_1 #id1_6 {border:none;margin: 11px 0px 0px 40px;padding: 0px;border:none;width: 1083px;overflow: hidden;}
+#page_1 #id1_6 #id1_6_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 513px;overflow: hidden;}
+#page_1 #id1_6 #id1_6_2 {float:left;border:none;margin: 2px 0px 0px 16px;padding: 0px;border:none;width: 554px;overflow: hidden;}
+#page_1 #id1_7 {border:none;margin: 0px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_1 #id1_7 #id1_7_1 {float:left;border:none;margin: 3px 0px 0px 0px;padding: 0px;border:none;width: 572px;overflow: hidden;}
+#page_1 #id1_7 #id1_7_2 {float:left;border:none;margin: 19px 0px 0px 0px;padding: 0px;border:none;width: 83px;overflow: hidden;}
+#page_1 #id1_7 #id1_7_3 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 68px;overflow: hidden;}
+#page_1 #id1_7 #id1_7_4 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 50px;overflow: hidden;}
+#page_1 #id1_7 #id1_7_5 {float:left;border:none;margin: 7px 0px 0px 36px;padding: 0px;border:none;width: 290px;overflow: hidden;}
+#page_1 #id1_8 {border:none;margin: 0px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_1 #id1_8 #id1_8_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 549px;overflow: hidden;}
+#page_1 #id1_8 #id1_8_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 550px;overflow: hidden;}
+#page_1 #id1_9 {border:none;margin: 0px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_1 #id1_9 #id1_9_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 522px;overflow: hidden;}
+#page_1 #id1_9 #id1_9_2 {float:left;border:none;margin: 0px 0px 0px 23px;padding: 0px;border:none;width: 359px;overflow: hidden;}
+#page_1 #id1_9 #id1_9_3 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 195px;overflow: hidden;}
+#page_1 #id1_10 {border:none;margin: 17px 0px 0px 24px;padding: 0px;border:none;width: 1077px;overflow: hidden;}
+#page_1 #id1_10 #id1_10_1 {float:left;border:none;margin: 2px 0px 0px 0px;padding: 0px;border:none;width: 906px;overflow: hidden;}
+#page_1 #id1_10 #id1_10_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 171px;overflow: hidden;}
+
+#page_1 #p1dimg1 {position:absolute;top:7px;left:0px;z-index:-1;width:1123px;height:773px;}
+#page_1 #p1dimg1 #p1img1 {width:1123px;height:773px;}
+
+#page_1 #p1inl_img1 {position:relative;width:19px;height:6px;}
+
+
+
+#page_2 {position:relative; overflow: hidden;margin: 14px 0px 0px 0px;padding: 0px;border: none;width: 1123px;height: 780px;}
+#page_2 #id2_1 {border:none;margin: 0px 0px 0px 20px;padding: 0px;border:none;width: 1103px;overflow: hidden;}
+#page_2 #id2_2 {border:none;margin: 20px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_2 #id2_2 #id2_2_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 181px;overflow: hidden;}
+#page_2 #id2_2 #id2_2_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 437px;overflow: hidden;}
+#page_2 #id2_2 #id2_2_3 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 481px;overflow: hidden;}
+#page_2 #id2_3 {border:none;margin: 0px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_2 #id2_3 #id2_3_1 {float:left;border:none;margin: 2px 0px 0px 0px;padding: 0px;border:none;width: 250px;overflow: hidden;}
+#page_2 #id2_3 #id2_3_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 268px;overflow: hidden;}
+#page_2 #id2_3 #id2_3_3 {float:left;border:none;margin: 10px 0px 0px 100px;padding: 0px;border:none;width: 247px;overflow: hidden;}
+#page_2 #id2_3 #id2_3_4 {float:left;border:none;margin: 10px 0px 0px 0px;padding: 0px;border:none;width: 234px;overflow: hidden;}
+#page_2 #id2_4 {border:none;margin: 2px 0px 0px 24px;padding: 0px;border:none;width: 1065px;overflow: hidden;}
+#page_2 #id2_4 #id2_4_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 181px;overflow: hidden;}
+#page_2 #id2_4 #id2_4_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 431px;overflow: hidden;}
+#page_2 #id2_4 #id2_4_3 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 453px;overflow: hidden;}
+#page_2 #id2_5 {border:none;margin: 1px 0px 0px 30px;padding: 0px;border:none;width: 1093px;overflow: hidden;}
+#page_2 #id2_5 #id2_5_1 {float:left;border:none;margin: 5px 0px 0px 0px;padding: 0px;border:none;width: 78px;overflow: hidden;}
+#page_2 #id2_5 #id2_5_2 {float:left;border:none;margin: 0px 0px 0px 104px;padding: 0px;border:none;width: 381px;overflow: hidden;}
+#page_2 #id2_5 #id2_5_3 {float:left;border:none;margin: 2px 0px 0px 57px;padding: 0px;border:none;width: 244px;overflow: hidden;}
+#page_2 #id2_5 #id2_5_4 {float:left;border:none;margin: 2px 0px 0px 0px;padding: 0px;border:none;width: 229px;overflow: hidden;}
+#page_2 #id2_6 {border:none;margin: 0px 0px 0px 24px;padding: 0px;border:none;width: 1035px;overflow: hidden;}
+#page_2 #id2_6 #id2_6_1 {float:left;border:none;margin: 32px 0px 0px 0px;padding: 0px;border:none;width: 193px;overflow: hidden;}
+#page_2 #id2_6 #id2_6_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 212px;overflow: hidden;}
+#page_2 #id2_6 #id2_6_3 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 221px;overflow: hidden;}
+#page_2 #id2_6 #id2_6_4 {float:left;border:none;margin: 1px 0px 0px 0px;padding: 0px;border:none;width: 166px;overflow: hidden;}
+#page_2 #id2_6 #id2_6_5 {float:left;border:none;margin: 0px 0px 0px 66px;padding: 0px;border:none;width: 177px;overflow: hidden;}
+#page_2 #id2_7 {border:none;margin: 0px 0px 0px 31px;padding: 0px;border:none;width: 1092px;overflow: hidden;}
+#page_2 #id2_7 #id2_7_1 {float:left;border:none;margin: 12px 0px 0px 0px;padding: 0px;border:none;width: 134px;overflow: hidden;}
+#page_2 #id2_7 #id2_7_2 {float:left;border:none;margin: 0px 0px 0px 48px;padding: 0px;border:none;width: 389px;overflow: hidden;}
+#page_2 #id2_7 #id2_7_3 {float:left;border:none;margin: 0px 0px 0px 36px;padding: 0px;border:none;width: 485px;overflow: hidden;}
+#page_2 #id2_8 {border:none;margin: 0px 0px 0px 252px;padding: 0px;border:none;width: 871px;overflow: hidden;}
+#page_2 #id2_8 #id2_8_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 413px;overflow: hidden;}
+#page_2 #id2_8 #id2_8_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 458px;overflow: hidden;}
+#page_2 #id2_9 {border:none;margin: 1px 0px 0px 24px;padding: 0px;border:none;width: 1069px;overflow: hidden;}
+#page_2 #id2_9 #id2_9_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 166px;overflow: hidden;}
+#page_2 #id2_9 #id2_9_2 {float:left;border:none;margin: 0px 0px 0px 42px;padding: 0px;border:none;width: 73px;overflow: hidden;}
+#page_2 #id2_9 #id2_9_3 {float:left;border:none;margin: 24px 0px 0px 13px;padding: 0px;border:none;width: 25px;overflow: hidden;}
+#page_2 #id2_9 #id2_9_4 {float:left;border:none;margin: 14px 0px 0px 0px;padding: 0px;border:none;width: 71px;overflow: hidden;}
+#page_2 #id2_9 #id2_9_5 {float:left;border:none;margin: 49px 0px 0px 0px;padding: 0px;border:none;width: 188px;overflow: hidden;}
+#page_2 #id2_9 #id2_9_6 {float:left;border:none;margin: 3px 0px 0px 48px;padding: 0px;border:none;width: 124px;overflow: hidden;}
+#page_2 #id2_9 #id2_9_7 {float:left;border:none;margin: 5px 0px 0px 22px;padding: 0px;border:none;width: 90px;overflow: hidden;}
+#page_2 #id2_9 #id2_9_8 {float:left;border:none;margin: 49px 0px 0px 0px;padding: 0px;border:none;width: 207px;overflow: hidden;}
+#page_2 #id2_10 {border:none;margin: 26px 0px 0px 24px;padding: 0px;border:none;width: 1077px;overflow: hidden;}
+#page_2 #id2_10 #id2_10_1 {float:left;border:none;margin: 2px 0px 0px 0px;padding: 0px;border:none;width: 906px;overflow: hidden;}
+#page_2 #id2_10 #id2_10_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 171px;overflow: hidden;}
+
+#page_2 #p2dimg1 {position:absolute;top:8px;left:0px;z-index:-1;width:1123px;height:772px;}
+#page_2 #p2dimg1 #p2img1 {width:1123px;height:772px;}
+
+
+
+
+.ft0{font: bold 32px 'Arial';line-height: 37px;}
+.ft1{font: bold 12px 'Arial';color: #0078ff;line-height: 15px;}
+.ft2{font: 9px 'Arial';line-height: 12px;}
+.ft3{font: bold 9px 'Arial';line-height: 11px;}
+.ft4{font: 10px 'Arial';line-height: 13px;}
+.ft5{font: 10px 'Arial';line-height: 8px;}
+.ft6{font: 8px 'Times New Roman';line-height: 8px;}
+.ft7{font: 6px 'Arial';color: #ffffff;line-height: 6px;}
+.ft8{font: 10px 'Arial';line-height: 12px;}
+.ft9{font: 8px 'Arial';line-height: 10px;}
+.ft10{font: 7px 'Arial';line-height: 7px;}
+.ft11{font: 7px 'Arial';color: #ffffff;line-height: 7px;}
+.ft12{font: 8px 'Arial';margin-left: 15px;line-height: 10px;}
+.ft13{font: 8px 'Arial';margin-left: 19px;line-height: 10px;}
+.ft14{font: 8px 'Arial';line-height: 9px;}
+.ft15{font: 8px 'Arial';color: #ffffff;line-height: 9px;}
+.ft16{font: 1px 'Arial';line-height: 2px;}
+.ft17{font: 8px 'Arial';line-height: 7px;}
+.ft18{font: bold 10px 'Arial';line-height: 12px;}
+.ft19{font: 10px 'Times New Roman';line-height: 12px;}
+.ft20{font: 10px 'Times New Roman';color: #0078ff;line-height: 12px;}
+.ft21{font: bold 10px 'Times New Roman';color: #ff7700;line-height: 12px;}
+.ft22{font: bold 10px 'Times New Roman';color: #0078ff;line-height: 12px;}
+.ft23{font: bold 10px 'Times New Roman';line-height: 12px;}
+.ft24{font: 10px 'Times New Roman';line-height: 7px;}
+.ft25{font: bold 10px 'Times New Roman';color: #0078ff;line-height: 7px;}
+.ft26{font: italic 11px 'Arial';line-height: 14px;}
+.ft27{font: bold 10px 'Times New Roman';color: #d75da2;line-height: 12px;}
+.ft28{font: 8px 'Times New Roman';color: #0078ff;line-height: 10px;}
+.ft29{font: 10px 'Times New Roman';color: #0078ff;line-height: 6px;}
+.ft30{font: 10px 'Times New Roman';line-height: 6px;}
+.ft31{font: 9px 'Times New Roman';color: #0078ff;line-height: 6px;}
+.ft32{font: 8px 'Times New Roman';line-height: 10px;}
+.ft33{font: 8px 'Arial';margin-left: 2px;line-height: 10px;}
+.ft34{font: 7px 'Arial';line-height: 10px;}
+.ft35{font: 8px 'Times New Roman';line-height: 14px;}
+.ft36{font: 8px 'Arial';line-height: 14px;}
+.ft37{font: 8px 'Times New Roman';line-height: 16px;}
+.ft38{font: 8px 'Arial';line-height: 16px;}
+.ft39{font: 1px 'Arial';line-height: 1px;}
+.ft40{font: 10px 'Times New Roman';line-height: 10px;}
+.ft41{font: 9px 'Times New Roman';line-height: 10px;}
+.ft42{font: 7px 'Times New Roman';line-height: 8px;}
+.ft43{font: 8px 'Arial';line-height: 8px;}
+.ft44{font: 1px 'Arial';line-height: 5px;}
+.ft45{font: 1px 'Arial';line-height: 6px;}
+.ft46{font: 8px 'Arial';line-height: 5px;}
+.ft47{font: 1px 'Arial';line-height: 9px;}
+.ft48{font: 1px 'Arial';line-height: 8px;}
+.ft49{font: 7px 'Arial';line-height: 11px;}
+.ft50{font: 7px 'Times New Roman';line-height: 12px;}
+.ft51{font: bold 18px 'Arial';color: #ffffff;line-height: 21px;}
+.ft52{font: 18px 'Arial';color: #ffffff;line-height: 21px;}
+.ft53{font: bold 8px 'Arial';color: #ffffff;line-height: 12px;}
+.ft54{font: bold 11px 'Arial';color: #0078ff;line-height: 14px;}
+.ft55{font: bold 10px 'Arial';line-height: 16px;}
+.ft56{font: bold 10px 'Times New Roman';line-height: 16px;}
+.ft57{font: 8px 'Arial';line-height: 4px;}
+.ft58{font: 1px 'Arial';line-height: 7px;}
+.ft59{font: 1px 'Arial';line-height: 4px;}
+.ft60{font: italic 10px 'Arial';line-height: 13px;}
+.ft61{font: bold 9px 'Arial';line-height: 15px;}
+.ft62{font: italic 9px 'Arial';line-height: 16px;}
+.ft63{font: bold 9px 'Times New Roman';line-height: 16px;}
+.ft64{font: 9px 'Times New Roman';line-height: 16px;}
+.ft65{font: 9px 'Arial';line-height: 16px;}
+.ft66{font: bold 10px 'Arial';line-height: 14px;}
+.ft67{font: 8px 'Arial';color: #ffffff;line-height: 8px;}
+.ft68{font: bold 8px 'Times New Roman';line-height: 11px;}
+.ft69{font: bold 9px 'Times New Roman';line-height: 12px;}
+.ft70{font: italic 9px 'Arial';line-height: 12px;}
+.ft71{font: 8px 'Arial';color: #ffffff;line-height: 10px;}
+.ft72{font: bold 9px 'Arial';line-height: 12px;}
+.ft73{font: italic 9px 'Arial';line-height: 13px;}
+.ft74{font: 9px 'Arial';line-height: 13px;}
+.ft75{font: 5px 'Arial';line-height: 6px;}
+.ft76{font: 1px 'Arial';line-height: 3px;}
+.ft77{font: 9px 'Times New Roman';line-height: 12px;}
+.ft78{font: 9px 'Times New Roman';line-height: 13px;}
+.ft79{font: bold 9px 'Times New Roman';line-height: 13px;}
+
+.p0{text-align: left;margin-top: 0px;margin-bottom: 0px;}
+.p1{text-align: left;padding-right: 33px;margin-top: 1px;margin-bottom: 0px;}
+.p2{text-align: left;margin-top: 1px;margin-bottom: 0px;}
+.p3{text-align: left;padding-right: 37px;margin-top: 1px;margin-bottom: 0px;}
+.p4{text-align: left;padding-right: 42px;margin-top: 1px;margin-bottom: 0px;}
+.p5{text-align: left;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p6{text-align: left;padding-left: 87px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p7{text-align: left;padding-left: 84px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p8{text-align: center;padding-right: 4px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p9{text-align: center;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p10{text-align: left;padding-left: 8px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p11{text-align: center;padding-right: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p12{text-align: left;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p13{text-align: left;padding-left: 10px;margin-top: 0px;margin-bottom: 0px;}
+.p14{text-align: left;padding-left: 10px;margin-top: 1px;margin-bottom: 0px;}
+.p15{text-align: right;padding-right: 13px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p16{text-align: left;padding-left: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p17{text-align: right;padding-right: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p18{text-align: left;padding-left: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p19{text-align: center;padding-right: 1px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p20{text-align: left;padding-left: 2px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p21{text-align: center;padding-right: 6px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p22{text-align: left;padding-left: 1px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p23{text-align: center;padding-left: 1px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p24{text-align: center;padding-right: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p25{text-align: center;padding-right: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p26{text-align: right;padding-right: 81px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p27{text-align: left;padding-left: 20px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p28{text-align: right;padding-right: 82px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p29{text-align: left;padding-left: 40px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p30{text-align: left;padding-left: 117px;margin-top: 8px;margin-bottom: 0px;}
+.p31{text-align: left;margin-top: 23px;margin-bottom: 0px;}
+.p32{text-align: left;padding-left: 25px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p33{text-align: left;padding-left: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p34{text-align: left;padding-left: 2px;margin-top: 0px;margin-bottom: 0px;}
+.p35{text-align: left;margin-top: 15px;margin-bottom: 0px;}
+.p36{text-align: left;padding-left: 19px;margin-top: 2px;margin-bottom: 0px;}
+.p37{text-align: left;padding-left: 1px;margin-top: 13px;margin-bottom: 0px;}
+.p38{text-align: left;padding-left: 2px;margin-top: 26px;margin-bottom: 0px;}
+.p39{text-align: left;padding-left: 2px;margin-top: 19px;margin-bottom: 0px;}
+.p40{text-align: left;margin-top: 70px;margin-bottom: 0px;}
+.p41{text-align: left;padding-left: 6px;padding-right: 162px;margin-top: 4px;margin-bottom: 0px;}
+.p42{text-align: left;padding-left: 6px;padding-right: 161px;margin-top: 12px;margin-bottom: 0px;}
+.p43{text-align: left;margin-top: 3px;margin-bottom: 0px;}
+.p44{text-align: left;margin-top: 19px;margin-bottom: 0px;}
+.p45{text-align: left;margin-top: 25px;margin-bottom: 0px;}
+.p46{text-align: right;padding-right: 6px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p47{text-align: left;padding-left: 6px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p48{text-align: left;padding-left: 48px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p49{text-align: center;padding-right: 18px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p50{text-align: center;padding-right: 17px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p51{text-align: center;padding-right: 41px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p52{text-align: center;padding-right: 39px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p53{text-align: center;padding-right: 29px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p54{text-align: center;padding-right: 40px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p55{text-align: center;padding-right: 28px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p56{text-align: center;padding-right: 2px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p57{text-align: right;padding-right: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p58{text-align: right;padding-right: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p59{text-align: right;padding-right: 15px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p60{text-align: left;padding-left: 4px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p61{text-align: right;padding-right: 16px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p62{text-align: left;padding-left: 13px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p63{text-align: left;padding-left: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p64{text-align: center;padding-right: 19px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p65{text-align: center;padding-left: 17px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p66{text-align: center;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p67{text-align: center;padding-left: 16px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p68{text-align: left;margin-top: 12px;margin-bottom: 0px;}
+.p69{text-align: right;padding-right: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p70{text-align: left;margin-top: 13px;margin-bottom: 0px;}
+.p71{text-align: center;padding-right: 21px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p72{text-align: center;padding-right: 20px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p73{text-align: left;padding-left: 1px;margin-top: 7px;margin-bottom: 0px;}
+.p74{text-align: left;padding-left: 1px;padding-right: 27px;margin-top: 2px;margin-bottom: 0px;}
+.p75{text-align: left;padding-left: 1px;margin-top: 0px;margin-bottom: 0px;}
+.p76{text-align: left;padding-left: 1px;padding-right: 29px;margin-top: 2px;margin-bottom: 0px;}
+.p77{text-align: left;margin-top: 0px;margin-bottom: 0px;text-indent: 9px;}
+.p78{text-align: left;margin-top: 11px;margin-bottom: 0px;}
+.p79{text-align: left;padding-left: 6px;margin-top: 0px;margin-bottom: 0px;}
+.p80{text-align: left;padding-left: 6px;margin-top: 2px;margin-bottom: 0px;}
+.p81{text-align: left;padding-left: 13px;padding-right: 50px;margin-top: 1px;margin-bottom: 0px;text-indent: -6px;}
+.p82{text-align: left;padding-left: 13px;padding-right: 101px;margin-top: 1px;margin-bottom: 0px;text-indent: -6px;}
+.p83{text-align: justify;padding-left: 13px;padding-right: 48px;margin-top: 1px;margin-bottom: 0px;text-indent: -6px;}
+.p84{text-align: left;padding-left: 6px;padding-right: 207px;margin-top: 0px;margin-bottom: 0px;}
+.p85{text-align: left;padding-left: 6px;padding-right: 164px;margin-top: 0px;margin-bottom: 0px;}
+.p86{text-align: center;padding-right: 16px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p87{text-align: left;padding-left: 21px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p88{text-align: center;padding-left: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p89{text-align: right;padding-right: 8px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p90{text-align: right;padding-right: 19px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p91{text-align: right;padding-right: 17px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p92{text-align: left;padding-left: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p93{text-align: left;padding-left: 6px;padding-right: 84px;margin-top: 0px;margin-bottom: 0px;}
+.p94{text-align: left;padding-left: 6px;padding-right: 127px;margin-top: 0px;margin-bottom: 0px;}
+.p95{text-align: justify;padding-right: 64px;margin-top: 0px;margin-bottom: 0px;}
+.p96{text-align: left;margin-top: 18px;margin-bottom: 0px;}
+.p97{text-align: left;padding-left: 13px;padding-right: 45px;margin-top: 1px;margin-bottom: 0px;text-indent: -6px;}
+.p98{text-align: left;padding-right: 143px;margin-top: 37px;margin-bottom: 0px;}
+.p99{text-align: justify;margin-top: 0px;margin-bottom: 0px;}
+.p100{text-align: left;padding-left: 6px;margin-top: 0px;margin-bottom: 0px;text-indent: -6px;}
+.p101{text-align: left;padding-left: 41px;margin-top: 0px;margin-bottom: 0px;}
+.p102{text-align: left;padding-left: 8px;margin-top: 2px;margin-bottom: 0px;}
+.p103{text-align: left;padding-left: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p104{text-align: right;padding-right: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p105{text-align: right;padding-right: 24px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p106{text-align: center;padding-left: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p107{text-align: right;padding-right: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p108{text-align: right;padding-right: 27px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p109{text-align: right;padding-right: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p110{text-align: left;padding-left: 31px;margin-top: 0px;margin-bottom: 0px;}
+.p111{text-align: left;padding-left: 22px;margin-top: 0px;margin-bottom: 0px;}
+.p112{text-align: left;padding-left: 13px;padding-right: 46px;margin-top: 11px;margin-bottom: 0px;text-indent: -6px;}
+.p113{text-align: left;margin-top: 0px;margin-bottom: 0px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);direction: rtl;block-progression: lr;width:24px;height:19px;}
+.p114{text-align: center;padding-left: 18px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p115{text-align: left;margin-top: 0px;margin-bottom: 0px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);direction: rtl;block-progression: lr;width:10px;height:19px;}
+.p116{text-align: left;margin-top: 0px;margin-bottom: 0px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);direction: rtl;block-progression: lr;width:20px;height:19px;}
+.p117{text-align: left;margin-top: 10px;margin-bottom: 0px;}
+.p118{text-align: center;padding-right: 15px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p119{text-align: center;padding-left: 19px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p120{text-align: right;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p121{text-align: right;padding-right: 23px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p122{text-align: center;padding-left: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p123{text-align: left;padding-left: 6px;padding-right: 3px;margin-top: 12px;margin-bottom: 0px;text-indent: -6px;}
+.p124{text-align: left;padding-left: 6px;padding-right: 5px;margin-top: 13px;margin-bottom: 0px;text-indent: -6px;}
+.p125{text-align: left;margin-top: 0px;margin-bottom: 0px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);direction: rtl;block-progression: lr;width:31px;height:19px;}
+.p126{text-align: left;margin-top: 0px;margin-bottom: 0px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);direction: rtl;block-progression: lr;width:31px;height:10px;}
+.p127{text-align: left;margin-top: 0px;margin-bottom: 0px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);direction: rtl;block-progression: lr;width:19px;height:19px;}
+.p128{text-align: left;margin-top: 0px;margin-bottom: 0px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);direction: rtl;block-progression: lr;width:19px;height:48px;}
+.p129{text-align: left;padding-left: 6px;margin-top: 21px;margin-bottom: 0px;text-indent: -6px;}
+.p130{text-align: left;padding-left: 233px;padding-right: 25px;margin-top: 0px;margin-bottom: 0px;}
+.p131{text-align: left;padding-left: 233px;margin-top: 3px;margin-bottom: 0px;}
+.p132{text-align: left;margin-top: 20px;margin-bottom: 0px;}
+.p133{text-align: left;padding-left: 16px;padding-right: 276px;margin-top: 0px;margin-bottom: 0px;text-indent: -6px;}
+.p134{text-align: left;padding-left: 13px;padding-right: 14px;margin-top: 0px;margin-bottom: 0px;text-indent: -6px;}
+.p135{text-align: left;margin-top: 26px;margin-bottom: 0px;}
+.p136{text-align: left;margin-top: 16px;margin-bottom: 0px;}
+.p137{text-align: left;padding-left: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p138{text-align: right;padding-right: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p139{text-align: left;padding-left: 11px;margin-top: 0px;margin-bottom: 0px;}
+.p140{text-align: left;padding-left: 11px;margin-top: 1px;margin-bottom: 0px;}
+.p141{text-align: left;padding-left: 8px;margin-top: 1px;margin-bottom: 0px;}
+
+.td0{padding: 0px;margin: 0px;width: 91px;vertical-align: bottom;}
+.td1{padding: 0px;margin: 0px;width: 88px;vertical-align: bottom;}
+.td2{padding: 0px;margin: 0px;width: 27px;vertical-align: bottom;}
+.td3{padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+.td4{padding: 0px;margin: 0px;width: 22px;vertical-align: bottom;}
+.td5{padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;background: #f5ac6b;}
+.td6{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;}
+.td7{border-left: #0078ff 1px solid;border-right: #0078ff 1px solid;padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td8{border-left: #0078ff 1px solid;border-right: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td9{border-top: #f5ac6b 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;background: #f5ac6b;}
+.td10{border-left: #f5ac6b 1px solid;border-right: #f5ac6b 1px solid;border-top: #f5ac6b 1px solid;padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td11{border-top: #fad5b5 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;background: #fad5b5;}
+.td12{border-left: #f5ac6b 1px solid;border-right: #f5ac6b 1px solid;padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td13{border-left: #f5ac6b 1px solid;border-right: #f5ac6b 1px solid;border-bottom: #f5ac6b 1px solid;padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td14{border-bottom: #f397a1 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;}
+.td15{border-left: #f397a1 1px solid;border-right: #f397a1 1px solid;padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td16{border-left: #f397a1 1px solid;border-right: #f397a1 1px solid;border-bottom: #f397a1 1px solid;padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td17{padding: 0px;margin: 0px;width: 25px;vertical-align: bottom;}
+.td18{padding: 0px;margin: 0px;width: 32px;vertical-align: bottom;}
+.td19{padding: 0px;margin: 0px;width: 23px;vertical-align: bottom;}
+.td20{padding: 0px;margin: 0px;width: 256px;vertical-align: bottom;}
+.td21{padding: 0px;margin: 0px;width: 257px;vertical-align: bottom;}
+.td22{padding: 0px;margin: 0px;width: 107px;vertical-align: bottom;}
+.td23{padding: 0px;margin: 0px;width: 258px;vertical-align: bottom;}
+.td24{padding: 0px;margin: 0px;width: 240px;vertical-align: bottom;}
+.td25{padding: 0px;margin: 0px;width: 36px;vertical-align: bottom;}
+.td26{padding: 0px;margin: 0px;width: 222px;vertical-align: bottom;}
+.td27{padding: 0px;margin: 0px;width: 33px;vertical-align: bottom;}
+.td28{padding: 0px;margin: 0px;width: 207px;vertical-align: bottom;}
+.td29{padding: 0px;margin: 0px;width: 153px;vertical-align: bottom;}
+.td30{padding: 0px;margin: 0px;width: 18px;vertical-align: bottom;}
+.td31{padding: 0px;margin: 0px;width: 108px;vertical-align: bottom;}
+.td32{padding: 0px;margin: 0px;width: 65px;vertical-align: bottom;}
+.td33{padding: 0px;margin: 0px;width: 134px;vertical-align: bottom;}
+.td34{padding: 0px;margin: 0px;width: 26px;vertical-align: bottom;}
+.td35{padding: 0px;margin: 0px;width: 152px;vertical-align: bottom;}
+.td36{padding: 0px;margin: 0px;width: 141px;vertical-align: bottom;}
+.td37{padding: 0px;margin: 0px;width: 17px;vertical-align: bottom;}
+.td38{padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;}
+.td39{padding: 0px;margin: 0px;width: 130px;vertical-align: bottom;}
+.td40{padding: 0px;margin: 0px;width: 6px;vertical-align: bottom;}
+.td41{padding: 0px;margin: 0px;width: 129px;vertical-align: bottom;}
+.td42{padding: 0px;margin: 0px;width: 16px;vertical-align: bottom;}
+.td43{padding: 0px;margin: 0px;width: 119px;vertical-align: bottom;}
+.td44{padding: 0px;margin: 0px;width: 70px;vertical-align: bottom;}
+.td45{padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td46{padding: 0px;margin: 0px;width: 69px;vertical-align: bottom;}
+.td47{padding: 0px;margin: 0px;width: 59px;vertical-align: bottom;}
+.td48{padding: 0px;margin: 0px;width: 8px;vertical-align: bottom;}
+.td49{padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;}
+.td50{padding: 0px;margin: 0px;width: 20px;vertical-align: bottom;}
+.td51{border-bottom: #bdeddc 1px solid;padding: 0px;margin: 0px;width: 32px;vertical-align: bottom;}
+.td52{border-bottom: #bdeddc 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+.td53{border-bottom: #bdeddc 1px solid;padding: 0px;margin: 0px;width: 33px;vertical-align: bottom;}
+.td54{border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 6px;vertical-align: bottom;}
+.td55{border-right: #bdeddc 1px solid;border-bottom: #bdeddc 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;background: #bdeddc;}
+.td56{border-right: #bdeddc 1px solid;border-bottom: #bdeddc 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;background: #bdeddc;}
+.td57{border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 8px;vertical-align: bottom;}
+.td58{border-right: #bdeddc 1px solid;border-bottom: #bdeddc 1px solid;padding: 0px;margin: 0px;width: 32px;vertical-align: bottom;background: #bdeddc;}
+.td59{border-right: #000000 1px solid;padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;}
+.td60{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 33px;vertical-align: bottom;}
+.td61{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 27px;vertical-align: bottom;}
+.td62{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 32px;vertical-align: bottom;}
+.td63{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td64{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+.td65{border-right: #000000 1px solid;padding: 0px;margin: 0px;width: 7px;vertical-align: bottom;}
+.td66{border-top: #000000 1px solid;padding: 0px;margin: 0px;width: 17px;vertical-align: bottom;}
+.td67{border-right: #0078ff 1px solid;padding: 0px;margin: 0px;width: 4px;vertical-align: bottom;}
+.td68{border-right: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+.td69{border-right: #0078ff 1px solid;padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;}
+.td70{border-right: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;}
+.td71{border-top: #000000 1px solid;padding: 0px;margin: 0px;width: 16px;vertical-align: bottom;}
+.td72{border-right: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 32px;vertical-align: bottom;}
+.td73{border-right: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;}
+.td74{border-bottom: #42cb9a 1px solid;padding: 0px;margin: 0px;width: 32px;vertical-align: bottom;}
+.td75{border-bottom: #42cb9a 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+.td76{border-right: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 7px;vertical-align: bottom;}
+.td77{border-bottom: #42cb9a 1px solid;padding: 0px;margin: 0px;width: 33px;vertical-align: bottom;}
+.td78{border-right: #42cb9a 1px solid;border-top: #42cb9a 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;background: #42cb9a;}
+.td79{border-right: #42cb9a 1px solid;border-top: #42cb9a 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;background: #42cb9a;}
+.td80{border-top: #000000 1px solid;padding: 0px;margin: 0px;width: 8px;vertical-align: bottom;}
+.td81{border-right: #42cb9a 1px solid;border-top: #42cb9a 1px solid;padding: 0px;margin: 0px;width: 32px;vertical-align: bottom;background: #42cb9a;}
+.td82{border-right: #42cb9a 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;background: #42cb9a;}
+.td83{border-right: #42cb9a 1px solid;padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;background: #42cb9a;}
+.td84{border-right: #42cb9a 1px solid;padding: 0px;margin: 0px;width: 32px;vertical-align: bottom;background: #42cb9a;}
+.td85{padding: 0px;margin: 0px;width: 167px;vertical-align: bottom;}
+.td86{padding: 0px;margin: 0px;width: 178px;vertical-align: bottom;}
+.td87{padding: 0px;margin: 0px;width: 136px;vertical-align: bottom;}
+.td88{padding: 0px;margin: 0px;width: 40px;vertical-align: bottom;}
+.td89{padding: 0px;margin: 0px;width: 90px;vertical-align: bottom;}
+.td90{padding: 0px;margin: 0px;width: 111px;vertical-align: bottom;}
+.td91{padding: 0px;margin: 0px;width: 206px;vertical-align: bottom;}
+.td92{padding: 0px;margin: 0px;width: 43px;vertical-align: bottom;}
+.td93{padding: 0px;margin: 0px;width: 58px;vertical-align: bottom;}
+.td94{padding: 0px;margin: 0px;width: 55px;vertical-align: bottom;}
+.td95{padding: 0px;margin: 0px;width: 72px;vertical-align: bottom;}
+.td96{padding: 0px;margin: 0px;width: 58px;vertical-align: bottom;background: #68d5ae;}
+.td97{padding: 0px;margin: 0px;width: 37px;vertical-align: bottom;}
+.td98{padding: 0px;margin: 0px;width: 29px;vertical-align: bottom;}
+.td99{padding: 0px;margin: 0px;width: 51px;vertical-align: bottom;}
+.td100{padding: 0px;margin: 0px;width: 93px;vertical-align: bottom;}
+.td101{padding: 0px;margin: 0px;width: 29px;vertical-align: bottom;background: #bdeddc;}
+.td102{padding: 0px;margin: 0px;width: 29px;vertical-align: bottom;background: #a0e5cd;}
+.td103{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 37px;vertical-align: bottom;}
+.td104{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 29px;vertical-align: bottom;}
+.td105{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 51px;vertical-align: bottom;}
+.td106{border-left: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 36px;vertical-align: bottom;}
+.td107{border-right: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 50px;vertical-align: bottom;}
+.td108{border-top: #000000 1px solid;padding: 0px;margin: 0px;width: 93px;vertical-align: bottom;}
+.td109{padding: 0px;margin: 0px;width: 29px;vertical-align: bottom;background: #42cb9a;}
+.td110{padding: 0px;margin: 0px;width: 45px;vertical-align: bottom;}
+.td111{padding: 0px;margin: 0px;width: 4px;vertical-align: bottom;}
+.td112{padding: 0px;margin: 0px;width: 73px;vertical-align: bottom;}
+.td113{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 45px;vertical-align: bottom;}
+.td114{border-right: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 44px;vertical-align: bottom;}
+.td115{border-top: #000000 1px solid;padding: 0px;margin: 0px;width: 73px;vertical-align: bottom;}
+.td116{padding: 0px;margin: 0px;width: 199px;vertical-align: bottom;}
+.td117{padding: 0px;margin: 0px;width: 142px;vertical-align: bottom;}
+.td118{padding: 0px;margin: 0px;width: 46px;vertical-align: bottom;}
+.td119{padding: 0px;margin: 0px;width: 34px;vertical-align: bottom;}
+.td120{padding: 0px;margin: 0px;width: 50px;vertical-align: bottom;}
+.td121{padding: 0px;margin: 0px;width: 48px;vertical-align: bottom;}
+.td122{padding: 0px;margin: 0px;width: 0px;vertical-align: bottom;}
+.td123{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;}
+.td124{padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;}
+.td125{padding: 0px;margin: 0px;width: 41px;vertical-align: bottom;}
+.td126{padding: 0px;margin: 0px;width: 41px;vertical-align: bottom;background: #f8c597;}
+.td127{padding: 0px;margin: 0px;width: 47px;vertical-align: bottom;}
+.td128{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;}
+.td129{padding: 0px;margin: 0px;width: 44px;vertical-align: bottom;}
+.td130{padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;background: #99c9ff;}
+.td131{padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;background: #f8c597;}
+.td132{padding: 0px;margin: 0px;width: 41px;vertical-align: bottom;background: #d75da2;}
+
+.tr0{height: 12px;}
+.tr1{height: 60px;}
+.tr2{height: 18px;}
+.tr3{height: 20px;}
+.tr4{height: 22px;}
+.tr5{height: 11px;}
+.tr6{height: 10px;}
+.tr7{height: 13px;}
+.tr8{height: 9px;}
+.tr9{height: 2px;}
+.tr10{height: 7px;}
+.tr11{height: 15px;}
+.tr12{height: 6px;}
+.tr13{height: 14px;}
+.tr14{height: 8px;}
+.tr15{height: 5px;}
+.tr16{height: 17px;}
+.tr17{height: 4px;}
+.tr18{height: 24px;}
+.tr19{height: 31px;}
+.tr20{height: 19px;}
+.tr21{height: 3px;}
+
+.t0{width: 91px;font: 6px 'Arial';color: #ffffff;}
+.t1{width: 88px;font: 6px 'Arial';color: #ffffff;}
+.t2{width: 80px;font: 8px 'Arial';}
+.t3{width: 119px;font: 8px 'Arial';}
+.t4{width: 513px;font: 10px 'Times New Roman';}
+.t5{width: 363px;margin-left: 16px;font: 10px 'Times New Roman';color: #0078ff;}
+.t6{width: 498px;margin-left: 14px;margin-top: 12px;font: 10px 'Times New Roman';}
+.t7{width: 411px;margin-left: 14px;font: 10px 'Times New Roman';}
+.t8{width: 325px;margin-left: 18px;margin-top: 12px;font: 10px 'Times New Roman';}
+.t9{width: 523px;margin-left: 4px;font: 8px 'Arial';}
+.t10{width: 284px;margin-left: 18px;font: 10px 'Times New Roman';}
+.t11{width: 317px;margin-left: 7px;margin-top: 6px;font: 7px 'Times New Roman';}
+.t12{width: 268px;font: 8px 'Arial';}
+.t13{width: 216px;margin-left: 15px;margin-top: 3px;font: 8px 'Arial';}
+.t14{width: 188px;margin-left: 18px;margin-top: 3px;font: 8px 'Arial';}
+.t15{width: 341px;margin-left: 25px;margin-top: 6px;font: 8px 'Times New Roman';}
+.t16{width: 178px;margin-top: 6px;font: 8px 'Arial';}
+.t17{width: 128px;margin-left: 24px;font: 8px 'Arial';}
+.t18{width: 129px;margin-left: 8px;font: 8px 'Arial';}
+.t19{width: 166px;font: 8px 'Arial';}
+.t20{width: 177px;font: 8px 'Arial';}
+.t21{width: 348px;margin-left: 28px;font: 8px 'Arial';}
+.t22{width: 73px;font: 8px 'Arial';}
+.t23{width: 124px;font: 8px 'Arial';}
+
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV id="page_1">
+<DIV id="p1dimg1">
+<IMG src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABGMAAAMFCAIAAABfxayaAAAfH0lEQVR4nO3dP4gmaYHH8SppWe5lReig0WAD6QVBkE0MlPYPt8hBL8slE22ymTDBgigbuJEYTSIeBxMMXLaJ0SSyTIOI4unLGZgsC4KwjcEGHhMMHA4tiwvvBa+0r7+3/1S/XU89VdWfTyC7PW8//XRVvTv19am3ql2tVg0AAAAbPlV7AgAAMGFt27ZtW3sW89e+07TvDPoT9wb9aQAAMEfrWLprl2tdli6rB7t817XfuP7ea1/TF2tKAACwozu7mnT1Cs9uf3TFnw68mrSmlAAAgBvYuVu6fGOVKLqQUgIAAHqzenDxBXLdE2gkseRzSgAAwI52+9TQLVNqGNaUAACggvYSfb3+sm+55cibPdM9k25aQWOoJqUEAABDu7aIrv7K9p9uv6Dj3SZuOvJmHe125+7L+mqwm9p1pJQAAGBQXRpmh7vqDfMtFwwygvWfEnxOCQAAhpNLNP/8CKYL02X7MU07F85uT3xq2/bqb1zH0tgWhW5JKQEAwMScd8ulnyba+HrHOureY+si2l5KmlkvufoOAABGofsni7rczqG0y4po+8NLu90EojqlBAAA1exwF7sef/T5P+92Vd760UnXxk/cBGIqlBIAAAxkt86pu3bUxXYvTaiILqOUAABgINcu3aw2dHlZr7O7rQldWdeFOzoAAEAdO6TO2OpoxqwpAQBAP256mdxNH6w03Uzq8lGljjd+GOy6PmtKAACwo9VqFbXT8YFIV7w+Xrz5I659rlFd3RvmprWzevBP33Lht/d+7Z9SAgCAsjYLZzuutl/cXB5X1e/usPOSTtTO1a/cQe9Pc3L1HQAA7G48nzUa1XLThcXSJWPGc1sIpQQAALfSeyxtX4B30wF3+JaOL+jy9KQrXnP1t+/8jSWM+kpHAACAKqwpAQAAJHd0AAAA6hjmLna7saYEAABU0OXBShUpJQAAoIKRrB1dxtV3AABAHZuxNJKlpHPufQcAAJBcfQcAAJCUEgAAQFJKAAAASSkBAMBA2rZt27b2LOjEHR0AAKCs7TraPAmPP43z8y5l5ZS+BHcJBwCAgjZTZztptkOobf+xmGEBqiKlBAAAO9p8BNC1z1G9IpOuTqPtP5VSA/A5JQAA6EHvD05dV9B2X7nWbhhKCQAAStleBeryR4yBUgIAgFKuuEzOFXQj53NKAADQg2s/p9RlfYnxcJdwAAAo66YLSus/3f6cUpev0BelBAAAkHxOCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUuIuOlme1p4CANyWv86gKKUEAACQlBIAo+D/HQdgVJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABpr/YEYGJOlqcXfv346HDgmczbZdu56byprxhh5zGxVQG4O5QS3JjzvwFctpGdqdfVfZPeaE/dUrmfdXx0OMXB+z3yp7gFig5eetqFRm6muSunu7WvNcXdUXTwcf6V7eo7AACApJQAAACSq+9KGfLKk2kZ5+oqAABssqZUih4AAIDpUkoAAABJKQEAACSlBAAAkJQSAABAcu87AKat6B10pjt4X6a7BcoNPokdt83WHpWJ7o7Sg4+NUgJg2p4+Oys08sH+4uzxW4UGX9x7WGjmB/uLHkcrunnbdwqN3awelJr5wf7iR78oMXDTNM0Pv11q5Gaa75TFvYeffPT7EiM3TbP30lcKjdzFdN9ZP32/yMhvvFJk2Fty9R0AAECypgQ9G/6hw3dqHbyEgXdZof3lwAOAfikl6Nnx0eHJ8vTak8iOr/nxC7+8+jVvf/zqzebHRWawv/o98F5775rXPHl96DADgIG5+g4AACAppVKGvxIGAADoi6vvSul4JczOyg1eetqFRoZZatu2aZrValV7IgBw5yglgPFaN5JeAoDhufoO5mZ9Vs2crFar1WrVtq2dCwCDsaYEc7M+pbb+MAk7lI/1JQAYhlKCGRJLU9FxH20Gld267WB/UW7wxb2H5QYvOvO+FJ3k6kG5sQvO/IffLjRwWRN9p+y99JVCI9c13XfWG68U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viglAJgV1QTQC6UEAACQlBIATNv2IpJlJYDbU0oAMB9ufAfQF6UEABNm+QigEKUEAJO3vZSkoABuSSkBwKy4AA+gF0oJAGZILwHc0l7tCQAAu7uwiGQSwO1ZUwIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAIO3VngAA0IPFvYfbX2zbdvNfV6vVUNO5wIUzBBittu5/NAFg7WR5enx0WHsWA1kHzIV/BZ8sTwefzvTcnUMFqMiaEgAMbd1IV/QSANUpJQCoQy8BjJlSAoAi4jNCXV6slwDGQykBQBEds0cjAYyTUgKAOjQSwJgpJQCooG17vv3sNz5YNk3zmy8fbX7xta+/HC978tsPe/yhN3LhDAFGSykBQAWXZdL5/a9vetv05x8sm63bZ8dPadu24v21L5xhR3fqJvLASHyq9gQAAABGRykBAAAkpQQAAJCUEgAAQFJKAAAASSkBwIQ9f/Tu80fvbn+xymQA5kQpAcAMiSWAW1JKAAAASSkBwORtriBZTQLohVICgAl78f6bN/o6AB0pJQCYDwtKAH1RSgAwNxaUAG5PKQHAtOkigBKUEgAAQFJKADB5m8tKlpgAeqGUAAAAklICAABIe7UnAAD04MKL7tq2HX4mAPPQrlar2nMAgOZkeXp8dFh7FvWdLE9rT6GUb3ywbJrmN18+uv1QDhVgAK6+AwAASEoJAAAgKSUAAICklAAAAJJSAgAASEoJAAAgeZ4SAIzI+f2v53fb9OcfLJtdb/A9v60BjJ81JQAAgKSUAAAAklICAABISgkAACApJQCgoOeP3n3+6N3tL1aZDEB3SgkAqEAsASOnlAAAAJJSAgCK21xBspoETIJSAgAKevH+mzf6OsBIKCUAYDgWlICpUEoAwNAsKAHjp5QAgLJ0ETBFSgkAACApJQCguM1lJUtMwCQoJQAAgKSUAAAA0l7tCQAAd4KL7oBpsaYEAACQrCkBwEidLE9rTwHg7lJKADBGx0eHtacAcKe5+g4AACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAA0l7tCQDATJwsT0sMe3x0WGjkAQYvNPKETHfflTueSww7IVPca0UHH/MhYU0JAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAICklAAAAJJSAgAASO1qtao9BwBoTpanY37+IAB3zV7tCQAANb3/lz8XGvmVz3y+0MgMoNCB4aiYrjt4SLj6DgAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAIO3VngAAUNMrn/l87SkwRg4Mwh08JJQSAPTj6bOzEsMe7C8Kjbwe/P2//LnQ4HfwvGpb0X03xQPDUeGQCGM+JFx9BwAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAAOPStm3tKSglAACALe1qtao9BwBoTpanx0eHtWcBAH9nTQkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAGEjbtrWnwEg5NhghpQQAQE0yiXHaqz0BAJiJp8/OSgx7sL8oNPJ68Ecf/a7Q4Pdf+mp8ZbVaFfpZo1V0303xwNg+Kpo7dmA4JMKFh8RIWFMCAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABI7Z16KDIAo3WyPD0+Oqw9CwD4u73aEwAAanr00e8KjXz/pa8WGpkBFDowHBXTdQcPCVffAQAAJKUEANdr27Zt29qzYFwcFQSHxMy4+g4Arrf+WO/mOZAP+uKoIDgkZkYpAUBXmyc965Mhp0E4KggOidlQSgBwM0592OaoIDgkZkApAUBXTn3Y5qggOCRmQykBQCdt6yGEJEcFwSExJ+59BwCdOPthm6OC4JCYE6UEAACQrA8CMAony9Pjo8PaswCAv/M5JQDox9NnZyWGPdhfFBp5Pfj3//heocF/8sXXC408IUX33RQPDEeFQyKM+ZBw9R0AAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQ2tVqVXsOANCcLE+Pjw5rz4Ky2taJBzAZe7UnAADU9P0/vldo5J988fVCIzOAQgeGo2K67uAh4eo7AGAgFpSACVFKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQGo9Aw6AMThZnh4fHdaeBQD83V7tCQDATDx9dlZi2IP9RaGR14N//4/vFRr8J198vdDIE1J0303xwHBUOCTCmA8JV98BAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAACkdrVa1Z4DADQny9Pjo8PaswAqaNu2aRonpWxq2/qdslf3xwMAcMdVPyFmhMZwVLj6DgAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAABSb89TOlme9jUUAPPmCbMAjF9vpeSvPQAAYDZ6KyUAuOOePjsrMezB/qLQyOvBC43MWtF958CYIofEhPicEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQNqrPQEAmIlyz7AvNzKlFd13DowpckhMiDUlAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAIO3VngAAXONkeVp7CgBMw/HRYV9DKSUAxq7Hv/YAoCNX3wEAACSlBAAAkJQSAABAUkoAAEyPe71QmlICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgLRXewIAcI2T5WntKUzY8dGhDci0HB8d1p4CNI01JQAAgG1KCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSJ88CMHYeQ3lLNiDADpQSAGP39NlZ7SlM2MH+wgZkWg72F7WnAE3j6jsAAIBtSgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABIe7UnAADXONhf1J7CtNmAADuwpgQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAAaa/2BADgGk+fndWewoQd7C9sQKblYH9RewrQNNaUAAAAtiklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEiePAvA2HkM5S3ZgAA7sKYEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAGmv9gQA4BpPn53VnsKEHewvbECm5WB/UXsK0DTWlAAAALYpJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgmAUTg+Oqw9BQD4h73aEwCAaxzsL2pPYdpsQIAdWFMCAABISgkAACApJQAAgNSuVqvacwAAABgXa0oAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAAKS2+YG7hAMAAPwTa0oAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABpr/YEmI/Vg9oz4Cbad2rPYBAOy0LuyPEDwF3WNj9Y1Z4DAADAuLj6DgAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAIP0/w3qnEgKXXR4AAAAASUVORK5CYII=" id="p1img1"></DIV>
+
+
+<DIV id="id1_1">
+<P class="p0 ft0">SQL Window Functions Cheat Sheet</P>
+</DIV>
+<DIV id="id1_2">
+<DIV id="id1_2_1">
+<P class="p0 ft1">WINDOW FUNCTIONS</P>
+<P class="p1 ft2">compute their result based on a sliding window frame, a set of rows that are somehow related to</P>
+</DIV>
+<DIV id="id1_2_2">
+<P class="p0 ft1">AGGREGATE FUNCTIONS VS. WINDOW FUNCTIONS</P>
+<P class="p2 ft2">unlike aggregate functions, window functions do not collapse rows.</P>
+</DIV>
+<DIV id="id1_2_3">
+<P class="p0 ft1">PARTITION BY</P>
+<P class="p3 ft2">divides rows into multiple groups, called <SPAN class="ft3">partitions</SPAN>, to which the window function is applied.</P>
+</DIV>
+<DIV id="id1_2_4">
+<P class="p0 ft1">ORDER BY</P>
+<P class="p4 ft4">specifies the order of rows in each partition to which the window function is applied.</P>
+</DIV>
+</DIV>
+<DIV id="id1_3">
+<DIV id="id1_3_1">
+<P class="p0 ft5">the current row.</P>
+</DIV>
+<DIV id="id1_3_2">
+<P class="p0 ft6">PARTITION BY city</P>
+</DIV>
+<DIV id="id1_3_3">
+<P class="p0 ft6">PARTITION BY city ORDER BY month</P>
+</DIV>
+</DIV>
+<DIV id="id1_4">
+<DIV id="id1_4_1">
+<P class="p0 ft4">current row <IMG src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAGCAYAAAAhS6XkAAAAOklEQVQYlaXRMQoAIAxD0R/w/leOUxexqDFr4NES2eY2kgxgW9v+BTuhEdahAnJtxX/erNRlI4G6ASYPKyD93Hfi+QAAAABJRU5ErkJggg==" id="p1inl_img1"></P>
+</DIV>
+<DIV id="id1_4_2">
+<TABLE cellpadding=0 cellspacing=0 class="t0">
+<TR>
+	<TD class="tr0 td0"><P class="p5 ft2">Aggregate Functions</P></TD>
+</TR>
+<TR>
+	<TD class="tr1 td0"><P class="p6 ft7">∑</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id1_4_3">
+<TABLE cellpadding=0 cellspacing=0 class="t1">
+<TR>
+	<TD class="tr0 td1"><P class="p5 ft8">Window Functions</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td1"><P class="p7 ft7">∑</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td1"><P class="p7 ft7">∑</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td1"><P class="p7 ft7">∑</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id1_4_4">
+<TABLE cellpadding=0 cellspacing=0 class="t2">
+<TR>
+	<TD class="tr0 td2"><P class="p8 ft9">month</P></TD>
+	<TD class="tr0 td3"><P class="p9 ft9">city</P></TD>
+	<TD class="tr0 td4"><P class="p10 ft9">sold</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td2"><P class="p11 ft9">1</P></TD>
+	<TD class="tr5 td3"><P class="p9 ft10">Rome</P></TD>
+	<TD class="tr5 td4"><P class="p12 ft9">200</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td2"><P class="p11 ft9">2</P></TD>
+	<TD class="tr5 td3"><P class="p9 ft11">Paris</P></TD>
+	<TD class="tr5 td4"><P class="p12 ft9">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td2"><P class="p11 ft9">1</P></TD>
+	<TD class="tr6 td3"><P class="p9 ft9">London</P></TD>
+	<TD class="tr6 td4"><P class="p12 ft9">100</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td2"><P class="p11 ft9">1</P></TD>
+	<TD class="tr5 td3"><P class="p9 ft11">Paris</P></TD>
+	<TD class="tr5 td4"><P class="p12 ft9">300</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td2"><P class="p11 ft9">2</P></TD>
+	<TD class="tr5 td5"><P class="p9 ft10">Rome</P></TD>
+	<TD class="tr5 td4"><P class="p12 ft9">300</P></TD>
+</TR>
+</TABLE>
+<P class="p13 ft9"><SPAN class="ft9">2</SPAN><SPAN class="ft12">London 400</SPAN></P>
+<P class="p14 ft9"><SPAN class="ft9">3</SPAN><SPAN class="ft13">Rome 400</SPAN></P>
+</DIV>
+<DIV id="id1_4_5">
+<TABLE cellpadding=0 cellspacing=0 class="t3">
+<TR>
+	<TD class="tr7 td2"><P class="p8 ft9">month</P></TD>
+	<TD class="tr7 td3"><P class="p9 ft9">city</P></TD>
+	<TD class="tr0 td6"><P class="p10 ft9">sold</P></TD>
+	<TD class="tr7 td3"><P class="p10 ft9">sum</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td2"><P class="p15 ft14">1</P></TD>
+	<TD class="tr8 td3"><P class="p16 ft15">Paris</P></TD>
+	<TD class="tr8 td7"><P class="p12 ft14">300</P></TD>
+	<TD class="tr8 td3"><P class="p17 ft14">800</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td2"><P class="p11 ft9">2</P></TD>
+	<TD class="tr5 td3"><P class="p9 ft11">Paris</P></TD>
+	<TD class="tr6 td8"><P class="p12 ft9">500</P></TD>
+	<TD class="tr5 td3"><P class="p12 ft9">800</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td2"><P class="p15 ft9">1</P></TD>
+	<TD class="tr8 td9"><P class="p18 ft14">Rome</P></TD>
+	<TD class="tr8 td10"><P class="p12 ft14">200</P></TD>
+	<TD class="tr8 td11"><P class="p17 ft14">900</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td2"><P class="p11 ft9">2</P></TD>
+	<TD class="tr5 td3"><P class="p19 ft9">Rome</P></TD>
+	<TD class="tr5 td12"><P class="p12 ft9">300</P></TD>
+	<TD class="tr5 td3"><P class="p12 ft9">900</P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td2"><P class="p11 ft9">3</P></TD>
+	<TD class="tr0 td3"><P class="p19 ft9">Rome</P></TD>
+	<TD class="tr5 td13"><P class="p12 ft9">400</P></TD>
+	<TD class="tr0 td3"><P class="p12 ft9">900</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr6 td2"><P class="p15 ft9">1</P></TD>
+	<TD rowspan=2 class="tr6 td3"><P class="p20 ft9">London</P></TD>
+	<TD class="tr9 td14"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr6 td3"><P class="p17 ft9">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr10 td15"><P class="p12 ft17">100</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td2"><P class="p11 ft9">2</P></TD>
+	<TD class="tr6 td3"><P class="p19 ft9">London</P></TD>
+	<TD class="tr8 td16"><P class="p12 ft14">400</P></TD>
+	<TD class="tr6 td3"><P class="p12 ft9">500</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id1_4_6">
+<TABLE cellpadding=0 cellspacing=0 class="t2">
+<TR>
+	<TD class="tr0 td17"><P class="p5 ft9">sold</P></TD>
+	<TD class="tr0 td18"><P class="p21 ft9">city</P></TD>
+	<TD class="tr0 td19"><P class="p9 ft9">month</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">200</P></TD>
+	<TD class="tr5 td18"><P class="p21 ft9">Rome</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">500</P></TD>
+	<TD class="tr5 td18"><P class="p24 ft11">Paris</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td17"><P class="p22 ft9">100</P></TD>
+	<TD class="tr6 td18"><P class="p21 ft9">London</P></TD>
+	<TD class="tr6 td19"><P class="p23 ft9">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">300</P></TD>
+	<TD class="tr5 td18"><P class="p24 ft11">Paris</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">300</P></TD>
+	<TD class="tr5 td18"><P class="p21 ft9">Rome</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td17"><P class="p22 ft9">400</P></TD>
+	<TD class="tr6 td18"><P class="p21 ft9">London</P></TD>
+	<TD class="tr6 td19"><P class="p23 ft9">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">400</P></TD>
+	<TD class="tr5 td18"><P class="p21 ft9">Rome</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">3</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id1_4_7">
+<TABLE cellpadding=0 cellspacing=0 class="t2">
+<TR>
+	<TD class="tr0 td17"><P class="p5 ft9">sold</P></TD>
+	<TD class="tr0 td18"><P class="p21 ft9">city</P></TD>
+	<TD class="tr0 td19"><P class="p9 ft9">month</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">300</P></TD>
+	<TD class="tr5 td18"><P class="p25 ft11">Paris</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">500</P></TD>
+	<TD class="tr5 td18"><P class="p25 ft11">Paris</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td17"><P class="p22 ft9">200</P></TD>
+	<TD class="tr6 td18"><P class="p21 ft9">Rome</P></TD>
+	<TD class="tr6 td19"><P class="p23 ft9">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">300</P></TD>
+	<TD class="tr5 td18"><P class="p21 ft9">Rome</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">400</P></TD>
+	<TD class="tr5 td18"><P class="p21 ft9">Rome</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">3</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td17"><P class="p22 ft9">100</P></TD>
+	<TD class="tr6 td18"><P class="p21 ft9">London</P></TD>
+	<TD class="tr6 td19"><P class="p23 ft9">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td17"><P class="p22 ft9">400</P></TD>
+	<TD class="tr5 td18"><P class="p21 ft9">London</P></TD>
+	<TD class="tr5 td19"><P class="p23 ft9">2</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id1_5">
+<DIV id="id1_5_1">
+<P class="p0 ft1">SYNTAX</P>
+</DIV>
+<DIV id="id1_5_2">
+<P class="p0 ft4"><SPAN class="ft18">Default Partition: </SPAN>with no <SPAN class="ft19">PARTITION BY </SPAN>clause, the entire result set is the partition.</P>
+</DIV>
+<DIV id="id1_5_3">
+<P class="p0 ft4"><SPAN class="ft18">Default ORDER BY: </SPAN>with no <SPAN class="ft19">ORDER BY </SPAN>clause, the order of rows within each partition is arbitrary.</P>
+</DIV>
+</DIV>
+<DIV id="id1_6">
+<DIV id="id1_6_1">
+<TABLE cellpadding=0 cellspacing=0 class="t4">
+<TR>
+	<TD class="tr2 td20"><P class="p5 ft19"><SPAN class="ft20">SELECT </SPAN>city, month,</P></TD>
+	<TD class="tr2 td21"><P class="p26 ft19"><SPAN class="ft20">SELECT </SPAN>&lt;column_1&gt;, &lt;column_2&gt;,</P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td20"><P class="p27 ft19"><SPAN class="ft21">sum</SPAN>(sold) <SPAN class="ft22">OVER </SPAN><SPAN class="ft23">(</SPAN></P></TD>
+	<TD class="tr0 td21"><P class="p28 ft21">&lt;window_function&gt;<SPAN class="ft19">() </SPAN><SPAN class="ft22">OVER </SPAN><SPAN class="ft19">(</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td20"><P class="p29 ft22">PARTITION BY <SPAN class="ft19">city</SPAN></P></TD>
+	<TD class="tr0 td21"><P class="p29 ft22">PARTITION BY <SPAN class="ft19">&lt;...&gt;</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td20"><P class="p29 ft22">ORDER BY <SPAN class="ft19">month</SPAN></P></TD>
+	<TD class="tr0 td21"><P class="p29 ft22">ORDER BY <SPAN class="ft19">&lt;...&gt;</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr10 td20"><P class="p29 ft25">RANGE UNBOUNDED PRECEDING<SPAN class="ft24">) total</SPAN></P></TD>
+	<TD class="tr10 td21"><P class="p29 ft24"><SPAN class="ft25">&lt;window_frame&gt;</SPAN>) &lt;window_column_alias&gt;</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id1_6_2">
+<P class="p0 ft1">WINDOW FRAME</P>
+<P class="p2 ft2">is a set of rows that are somehow related to the current row. The window frame is evaluated separately within each partition.</P>
+<P class="p30 ft26">ROWS | RANGE | GROUPS BETWEEN lower_bound AND upper_bound</P>
+</DIV>
+</DIV>
+<DIV id="id1_7">
+<DIV id="id1_7_1">
+<TABLE cellpadding=0 cellspacing=0 class="t5">
+<TR>
+	<TD class="tr11 td20"><P class="p5 ft19"><SPAN class="ft20">FROM </SPAN>sales;</P></TD>
+	<TD class="tr11 td22"><P class="p5 ft19"><SPAN class="ft20">FROM </SPAN>&lt;table_name&gt;;</P></TD>
+</TR>
+</TABLE>
+<P class="p31 ft1">Named Window Definition</P>
+<TABLE cellpadding=0 cellspacing=0 class="t6">
+<TR>
+	<TD colspan=2 class="tr2 td23"><P class="p5 ft19"><SPAN class="ft20">SELECT </SPAN>country, city,</P></TD>
+	<TD colspan=2 class="tr2 td24"><P class="p5 ft19"><SPAN class="ft20">SELECT </SPAN>&lt;column_1&gt;, &lt;column_2&gt;,</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 class="tr0 td23"><P class="p32 ft27"><SPAN class="ft21">rank</SPAN><SPAN class="ft19">() </SPAN><SPAN class="ft22">OVER </SPAN>country_sold_avg</P></TD>
+	<TD colspan=2 class="tr0 td24"><P class="p27 ft21">&lt;window_function&gt;<SPAN class="ft19">() </SPAN><SPAN class="ft22">OVER </SPAN><SPAN class="ft27">&lt;window_name&gt;</SPAN></P></TD>
+</TR>
+<TR>
+	<TD colspan=2 class="tr0 td23"><P class="p5 ft20">FROM <SPAN class="ft19">sales</SPAN></P></TD>
+	<TD colspan=2 class="tr0 td24"><P class="p5 ft19"><SPAN class="ft20">FROM </SPAN>&lt;table_name&gt;</P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td25"><P class="p5 ft20">WHERE</P></TD>
+	<TD class="tr0 td26"><P class="p5 ft20"><SPAN class="ft19">month </SPAN>BETWEEN <SPAN class="ft19">1 </SPAN>AND <SPAN class="ft19">6</SPAN></P></TD>
+	<TD class="tr0 td27"><P class="p5 ft28">WHERE</P></TD>
+	<TD class="tr0 td28"><P class="p33 ft19">&lt;...&gt;</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td25"><P class="p5 ft29">GROUP</P></TD>
+	<TD class="tr12 td26"><P class="p5 ft30"><SPAN class="ft29">BY </SPAN>country, city</P></TD>
+	<TD class="tr12 td27"><P class="p5 ft31">GROUP</P></TD>
+	<TD class="tr12 td28"><P class="p33 ft30"><SPAN class="ft29">BY </SPAN>&lt;...&gt;</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id1_7_2">
+<P class="p34 ft9">N PRECEDING</P>
+<P class="p35 ft32">CURRENT</P>
+<P class="p36 ft32">ROW</P>
+<P class="p37 ft9">M FOLLOWING</P>
+</DIV>
+<DIV id="id1_7_3">
+<P class="p0 ft9">PARTITION</P>
+<P class="p38 ft9"><SPAN class="ft10">N</SPAN><SPAN class="ft33">ROWS</SPAN></P>
+<P class="p39 ft9">M ROWS</P>
+</DIV>
+<DIV id="id1_7_4">
+<P class="p0 ft34">UNBOUNDED PRECEDING</P>
+<P class="p40 ft34">UNBOUNDED FOLLOWING</P>
+</DIV>
+<DIV id="id1_7_5">
+<P class="p0 ft4">The bounds can be any of the five options:</P>
+<P class="p41 ft36">∙ UNBOUNDED <SPAN class="ft35">PRECEDING </SPAN>∙ n <SPAN class="ft35">PRECEDING </SPAN>∙ CURRENT <SPAN class="ft35">ROW</SPAN></P>
+<P class="p42 ft38">∙ n <SPAN class="ft37">FOLLOWING </SPAN>∙ UNBOUNDED <SPAN class="ft37">FOLLOWING</SPAN></P>
+<P class="p43 ft4">The lower_bound must be BEFORE the upper_bound</P>
+</DIV>
+</DIV>
+<DIV id="id1_8">
+<DIV id="id1_8_1">
+<TABLE cellpadding=0 cellspacing=0 class="t7">
+<TR>
+	<TD class="tr2 td23"><P class="p5 ft19"><SPAN class="ft20">HAVING </SPAN>sum(sold) &gt; 10000</P></TD>
+	<TD class="tr2 td29"><P class="p5 ft20">HAVING <SPAN class="ft19">&lt;...&gt;</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td23"><P class="p5 ft27"><SPAN class="ft22">WINDOW </SPAN>country_sold_avg <SPAN class="ft22">AS </SPAN><SPAN class="ft19">(</SPAN></P></TD>
+	<TD class="tr0 td29"><P class="p5 ft27"><SPAN class="ft22">WINDOW </SPAN>&lt;window_name&gt; <SPAN class="ft22">AS </SPAN><SPAN class="ft19">(</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td23"><P class="p27 ft22">PARTITION BY <SPAN class="ft19">country</SPAN></P></TD>
+	<TD class="tr0 td29"><P class="p27 ft22">PARTITION BY <SPAN class="ft19">&lt;...&gt;</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td23"><P class="p27 ft19"><SPAN class="ft22">ORDER BY </SPAN>avg(sold) DESC)</P></TD>
+	<TD class="tr0 td29"><P class="p27 ft22">ORDER BY <SPAN class="ft19">&lt;...&gt;</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td23"><P class="p5 ft19"><SPAN class="ft20">ORDER BY </SPAN>country, city;</P></TD>
+	<TD class="tr0 td29"><P class="p27 ft22">&lt;window_frame&gt;<SPAN class="ft19">)</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr11 td23"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr11 td29"><P class="p5 ft20">ORDER BY <SPAN class="ft19">&lt;...&gt;;</SPAN></P></TD>
+</TR>
+</TABLE>
+<P class="p44 ft4"><SPAN class="ft19">PARTITION BY</SPAN>, <SPAN class="ft19">ORDER BY, </SPAN>and window frame definition are all optional.</P>
+<P class="p45 ft1">LOGICAL ORDER OF OPERATIONS IN SQL</P>
+<TABLE cellpadding=0 cellspacing=0 class="t8">
+<TR>
+	<TD class="tr2 td30"><P class="p46 ft19">1.</P></TD>
+	<TD class="tr2 td31"><P class="p47 ft19">FROM, JOIN</P></TD>
+	<TD class="tr2 td32"><P class="p48 ft19">7.</P></TD>
+	<TD class="tr2 td33"><P class="p18 ft19">SELECT</P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td30"><P class="p46 ft19">2.</P></TD>
+	<TD class="tr0 td31"><P class="p47 ft19">WHERE</P></TD>
+	<TD class="tr0 td32"><P class="p48 ft19">8.</P></TD>
+	<TD class="tr0 td33"><P class="p47 ft19">DISTINCT</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td30"><P class="p46 ft40">3.</P></TD>
+	<TD class="tr6 td31"><P class="p47 ft40">GROUP BY</P></TD>
+	<TD class="tr6 td32"><P class="p48 ft40">9.</P></TD>
+	<TD class="tr6 td33"><P class="p47 ft41">UNION/INTERSECT/EXCEPT</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id1_8_2">
+<TABLE cellpadding=0 cellspacing=0 class="t9">
+<TR>
+	<TD class="tr6 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD colspan=7 class="tr6 td35"><P class="p49 ft42">ROWS BETWEEN 1 PRECEDING</P></TD>
+	<TD class="tr6 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD colspan=7 class="tr6 td35"><P class="p50 ft42">RANGE BETWEEN 1 PRECEDING</P></TD>
+	<TD class="tr6 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD colspan=7 class="tr6 td36"><P class="p24 ft42">GROUPS BETWEEN 1 PRECEDING</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD colspan=5 class="tr5 td39"><P class="p51 ft42">AND 1 FOLLOWING</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD colspan=5 class="tr5 td41"><P class="p52 ft42">AND 1 FOLLOWING</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td42"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD colspan=5 class="tr5 td43"><P class="p53 ft42">AND 1 FOLLOWING</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td27"><P class="p25 ft9">city</P></TD>
+	<TD class="tr5 td2"><P class="p8 ft9">sold</P></TD>
+	<TD colspan=3 class="tr5 td44"><P class="p52 ft9">month</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td18"><P class="p25 ft9">city</P></TD>
+	<TD class="tr5 td45"><P class="p8 ft9">sold</P></TD>
+	<TD colspan=3 class="tr5 td46"><P class="p54 ft9">month</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td42"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td27"><P class="p25 ft9">city</P></TD>
+	<TD class="tr5 td2"><P class="p8 ft9">sold</P></TD>
+	<TD colspan=3 class="tr5 td47"><P class="p55 ft9">month</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td27"><P class="p21 ft10">Paris</P></TD>
+	<TD class="tr5 td2"><P class="p8 ft9">300</P></TD>
+	<TD class="tr5 td18"><P class="p56 ft9">1</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td18"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td18"><P class="p25 ft10">Paris</P></TD>
+	<TD class="tr5 td45"><P class="p8 ft9">300</P></TD>
+	<TD class="tr5 td3"><P class="p19 ft9">1</P></TD>
+	<TD class="tr5 td48"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td49"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td42"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td27"><P class="p21 ft10">Paris</P></TD>
+	<TD class="tr5 td2"><P class="p8 ft9">300</P></TD>
+	<TD class="tr5 td27"><P class="p11 ft9">1</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td50"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td27"><P class="p25 ft9">Rome</P></TD>
+	<TD class="tr5 td2"><P class="p8 ft9">200</P></TD>
+	<TD class="tr6 td51"><P class="p56 ft9">1</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td18"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td18"><P class="p25 ft10">Rome</P></TD>
+	<TD class="tr5 td45"><P class="p8 ft9">200</P></TD>
+	<TD class="tr6 td52"><P class="p19 ft9">1</P></TD>
+	<TD class="tr5 td48"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td49"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td42"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td27"><P class="p25 ft9">Rome</P></TD>
+	<TD class="tr5 td2"><P class="p8 ft9">200</P></TD>
+	<TD class="tr6 td53"><P class="p11 ft9">1</P></TD>
+	<TD class="tr6 td54"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td50"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td27"><P class="p18 ft9">Paris</P></TD>
+	<TD class="tr0 td2"><P class="p17 ft9">500</P></TD>
+	<TD class="tr5 td55"><P class="p57 ft9">2</P></TD>
+	<TD class="tr5 td54"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td18"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td18"><P class="p18 ft9">Paris</P></TD>
+	<TD class="tr0 td45"><P class="p58 ft9">500</P></TD>
+	<TD class="tr5 td56"><P class="p15 ft9">2</P></TD>
+	<TD class="tr5 td57"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td49"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td42"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td27"><P class="p18 ft9">Paris</P></TD>
+	<TD class="tr0 td2"><P class="p17 ft9">500</P></TD>
+	<TD class="tr5 td58"><P class="p59 ft9">2</P></TD>
+	<TD class="tr0 td59"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td50"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr13 td34"><P class="p5 ft9">current</P></TD>
+	<TD class="tr13 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr13 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr7 td60"><P class="p60 ft9">Rome</P></TD>
+	<TD class="tr7 td61"><P class="p17 ft9">100</P></TD>
+	<TD class="tr7 td62"><P class="p59 ft9">4</P></TD>
+	<TD class="tr13 td59"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr13 td18"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr13 td34"><P class="p5 ft9">current</P></TD>
+	<TD class="tr13 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr13 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr7 td62"><P class="p60 ft9">Rome</P></TD>
+	<TD class="tr7 td63"><P class="p58 ft9">100</P></TD>
+	<TD class="tr7 td64"><P class="p57 ft9">4</P></TD>
+	<TD class="tr13 td65"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr13 td49"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr13 td34"><P class="p5 ft9">current</P></TD>
+	<TD class="tr13 td42"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr13 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr7 td60"><P class="p60 ft9">Rome</P></TD>
+	<TD class="tr7 td61"><P class="p17 ft9">100</P></TD>
+	<TD class="tr7 td60"><P class="p61 ft9">4</P></TD>
+	<TD class="tr13 td59"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr13 td50"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr14 td34"><P class="p62 ft43">row</P></TD>
+	<TD class="tr15 td66"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr12 td67"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr15 td60"><P class="p18 ft46">Paris</P></TD>
+	<TD class="tr15 td61"><P class="p17 ft46">200</P></TD>
+	<TD class="tr15 td68"><P class="p57 ft46">4</P></TD>
+	<TD class="tr12 td59"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td18"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr14 td34"><P class="p62 ft43">row</P></TD>
+	<TD class="tr15 td66"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr12 td69"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr15 td62"><P class="p18 ft46">Paris</P></TD>
+	<TD class="tr15 td63"><P class="p58 ft46">200</P></TD>
+	<TD class="tr15 td70"><P class="p15 ft46">4</P></TD>
+	<TD class="tr12 td65"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td49"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr14 td34"><P class="p63 ft43">row</P></TD>
+	<TD class="tr15 td71"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr12 td69"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr15 td60"><P class="p18 ft46">Paris</P></TD>
+	<TD class="tr15 td61"><P class="p17 ft46">200</P></TD>
+	<TD class="tr15 td72"><P class="p59 ft46">4</P></TD>
+	<TD class="tr12 td59"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td50"><P class="p5 ft45">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr9 td37"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td38"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr0 td27"><P class="p21 ft10">Paris</P></TD>
+	<TD rowspan=2 class="tr0 td2"><P class="p8 ft9">300</P></TD>
+	<TD rowspan=2 class="tr0 td18"><P class="p56 ft9">5</P></TD>
+	<TD class="tr9 td59"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td18"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td37"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td40"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr0 td18"><P class="p25 ft10">Paris</P></TD>
+	<TD rowspan=2 class="tr0 td45"><P class="p8 ft9">300</P></TD>
+	<TD rowspan=2 class="tr0 td3"><P class="p19 ft9">5</P></TD>
+	<TD class="tr9 td65"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td49"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td42"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td40"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr0 td27"><P class="p21 ft10">Paris</P></TD>
+	<TD rowspan=2 class="tr0 td2"><P class="p8 ft9">300</P></TD>
+	<TD rowspan=2 class="tr0 td27"><P class="p11 ft9">5</P></TD>
+	<TD class="tr9 td59"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td50"><P class="p5 ft16">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr8 td73"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr6 td18"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td65"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td49"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td42"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td59"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td50"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td34"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td37"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td38"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td27"><P class="p60 ft14">Rome</P></TD>
+	<TD class="tr8 td2"><P class="p17 ft14">200</P></TD>
+	<TD class="tr8 td18"><P class="p59 ft14">5</P></TD>
+	<TD class="tr8 td40"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td18"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td34"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td37"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td40"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td18"><P class="p60 ft14">Rome</P></TD>
+	<TD class="tr8 td45"><P class="p58 ft14">200</P></TD>
+	<TD class="tr8 td3"><P class="p57 ft14">5</P></TD>
+	<TD class="tr8 td65"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td49"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td34"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td42"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td40"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td27"><P class="p60 ft14">Rome</P></TD>
+	<TD class="tr8 td2"><P class="p17 ft14">200</P></TD>
+	<TD class="tr8 td27"><P class="p61 ft14">5</P></TD>
+	<TD class="tr8 td59"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td50"><P class="p5 ft47">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td27"><P class="p25 ft9">London</P></TD>
+	<TD class="tr0 td2"><P class="p8 ft9">200</P></TD>
+	<TD class="tr5 td74"><P class="p56 ft9">5</P></TD>
+	<TD class="tr0 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td18"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td18"><P class="p25 ft9">London</P></TD>
+	<TD class="tr0 td45"><P class="p8 ft9">200</P></TD>
+	<TD class="tr5 td75"><P class="p19 ft9">5</P></TD>
+	<TD class="tr5 td76"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td49"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td42"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td27"><P class="p25 ft9">London</P></TD>
+	<TD class="tr0 td2"><P class="p8 ft9">200</P></TD>
+	<TD class="tr5 td77"><P class="p11 ft9">5</P></TD>
+	<TD class="tr5 td73"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td50"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td34"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td37"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td38"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td27"><P class="p22 ft14">London</P></TD>
+	<TD class="tr8 td2"><P class="p17 ft14">100</P></TD>
+	<TD class="tr14 td78"><P class="p57 ft43">6</P></TD>
+	<TD class="tr8 td40"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td18"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td34"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td37"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td40"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td18"><P class="p5 ft14">London</P></TD>
+	<TD class="tr8 td45"><P class="p58 ft14">100</P></TD>
+	<TD class="tr14 td79"><P class="p15 ft43">6</P></TD>
+	<TD class="tr14 td80"><P class="p5 ft48">&nbsp;</P></TD>
+	<TD class="tr8 td49"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td34"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td42"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td40"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td27"><P class="p22 ft14">London</P></TD>
+	<TD class="tr8 td2"><P class="p17 ft14">100</P></TD>
+	<TD class="tr14 td81"><P class="p59 ft43">6</P></TD>
+	<TD class="tr8 td40"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD class="tr8 td50"><P class="p5 ft47">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td27"><P class="p25 ft9">Rome</P></TD>
+	<TD class="tr5 td2"><P class="p8 ft9">300</P></TD>
+	<TD class="tr5 td82"><P class="p19 ft9">6</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td18"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td18"><P class="p25 ft10">Rome</P></TD>
+	<TD class="tr5 td45"><P class="p8 ft9">300</P></TD>
+	<TD class="tr5 td83"><P class="p9 ft9">6</P></TD>
+	<TD class="tr5 td48"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td49"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td42"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td27"><P class="p25 ft9">Rome</P></TD>
+	<TD class="tr5 td2"><P class="p8 ft9">300</P></TD>
+	<TD class="tr5 td84"><P class="p56 ft9">6</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td50"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD colspan=7 class="tr6 td35"><P class="p64 ft9">1 row before the current row and</P></TD>
+	<TD class="tr6 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD colspan=7 class="tr6 td35"><P class="p50 ft9">values in the range between 3 and 5</P></TD>
+	<TD colspan=8 class="tr6 td85"><P class="p65 ft9">1 group before the current row and 1 group</P></TD>
+</TR>
+<TR>
+	<TD class="tr7 td34"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr7 td37"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr7 td38"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD colspan=5 class="tr7 td39"><P class="p5 ft9">1 row after the current row</P></TD>
+	<TD colspan=8 class="tr7 td86"><P class="p66 ft9"><SPAN class="ft32">ORDER BY </SPAN>must contain a single expression</P></TD>
+	<TD colspan=8 class="tr7 td85"><P class="p67 ft9">after the current row regardless of the value</P></TD>
+</TR>
+</TABLE>
+<P class="p68 ft4">As of 2020, GROUPS is only supported in PostgreSQL 11 and up.</P>
+</DIV>
+</DIV>
+<DIV id="id1_9">
+<DIV id="id1_9_1">
+<TABLE cellpadding=0 cellspacing=0 class="t10">
+<TR>
+	<TD class="tr13 td30"><P class="p46 ft19">4.</P></TD>
+	<TD class="tr13 td87"><P class="p47 ft19">aggregate functions</P></TD>
+	<TD class="tr13 td88"><P class="p69 ft19">10.</P></TD>
+	<TD class="tr13 td89"><P class="p33 ft19">ORDER BY</P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td30"><P class="p46 ft19">5.</P></TD>
+	<TD class="tr0 td87"><P class="p47 ft19">HAVING</P></TD>
+	<TD class="tr0 td88"><P class="p69 ft19">11.</P></TD>
+	<TD class="tr0 td89"><P class="p33 ft19">OFFSET</P></TD>
+</TR>
+<TR>
+	<TD class="tr11 td30"><P class="p46 ft19">6.</P></TD>
+	<TD class="tr11 td87"><P class="p47 ft23">window functions</P></TD>
+	<TD class="tr11 td88"><P class="p69 ft19">12.</P></TD>
+	<TD class="tr11 td89"><P class="p33 ft19">LIMIT/FETCH/TOP</P></TD>
+</TR>
+</TABLE>
+<P class="p70 ft4">You can use window functions in <SPAN class="ft19">SELECT </SPAN>and <SPAN class="ft19">ORDER BY. </SPAN>However, you can’t put window functions anywhere in the <SPAN class="ft19">FROM</SPAN>, <SPAN class="ft19">WHERE</SPAN>, <SPAN class="ft19">GROUP BY</SPAN>, or <SPAN class="ft19">HAVING </SPAN>clauses.</P>
+</DIV>
+<DIV id="id1_9_2">
+<P class="p0 ft1">ABBREVIATIONS</P>
+<TABLE cellpadding=0 cellspacing=0 class="t11">
+<TR>
+	<TD class="tr0 td90"><P class="p71 ft9">Abbreviation</P></TD>
+	<TD class="tr0 td91"><P class="p23 ft10">Meaning</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td90"><P class="p71 ft42">UNBOUNDED PRECEDING</P></TD>
+	<TD class="tr5 td91"><P class="p23 ft42">BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td90"><P class="p71 ft32">n PRECEDING</P></TD>
+	<TD class="tr5 td91"><P class="p9 ft42">BETWEEN n PRECEDING AND CURRENT ROW</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td90"><P class="p72 ft42">CURRENT ROW</P></TD>
+	<TD class="tr5 td91"><P class="p23 ft42">BETWEEN CURRENT ROW AND CURRENT ROW</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td90"><P class="p71 ft42">n FOLLOWING</P></TD>
+	<TD class="tr6 td91"><P class="p9 ft42">BETWEEN AND CURRENT ROW AND n FOLLOWING</P></TD>
+</TR>
+<TR>
+	<TD class="tr0 td90"><P class="p72 ft42">UNBOUNDED FOLLOWING</P></TD>
+	<TD class="tr0 td91"><P class="p9 ft42">BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id1_9_3">
+<P class="p0 ft1">DEFAULT WINDOW FRAME</P>
+<P class="p73 ft9">If <SPAN class="ft32">ORDER BY </SPAN>is specified, then the frame is</P>
+<P class="p74 ft32">RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW<SPAN class="ft9">.</SPAN></P>
+<P class="p75 ft9">Without <SPAN class="ft32">ORDER BY, </SPAN>the frame specification is</P>
+<P class="p76 ft50">ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING<SPAN class="ft49">.</SPAN></P>
+</DIV>
+</DIV>
+<DIV id="id1_10">
+<DIV id="id1_10_1">
+<P class="p0 ft52">Try out the interactive <A href="https://learnsql.com/course/window-functions"><SPAN class="ft51">Window Functions </SPAN></A>course at <A href="https://learnsql.com/"><SPAN class="ft51">LearnSQL.com</SPAN></A><A href="https://learnsql.com/">, </A>and check out our other SQL courses.</P>
+</DIV>
+<DIV id="id1_10_2">
+<P class="p77 ft53">LearnSQL.com is owned by Vertabelo SA vertabelo.com | CC <NOBR>BY-NC-ND</NOBR> Vertabelo SA</P>
+</DIV>
+</DIV>
+</DIV>
+<DIV id="page_2">
+<DIV id="p2dimg1">
+<IMG src="data:image/png;base64,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QFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBQF92d7ZLLwGAlpQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAAKSN0gtgLRwdn5ReAgAAa6GrveyUEqtg70UAAMbF1XcAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAAKSN0gsAAP7r6PikyLy7O9ulpi47++7OdotXFfxZnWm3bGBZzikBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAAqW6apvQamJSj4xM74gEAMHYbpRcAAPxX/aDMvM3DMvOe++pZmXk/u9PmVaVWe67dsoFlufoOAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAIDkKeEAALR3dHxSaurdne1Ss5edut0LC/5/6szottxUSqyjus49l/v73dHfb9LOf92MZZ1D43C6qNefQE8jA0Bw9R0AAEByTgkAhqJ5WHoFhXx2p/QKljGu1QKtKSUAGIr6QZl5m4fVi5enZeauqq3NWanZtzZnLV711bPOF7IcqQar4eo7AACApJQAAACSUgIAAEhKCQAAICklAACA5Nl3AAC0V3ZL6IKzj24v7NEtuDilBFXV8++OsfxiGss6h8/hNIpFAl0p9XT7ao23IGvHA+6XpZSgqqrqn6f/6WnkX89+efr4fh8jz+4+6nbAnv5Tt4b/GXM4AcAEuE8JAAAgOacEAENR8Bzs1uas2NylZ1/W6K4gAtpRSgAwFKXu91jDq2Svw80esCZcfQcAAJCUEgAAQFJKAAAASSkBAAAkT3QAAKA9TwQZC88CWZZSAgCgvVLPbKyqqnlYvXh5WmTqrc1ZwanbvdBjG5ellKCqqurXs1/2N/js7qP+Bu+QDwW74nACgAlQSlBVVfXdT897Gvnjm7d6+rCt87B5dXDY8YhVVVXVjf29PoYdMofT6eP7XQ43RygCsDJKCQCGwqndURjdFURAO0oJAIaiv9Nxl5vdfVTqjovqGjddlPL66UHZBbzz/n7ZBcCa8JRwAACApJQAAACSUgIAAEhKCQAAICklAACA5Nl3AAC0V/bp9gWfnTi6xzZ6wP2ylBJUVVV9fPNWf4OPZYOUNdwiticOJ/vDwlrpaUfsRZT9lfjVszLztg6eUgs+N7pUU0pQVVX15Y/f9zTy5+9+8OrgsI+ROw+bT/Z6+Q367eHYfi9em8Opv7dNowhFAKbBfUoAAADJOSUAGIqCFy6O7o6Lgt55f7/0EoBVUEoAMBSnj+8XmdetZUt5/fSg7AKkGqyGq+8AAACSUgIAAEhKCQAAICklAACApJQAAACSZ98BANDe2m4J/dnYdlYf3YKLq5umKb0GJuXo+GR3Z7v0Kq5Q1458OuNwokOeEj4KnhIeSh23VVXN7j568fK0yNRbm7OCU7d7oUN3Wc4pQVVV1e//8deeRv7Lb373yd6zPkb+9rDjj4ae733T7YBnbh1+2sewQ+ZwenVw2OFo827s7/U0MgAE9ykBAAAk55QAYChcBTcKo7uCCGhHKQHAUBS8T6nUHRfVCO/3cLMHrAlX3wEAACSlBAAAkJQSAABAUkoAAADJEx0AAGiv7DMbW2/DOuqp2/EskGUpJQAA2iv1zMaqdKSNjsc2LkspQVVV1V9+87v+Bv/28E5/g3fo1uGnpZcwEQ6nG/t7pZcAANellKCqqurDH77uaeQnt+893/umj5E7D5ue9jMZ3cUJ1+dw+mTvWYejzRtFKAIwDUoJAIai4KVEZT/UGNdHKqO7gghox7PvWCN1XZdeAtPhcAKAaVNKrDVvdumKYwkAJkYpsUaappl/O1vXddM0BdfDqM0fTo4lAJgepQQAAJCUEuvl/DyAkwBcX5ylBACmRCkBAAAkTwln7ZydB3BCiU44nAAKPt2epXjA/bL8B56OHR2f7O5sl17FFby1pUMOJ2DNnT6+X2rq2d1HPW2bfqWtzdnrpwdFpm4dPKUWfG50qebqO9aR97V0yOEEAJOklAAAAJJSAgAASEoJAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAIBka3k6dnR8sruzXXoVAABwLc4pAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKXEOqrruvQSmA6HEwBM0kbpBcAgHB2f9DTy7s52r4N3ONpY1jl8DqfK4QTA+DmnBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEwYnb+BaAnddM0pdfApBwdnwx/X8i6duTTGYdTWX7+APRko/QCYBD+efqfnkb+9eyXp4/v9zT47O6jDkd7dXDY4Wjzbuzv9TTyMDmcAGACXH0HAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQ6qZpSq+BSTk6Ptnd2S69iivUtSOfzjicyvLzB6AnG6UXAIPw3U/Pexr545u36gc9jV01D7sc7ZO9Z10ON+fbwzs9jTxMDqeqql68PO1yuDlbm7NKIAHQP1ffATAFdV2XXgIAk6KUABifpmnm08gpJgA6p5QAAACSUgJg3JxQAqAPSgmAUYoL8ACgW0oJAAAgKSUAxursojuX3gHQB6UEAACQlBIAI+aEEgA98bwgOnZ0fLK7s116FVfwpCw65HACgEnaKL0AGIQvf/y+p5E/f/eDVweHPQ1+Y3+vw9Ge733T4Wjzbh1+2tPIw+Rwqqrq9PH9DkebN7v7qKeRAWCeq+8AAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACAZGt5OnZ0fLK7s116FVeoa0c+nXE4AcAkbZReAAzC7//x155G/stvfvfJ3rOeBv/28E5PI/dnHbrC4VRVVf2gw8F+pnnY18gAMM/VdwAAAEkpAatT1/X5/wIADJlSAgAASEoJWLWmaZxWAgAGTikBAAAkpQSsyPxT75xWAgAGTikBZUz+WeEAwKgpJWBFpBEAMCJKCQAAINU+5aVbR8cnuzvbpVdxhfkbZlix6f3wp/cdAQBVVW2UXgAMwoc/fN3TyE9u33u+901Pg986/LTD0V68PO1wtHlbm7OeRh4mh1NVVa8ODjscbd6N/b2eRgaAea6+AwAASEqJ9eLJ1HTI4QQAE6aUWGve6dIhhxMATIlSYr3Mb3jqRnyuyeEEABOmlAAAAJJSYk05A0CHHE4AMD1KCQAAICkl1s7ZZ//OANAJhxMATJVSAlZKVAAAo+Daejp2dHyyu7NdehUAAHAtzikBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQNoovQBYwtHxSZF5d3e2S019Nnu7F/a35tZLAgAYC6UEAEO0hp8NjfFjqYILPuOjK+iPq+8AAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklGJm6rksvAQBg+uw8y5gU3F+v4NSt08h2hAAArdVN05ReA5NydHwyyTfo3/30vNTUH9+8Nf+Pdb3oX9vTx/f7WVE1u/uop5EBAAbCOSUAGKL6QZl5m4dl5h2pr54VXsBndwovACbMfUoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkOynBAuJ7V9Hwf6wAACtKSXG5MXL0yLzbm3OvvvpeZGpq2tE2unj+92u5JwGgxWwA+wo2PgVJkwpAcAQ1Q/KzNs8LPmxVJF5r+OrZ4UXINWgP+5TAgAASEoJAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAICklAAAAJKdZxmTgpsSfnzzVqmpW5vdfVR6CQAAY6WUYCF/+tffSk39xXsftXvh6eP73a7knAaDFWgeFpu64MdSo/PZndIrAHqjlABgiOoHZeYtWGhj9NWzwguQatAf9ykBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQLKfEgxdXdellwAAsHaUEizki/c+KjZ108z/4+LhNLv7qIflAACsBaXEmLx4eVpk3q3N2Z/+9bciU1dV9ef/+d92L3x1cNjtSs7d2N/raWTgXPOw9ApYwGd3Sq8A6I1SgqFr2p5TAkbt9PH9IvPO7j4q+LFUqanPZm/xqtdPDzpfyVLeeX+/7AJgwjzRAQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACS/ZQYk3abXXTii/c+KjV1a/aHBQBorY5NLeGajo5Pdne2S6+ie3/6199KTR2RVteL/rV9dXDYz4o0GAAwfc4pAcAQnT6+X2Te2d1HReYdqddPD8ou4J3398suACbMfUoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAsvMsLOSL9z4qvYSl3djfK70EAICxqpumKb0GJuXo+GR3Z7unwV+8PO1p5Mttbc4+/OHrIlNXVfXk9r35f6zrRf/avjo47GdFGgwAmD7nlABgiE4f3y8y7+zuo4IfS5Wa+mz2Fq96/fSg85Us5Z3398suACbMfUoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACRPCYehq+u69BIAANaOUoKhi31mhRMAwAooJcak3baAnXhy+16pqVun0Y39vW5XAgCwPpQSLOTDH74uNXXrc0qf7D3rYTlVVVXfHt7paWTg3Ozuo1JTF/xYquDU7bzz/n7pJQB9UUoAMESnj+8XmbdgoY3R66cHZRcg1aA/nn0HAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAMl+SrCQJ7fvlV7C0uwPCwDQWt00Tek1MClHxye7O9s9Df7i5WlPI19ua3P24Q9fF5m6uhBpdb3oX9tP9p71syINBgBMn3NKAMDPFPxYqtTUZ7O3eFXBBZ9pt2xgEe5TAgAASEoJAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAIBkPyUYurquSy8BAGDtKCXGpOD+ek9u3ys1ddW0nPrbwzvdLgQAYH0oJQDgZwp+LFVw6nZGt2Bgce5TAgAASEoJAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAICklAAAAJJSAgAASHXTNKXXAAAAMCzOKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkOrqD03pNQAAAAyLc0oAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABpo/QCmI7mYekVsIz6QekVrITDsidrcvwAsM7q6g9N6TUAAAAMi6vvAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAA0v8BvMRsSp42uikAAAAASUVORK5CYII=" id="p2img1"></DIV>
+
+
+<DIV id="id2_1">
+<P class="p0 ft0">SQL Window Functions Cheat Sheet</P>
+</DIV>
+<DIV id="id2_2">
+<DIV id="id2_2_1">
+<P class="p0 ft1">LIST OF WINDOW FUNCTIONS</P>
+<P class="p78 ft54">Aggregate Functions</P>
+<P class="p79 ft18">∙ avg()</P>
+<P class="p80 ft18">∙ count()</P>
+<P class="p80 ft18">∙ max()</P>
+</DIV>
+<DIV id="id2_2_2">
+<P class="p0 ft1">RANKING FUNCTIONS</P>
+<P class="p81 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">row_number() </SPAN>− unique number for each row within partition, with different numbers for tied values</P>
+<P class="p79 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">rank(</SPAN><SPAN class="ft19">) </SPAN>− ranking within partition, with gaps and same ranking for tied values</P>
+<P class="p80 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">dense_rank() </SPAN>− ranking within partition, with no gaps and same ranking for tied values</P>
+</DIV>
+<DIV id="id2_2_3">
+<P class="p0 ft1">DISTRIBUTION FUNCTIONS</P>
+<P class="p82 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">percent_rank() </SPAN>− the percentile ranking number of a <NOBR>row—a</NOBR> value in [0, 1] interval: (rank - 1) / (total number of rows - 1)</P>
+<P class="p83 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">cume_dist() </SPAN>− the cumulative distribution of a value within a group of values, i.e., the number of rows with values less than or equal to the current row’s value divided by the total number of rows; a value in (0, 1] interval</P>
+</DIV>
+</DIV>
+<DIV id="id2_3">
+<DIV id="id2_3_1">
+<P class="p84 ft56"><SPAN class="ft55">∙ </SPAN>min() <SPAN class="ft55">∙ sum()</SPAN></P>
+<P class="p43 ft54">Ranking Functions</P>
+<P class="p85 ft56"><SPAN class="ft55">∙ </SPAN>row_number() <SPAN class="ft55">∙ </SPAN>rank() <SPAN class="ft55">∙ </SPAN>dense_rank()</P>
+</DIV>
+<DIV id="id2_3_2">
+<TABLE cellpadding=0 cellspacing=0 class="t12">
+<TR>
+	<TD rowspan=2 class="tr16 td92"><P class="p86 ft9">city</P></TD>
+	<TD rowspan=2 class="tr16 td93"><P class="p87 ft9">price</P></TD>
+	<TD class="tr0 td94"><P class="p88 ft9">row_number</P></TD>
+	<TD class="tr0 td95"><P class="p25 ft9">rank</P></TD>
+	<TD class="tr0 td88"><P class="p9 ft9">dense_rank</P></TD>
+</TR>
+<TR>
+	<TD class="tr15 td94"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr6 td95"><P class="p25 ft9">over(order by price)</P></TD>
+	<TD class="tr15 td88"><P class="p5 ft44">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr15 td92"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr15 td93"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr15 td94"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr15 td88"><P class="p5 ft44">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td92"><P class="p86 ft10">Paris</P></TD>
+	<TD class="tr5 td93"><P class="p9 ft9">7</P></TD>
+	<TD class="tr5 td94"><P class="p88 ft9">1</P></TD>
+	<TD class="tr5 td95"><P class="p21 ft9">1</P></TD>
+	<TD class="tr5 td88"><P class="p9 ft9">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td92"><P class="p86 ft10">Rome</P></TD>
+	<TD class="tr5 td93"><P class="p9 ft9">7</P></TD>
+	<TD class="tr5 td94"><P class="p88 ft9">2</P></TD>
+	<TD class="tr5 td95"><P class="p21 ft9">1</P></TD>
+	<TD class="tr5 td88"><P class="p9 ft9">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td92"><P class="p86 ft9">London</P></TD>
+	<TD class="tr6 td93"><P class="p9 ft9">8.5</P></TD>
+	<TD class="tr6 td94"><P class="p88 ft9">3</P></TD>
+	<TD class="tr6 td95"><P class="p21 ft9">3</P></TD>
+	<TD class="tr6 td88"><P class="p9 ft9">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td92"><P class="p86 ft9">Berlin</P></TD>
+	<TD class="tr5 td93"><P class="p9 ft9">8.5</P></TD>
+	<TD class="tr5 td94"><P class="p88 ft9">4</P></TD>
+	<TD class="tr5 td95"><P class="p21 ft9">3</P></TD>
+	<TD class="tr5 td88"><P class="p9 ft9">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td92"><P class="p86 ft10">Moscow</P></TD>
+	<TD class="tr5 td96"><P class="p9 ft9">9</P></TD>
+	<TD class="tr5 td94"><P class="p88 ft9">5</P></TD>
+	<TD class="tr5 td95"><P class="p21 ft9">5</P></TD>
+	<TD class="tr5 td88"><P class="p9 ft9">3</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td92"><P class="p50 ft9">Madrid</P></TD>
+	<TD class="tr6 td93"><P class="p9 ft9">10</P></TD>
+	<TD class="tr6 td94"><P class="p88 ft9">6</P></TD>
+	<TD class="tr6 td95"><P class="p21 ft9">6</P></TD>
+	<TD class="tr6 td88"><P class="p9 ft9">4</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td92"><P class="p86 ft10">Oslo</P></TD>
+	<TD class="tr5 td93"><P class="p9 ft9">10</P></TD>
+	<TD class="tr5 td94"><P class="p88 ft9">7</P></TD>
+	<TD class="tr5 td95"><P class="p21 ft9">6</P></TD>
+	<TD class="tr5 td88"><P class="p9 ft9">4</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_3_3">
+<P class="p0 ft32">percent_rank() OVER(ORDER BY sold)</P>
+<TABLE cellpadding=0 cellspacing=0 class="t13">
+<TR>
+	<TD class="tr0 td97"><P class="p9 ft9">city</P></TD>
+	<TD class="tr0 td98"><P class="p9 ft9">sold</P></TD>
+	<TD class="tr0 td99"><P class="p33 ft9">percent_rank</P></TD>
+	<TD class="tr0 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td100"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td97"><P class="p9 ft10">Paris</P></TD>
+	<TD class="tr5 td101"><P class="p23 ft9">100</P></TD>
+	<TD class="tr5 td99"><P class="p23 ft9">0</P></TD>
+	<TD class="tr5 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td100"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td97"><P class="p9 ft9">Berlin</P></TD>
+	<TD class="tr6 td102"><P class="p23 ft9">150</P></TD>
+	<TD class="tr6 td99"><P class="p9 ft9">0.25</P></TD>
+	<TD class="tr6 td40"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td100"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr15 td103"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr15 td104"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr15 td105"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr12 td40"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td100"><P class="p5 ft45">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td106"><P class="p10 ft57">Rome</P></TD>
+	<TD class="tr17 td104"><P class="p89 ft57">200</P></TD>
+	<TD class="tr17 td107"><P class="p90 ft57">0.5</P></TD>
+	<TD class="tr15 td40"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr5 td108"><P class="p10 ft9">without this row 50% of</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr5 td97"><P class="p9 ft10">Moscow</P></TD>
+	<TD rowspan=2 class="tr5 td98"><P class="p23 ft9">200</P></TD>
+	<TD rowspan=2 class="tr5 td99"><P class="p23 ft9">0.5</P></TD>
+	<TD class="tr10 td40"><P class="p5 ft58">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td40"><P class="p5 ft59">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr6 td100"><P class="p10 ft9">values are less than this</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr6 td97"><P class="p19 ft9">London</P></TD>
+	<TD rowspan=2 class="tr6 td109"><P class="p23 ft9">300</P></TD>
+	<TD rowspan=2 class="tr6 td99"><P class="p23 ft9">1</P></TD>
+	<TD class="tr12 td40"><P class="p5 ft45">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td40"><P class="p5 ft59">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr6 td100"><P class="p10 ft9">row’s value</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td97"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td98"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td99"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td40"><P class="p5 ft45">&nbsp;</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_3_4">
+<P class="p0 ft32">cume_dist() OVER(ORDER BY sold)</P>
+<TABLE cellpadding=0 cellspacing=0 class="t14">
+<TR>
+	<TD class="tr0 td97"><P class="p19 ft9">city</P></TD>
+	<TD class="tr0 td98"><P class="p16 ft9">sold</P></TD>
+	<TD class="tr0 td110"><P class="p60 ft9">cume_dist</P></TD>
+	<TD class="tr0 td111"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr0 td112"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td97"><P class="p9 ft10">Paris</P></TD>
+	<TD class="tr5 td101"><P class="p10 ft9">100</P></TD>
+	<TD class="tr5 td110"><P class="p19 ft9">0.2</P></TD>
+	<TD class="tr5 td111"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr5 td112"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td97"><P class="p19 ft9">Berlin</P></TD>
+	<TD class="tr6 td102"><P class="p10 ft9">150</P></TD>
+	<TD class="tr6 td110"><P class="p19 ft9">0.4</P></TD>
+	<TD class="tr6 td111"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td112"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr15 td103"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr15 td104"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr15 td113"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD class="tr12 td111"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td112"><P class="p5 ft45">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td106"><P class="p10 ft57">Rome</P></TD>
+	<TD class="tr17 td104"><P class="p89 ft57">200</P></TD>
+	<TD class="tr17 td114"><P class="p91 ft57">0.8</P></TD>
+	<TD class="tr15 td111"><P class="p5 ft44">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr5 td115"><P class="p92 ft9">80% of values are</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr5 td97"><P class="p19 ft9">Moscow</P></TD>
+	<TD rowspan=2 class="tr5 td98"><P class="p10 ft9">200</P></TD>
+	<TD rowspan=2 class="tr5 td110"><P class="p19 ft9">0.8</P></TD>
+	<TD class="tr10 td111"><P class="p5 ft58">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td111"><P class="p5 ft59">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr6 td112"><P class="p92 ft9">less than or equal</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr6 td97"><P class="p19 ft9">London</P></TD>
+	<TD rowspan=2 class="tr6 td109"><P class="p10 ft9">300</P></TD>
+	<TD rowspan=2 class="tr6 td110"><P class="p19 ft9">1</P></TD>
+	<TD class="tr12 td111"><P class="p5 ft45">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td111"><P class="p5 ft59">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr6 td112"><P class="p92 ft9">to this one</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td97"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td98"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td110"><P class="p5 ft45">&nbsp;</P></TD>
+	<TD class="tr12 td111"><P class="p5 ft45">&nbsp;</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id2_4">
+<DIV id="id2_4_1">
+<P class="p0 ft54">Distribution Functions</P>
+<P class="p93 ft55">∙ percent_rank() ∙ cume_dist()</P>
+<P class="p43 ft54">Analytic Functions</P>
+<P class="p79 ft18">∙ lead()</P>
+<P class="p94 ft18">∙ lag() ∙ <SPAN class="ft23">ntile()</SPAN></P>
+</DIV>
+<DIV id="id2_4_2">
+<P class="p95 ft19"><SPAN class="ft23">ORDER BY </SPAN><SPAN class="ft18">and Window Frame: </SPAN>rank() <SPAN class="ft4">and </SPAN>dense_rank() <SPAN class="ft4">require </SPAN>ORDER BY<SPAN class="ft4">, but </SPAN>row_number() <SPAN class="ft4">does not require </SPAN>ORDER BY<SPAN class="ft4">. Ranking functions do not accept window frame definition (</SPAN>ROWS, RANGE, GROUPS<SPAN class="ft4">).</SPAN></P>
+<P class="p96 ft1">ANALYTIC FUNCTIONS</P>
+<P class="p97 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">lead</SPAN>(<SPAN class="ft60">expr, offset, default</SPAN>) − the value for the row <SPAN class="ft60">offset </SPAN>rows after the current; <SPAN class="ft60">offset </SPAN>and <SPAN class="ft60">default </SPAN>are optional; default values: <SPAN class="ft60">offset </SPAN>= 1, <SPAN class="ft60">default </SPAN>= NULL</P>
+</DIV>
+<DIV id="id2_4_3">
+<P class="p79 ft4"><SPAN class="ft23">ORDER BY </SPAN><SPAN class="ft18">and Window Frame: </SPAN>Distribution functions require <SPAN class="ft19">ORDER BY</SPAN>. They do not accept window frame definition (<SPAN class="ft19">ROWS, RANGE, GROUPS</SPAN>).</P>
+<P class="p98 ft65"><SPAN class="ft61">∙ first_value</SPAN><SPAN class="ft62">(expr) </SPAN>− the value for the first row within the window frame <SPAN class="ft61">∙ </SPAN><SPAN class="ft63">last_valu</SPAN><SPAN class="ft64">e</SPAN><SPAN class="ft62">(expr) </SPAN>− the value for the last row within the window frame</P>
+</DIV>
+</DIV>
+<DIV id="id2_5">
+<DIV id="id2_5_1">
+<P class="p99 ft66">∙ first_value() ∙ last_value() ∙ nth_value()</P>
+</DIV>
+<DIV id="id2_5_2">
+<P class="p100 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">lag</SPAN>(<SPAN class="ft60">expr, offset, default</SPAN>) − the value for the row <SPAN class="ft60">offset </SPAN>rows before the current; <SPAN class="ft60">offset </SPAN>and <SPAN class="ft60">default </SPAN>are optional; default values: <SPAN class="ft60">offset </SPAN>= 1, <SPAN class="ft60">default </SPAN>= NULL</P>
+<TABLE cellpadding=0 cellspacing=0 class="t15">
+<TR>
+	<TD class="tr0 td116"><P class="p5 ft32">lead(sold) OVER(ORDER BY month)</P></TD>
+	<TD class="tr0 td117"><P class="p5 ft32">lag(sold) OVER(ORDER BY month)</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_5_3">
+<P class="p101 ft9">first_value(sold) OVER</P>
+<P class="p102 ft32">(PARTITION BY city ORDER BY month)</P>
+<TABLE cellpadding=0 cellspacing=0 class="t16">
+<TR>
+	<TD class="tr0 td118"><P class="p103 ft9">city</P></TD>
+	<TD class="tr0 td119"><P class="p104 ft9">month</P></TD>
+	<TD class="tr0 td120"><P class="p105 ft9">sold</P></TD>
+	<TD class="tr0 td121"><P class="p106 ft9">first_value</P></TD>
+</TR>
+<TR>
+	<TD class="tr14 td118"><P class="p5 ft67">Paris</P></TD>
+	<TD class="tr14 td119"><P class="p107 ft43">1</P></TD>
+	<TD class="tr14 td120"><P class="p108 ft43">500</P></TD>
+	<TD class="tr14 td121"><P class="p109 ft43">500</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_5_4">
+<P class="p110 ft32">last_value(sold) OVER</P>
+<P class="p75 ft32">(PARTITION BY city ORDER BY month</P>
+<P class="p0 ft68">RANGE BETWEEN UNBOUNDED PRECEDING</P>
+<P class="p111 ft68">AND UNBOUNDED FOLLOWING<SPAN class="ft32">)</SPAN></P>
+</DIV>
+</DIV>
+<DIV id="id2_6">
+<DIV id="id2_6_1">
+<P class="p0 ft1">AGGREGATE FUNCTIONS</P>
+<P class="p112 ft2"><SPAN class="ft3">∙ </SPAN><SPAN class="ft69">avg</SPAN><SPAN class="ft70">(expr) </SPAN>− average value for rows within the window frame</P>
+</DIV>
+<DIV id="id2_6_2">
+<TABLE cellpadding=0 cellspacing=0 class="t17">
+<TR>
+	<TD class="tr5 td122"></TD>
+	<TD rowspan=3 class="tr18 td123"><!--[if lte IE 7]><P style="margin-left:2px;margin-top:0px;margin-right:-7px;margin-bottom:0px;" class="p113 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:-3px;margin-top:0px;margin-right:-2px;margin-bottom:5px;" class="p113 ft9"><![endif]--><![if ! IE]><P style="margin-left:-1px;margin-top:3px;margin-right:-4px;margin-bottom:2px;" class="p113 ft9"><![endif]>month</P></TD>
+	<TD class="tr5 td98"><P class="p46 ft9">month</P></TD>
+	<TD class="tr5 td124"><P class="p86 ft9">sold</P></TD>
+	<TD class="tr5 td25"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td122"></TD>
+	<TD class="tr5 td98"><P class="p46 ft9">1</P></TD>
+	<TD class="tr5 td124"><P class="p86 ft9">500</P></TD>
+	<TD class="tr5 td25"><P class="p114 ft71">300</P></TD>
+</TR>
+<TR>
+	<TD class="tr9 td122"></TD>
+	<TD rowspan=2 class="tr6 td98"><P class="p46 ft9">2</P></TD>
+	<TD rowspan=2 class="tr6 td124"><P class="p86 ft71">300</P></TD>
+	<TD rowspan=2 class="tr6 td25"><P class="p114 ft9">400</P></TD>
+</TR>
+<TR>
+	<TD class="tr14 td122"></TD>
+	<TD rowspan=2 class="tr6 td123"><!--[if lte IE 7]><P style="margin-left:2px;margin-top:0px;margin-right:7px;margin-bottom:0px;" class="p115 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:11px;margin-top:0px;margin-right:-2px;margin-bottom:-9px;" class="p115 ft9"><![endif]--><![if ! IE]><P style="margin-left:7px;margin-top:-5px;margin-right:2px;margin-bottom:-4px;" class="p115 ft9"><![endif]>by</P></TD>
+</TR>
+<TR>
+	<TD class="tr9 td122"></TD>
+	<TD rowspan=2 class="tr5 td98"><P class="p46 ft9">3</P></TD>
+	<TD rowspan=2 class="tr5 td124"><P class="p86 ft9">400</P></TD>
+	<TD rowspan=2 class="tr5 td25"><P class="p114 ft71">100</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td122"></TD>
+	<TD rowspan=2 class="tr3 td123"><!--[if lte IE 7]><P style="margin-left:2px;margin-top:0px;margin-right:-3px;margin-bottom:0px;" class="p116 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:1px;margin-top:0px;margin-right:-2px;margin-bottom:1px;" class="p116 ft9"><![endif]--><![if ! IE]><P style="margin-left:1px;margin-top:1px;margin-right:-2px;margin-bottom:0px;" class="p116 ft9"><![endif]>order</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td122"></TD>
+	<TD class="tr5 td98"><P class="p46 ft9">4</P></TD>
+	<TD class="tr5 td124"><P class="p86 ft71">100</P></TD>
+	<TD class="tr5 td25"><P class="p114 ft71">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td122"></TD>
+	<TD class="tr6 td123"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td98"><P class="p46 ft9">5</P></TD>
+	<TD class="tr6 td124"><P class="p86 ft71">500</P></TD>
+	<TD class="tr6 td25"><P class="p114 ft10">NULL</P></TD>
+</TR>
+</TABLE>
+<P class="p117 ft32">lead(sold, 2, 0) OVER(ORDER BY month)</P>
+</DIV>
+<DIV id="id2_6_3">
+<TABLE cellpadding=0 cellspacing=0 class="t18">
+<TR>
+	<TD class="tr5 td122"></TD>
+	<TD rowspan=3 class="tr18 td4"><!--[if lte IE 7]><P style="margin-left:3px;margin-top:0px;margin-right:-8px;margin-bottom:0px;" class="p113 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:-2px;margin-top:0px;margin-right:-3px;margin-bottom:5px;" class="p113 ft9"><![endif]--><![if ! IE]><P style="margin-left:0px;margin-top:3px;margin-right:-5px;margin-bottom:2px;" class="p113 ft9"><![endif]>month</P></TD>
+	<TD class="tr5 td98"><P class="p46 ft9">month</P></TD>
+	<TD class="tr5 td125"><P class="p118 ft9">sold</P></TD>
+	<TD class="tr5 td97"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td122"></TD>
+	<TD class="tr5 td98"><P class="p46 ft9">1</P></TD>
+	<TD class="tr5 td125"><P class="p118 ft9">500</P></TD>
+	<TD class="tr5 td97"><P class="p119 ft10">NULL</P></TD>
+</TR>
+<TR>
+	<TD class="tr9 td122"></TD>
+	<TD rowspan=2 class="tr6 td98"><P class="p46 ft9">2</P></TD>
+	<TD rowspan=2 class="tr6 td125"><P class="p118 ft71">300</P></TD>
+	<TD rowspan=2 class="tr6 td97"><P class="p119 ft9">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr14 td122"></TD>
+	<TD rowspan=2 class="tr6 td4"><!--[if lte IE 7]><P style="margin-left:3px;margin-top:0px;margin-right:6px;margin-bottom:0px;" class="p115 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:12px;margin-top:0px;margin-right:-3px;margin-bottom:-9px;" class="p115 ft9"><![endif]--><![if ! IE]><P style="margin-left:8px;margin-top:-5px;margin-right:1px;margin-bottom:-4px;" class="p115 ft9"><![endif]>by</P></TD>
+</TR>
+<TR>
+	<TD class="tr9 td122"></TD>
+	<TD rowspan=2 class="tr5 td98"><P class="p46 ft9">3</P></TD>
+	<TD rowspan=2 class="tr5 td125"><P class="p118 ft9">400</P></TD>
+	<TD rowspan=2 class="tr5 td97"><P class="p119 ft71">300</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td122"></TD>
+	<TD rowspan=2 class="tr3 td4"><!--[if lte IE 7]><P style="margin-left:3px;margin-top:0px;margin-right:-4px;margin-bottom:0px;" class="p116 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:2px;margin-top:0px;margin-right:-3px;margin-bottom:1px;" class="p116 ft9"><![endif]--><![if ! IE]><P style="margin-left:2px;margin-top:1px;margin-right:-3px;margin-bottom:0px;" class="p116 ft9"><![endif]>order</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td122"></TD>
+	<TD class="tr5 td98"><P class="p46 ft9">4</P></TD>
+	<TD class="tr5 td125"><P class="p118 ft71">100</P></TD>
+	<TD class="tr5 td97"><P class="p119 ft9">400</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td122"></TD>
+	<TD class="tr6 td4"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td98"><P class="p46 ft9">5</P></TD>
+	<TD class="tr6 td125"><P class="p118 ft71">500</P></TD>
+	<TD class="tr6 td97"><P class="p119 ft71">100</P></TD>
+</TR>
+</TABLE>
+<P class="p117 ft32">lag(sold, 2, 0) OVER(ORDER BY month)</P>
+</DIV>
+<DIV id="id2_6_4">
+<TABLE cellpadding=0 cellspacing=0 class="t19">
+<TR>
+	<TD class="tr7 td110"><P class="p5 ft71">Paris</P></TD>
+	<TD class="tr7 td119"><P class="p46 ft9">2</P></TD>
+	<TD class="tr7 td125"><P class="p91 ft9">300</P></TD>
+	<TD class="tr7 td118"><P class="p120 ft9">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td110"><P class="p5 ft71">Paris</P></TD>
+	<TD class="tr6 td119"><P class="p46 ft9">3</P></TD>
+	<TD class="tr6 td125"><P class="p91 ft9">400</P></TD>
+	<TD class="tr6 td118"><P class="p120 ft9">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td110"><P class="p5 ft9">Rome</P></TD>
+	<TD class="tr5 td119"><P class="p46 ft9">2</P></TD>
+	<TD class="tr5 td126"><P class="p91 ft9">200</P></TD>
+	<TD class="tr5 td118"><P class="p120 ft9">200</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td110"><P class="p5 ft9">Rome</P></TD>
+	<TD class="tr6 td119"><P class="p46 ft9">3</P></TD>
+	<TD class="tr6 td125"><P class="p91 ft9">300</P></TD>
+	<TD class="tr6 td118"><P class="p120 ft9">200</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td110"><P class="p5 ft9">Rome</P></TD>
+	<TD class="tr5 td119"><P class="p46 ft9">4</P></TD>
+	<TD class="tr5 td125"><P class="p91 ft9">500</P></TD>
+	<TD class="tr5 td118"><P class="p120 ft9">200</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_6_5">
+<TABLE cellpadding=0 cellspacing=0 class="t20">
+<TR>
+	<TD class="tr6 td118"><P class="p92 ft9">city</P></TD>
+	<TD class="tr6 td119"><P class="p58 ft9">month</P></TD>
+	<TD class="tr6 td120"><P class="p121 ft9">sold</P></TD>
+	<TD class="tr6 td127"><P class="p122 ft9">last_value</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td118"><P class="p5 ft71">Paris</P></TD>
+	<TD class="tr6 td119"><P class="p46 ft9">1</P></TD>
+	<TD class="tr6 td120"><P class="p108 ft9">500</P></TD>
+	<TD class="tr6 td127"><P class="p122 ft9">400</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td118"><P class="p5 ft71">Paris</P></TD>
+	<TD class="tr5 td119"><P class="p46 ft9">2</P></TD>
+	<TD class="tr5 td120"><P class="p108 ft9">300</P></TD>
+	<TD class="tr5 td127"><P class="p122 ft9">400</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td118"><P class="p5 ft71">Paris</P></TD>
+	<TD class="tr5 td119"><P class="p46 ft9">3</P></TD>
+	<TD class="tr5 td120"><P class="p108 ft9">400</P></TD>
+	<TD class="tr5 td127"><P class="p122 ft9">400</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td118"><P class="p5 ft9">Rome</P></TD>
+	<TD class="tr6 td119"><P class="p46 ft9">2</P></TD>
+	<TD class="tr6 td120"><P class="p108 ft9">200</P></TD>
+	<TD class="tr6 td127"><P class="p122 ft9">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td118"><P class="p5 ft9">Rome</P></TD>
+	<TD class="tr5 td119"><P class="p46 ft9">3</P></TD>
+	<TD class="tr5 td120"><P class="p108 ft9">300</P></TD>
+	<TD class="tr5 td127"><P class="p122 ft9">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td118"><P class="p5 ft9">Rome</P></TD>
+	<TD class="tr5 td119"><P class="p46 ft9">4</P></TD>
+	<TD class="tr5 td120"><P class="p108 ft9">500</P></TD>
+	<TD class="tr5 td127"><P class="p122 ft9">500</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id2_7">
+<DIV id="id2_7_1">
+<P class="p100 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">count</SPAN><SPAN class="ft60">(expr) </SPAN>− count of values for rows within the window frame</P>
+<P class="p123 ft74"><SPAN class="ft72">∙  max</SPAN><SPAN class="ft73">(expr) </SPAN>− maximum value within the window frame</P>
+<P class="p124 ft2"><SPAN class="ft3">∙ </SPAN><SPAN class="ft69">min</SPAN><SPAN class="ft70">(expr) </SPAN>− minimum value within the window frame</P>
+</DIV>
+<DIV id="id2_7_2">
+<TABLE cellpadding=0 cellspacing=0 class="t21">
+<TR>
+	<TD rowspan=2 class="tr19 td123"><!--[if lte IE 7]><P style="margin-left:2px;margin-top:0px;margin-right:-14px;margin-bottom:0px;" class="p125 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:-10px;margin-top:0px;margin-right:-2px;margin-bottom:12px;" class="p125 ft9"><![endif]--><![if ! IE]><P style="margin-left:-4px;margin-top:6px;margin-right:-8px;margin-bottom:6px;" class="p125 ft9"><![endif]>monthby</P></TD>
+	<TD class="tr4 td49"><P class="p107 ft9">month</P></TD>
+	<TD class="tr4 td125"><P class="p86 ft9">sold</P></TD>
+	<TD class="tr4 td124"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr4 td128"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr19 td123"><!--[if lte IE 7]><P style="margin-left:2px;margin-top:0px;margin-right:-14px;margin-bottom:0px;" class="p125 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:-10px;margin-top:0px;margin-right:-2px;margin-bottom:12px;" class="p125 ft9"><![endif]--><![if ! IE]><P style="margin-left:-4px;margin-top:6px;margin-right:-8px;margin-bottom:6px;" class="p125 ft9"><![endif]>monthby</P></TD>
+	<TD class="tr4 td49"><P class="p107 ft9">month</P></TD>
+	<TD class="tr4 td125"><P class="p86 ft9">sold</P></TD>
+	<TD class="tr4 td124"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr19 td37"><!--[if lte IE 7]><P style="margin-left:7px;margin-top:0px;margin-right:-28px;margin-bottom:0px;" class="p126 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:-14px;margin-top:0px;margin-right:-7px;margin-bottom:21px;" class="p126 ft9"><![endif]--><![if ! IE]><P style="margin-left:-4px;margin-top:11px;margin-right:-17px;margin-bottom:10px;" class="p126 ft9"><![endif]>offset=2</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr5 td49"><P class="p107 ft9">1</P></TD>
+	<TD rowspan=2 class="tr5 td125"><P class="p86 ft9">500</P></TD>
+	<TD rowspan=2 class="tr5 td124"><P class="p122 ft9">400</P></TD>
+	<TD class="tr8 td128"><P class="p5 ft47">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr5 td49"><P class="p107 ft9">1</P></TD>
+	<TD rowspan=2 class="tr5 td125"><P class="p86 ft9">500</P></TD>
+	<TD rowspan=2 class="tr5 td124"><P class="p122 ft9">0</P></TD>
+</TR>
+<TR>
+	<TD class="tr9 td123"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td128"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td123"><P class="p5 ft16">&nbsp;</P></TD>
+	<TD class="tr9 td37"><P class="p5 ft16">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td123"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td49"><P class="p107 ft9">2</P></TD>
+	<TD class="tr6 td125"><P class="p86 ft71">300</P></TD>
+	<TD class="tr6 td124"><P class="p122 ft71">100</P></TD>
+	<TD class="tr6 td128"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td123"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td49"><P class="p107 ft9">2</P></TD>
+	<TD class="tr6 td125"><P class="p86 ft71">300</P></TD>
+	<TD class="tr6 td124"><P class="p122 ft9">0</P></TD>
+	<TD class="tr6 td37"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr20 td123"><!--[if lte IE 7]><P style="margin-left:2px;margin-top:0px;margin-right:-2px;margin-bottom:0px;" class="p127 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:2px;margin-top:0px;margin-right:-2px;margin-bottom:0px;" class="p127 ft9"><![endif]--><![if ! IE]><P style="margin-left:2px;margin-top:0px;margin-right:-2px;margin-bottom:0px;" class="p127 ft9"><![endif]>order</P></TD>
+	<TD class="tr5 td49"><P class="p107 ft9">3</P></TD>
+	<TD class="tr5 td125"><P class="p86 ft9">400</P></TD>
+	<TD class="tr5 td124"><P class="p122 ft71">500</P></TD>
+	<TD rowspan=2 class="tr20 td128"><!--[if lte IE 7]><P style="margin-left:15px;margin-top:0px;margin-right:14px;margin-bottom:0px;" class="p128 ft75"><![endif]--><!--[if gte IE 8]><P style="margin-left:44px;margin-top:0px;margin-right:-15px;margin-bottom:-29px;" class="p128 ft75"><![endif]--><![if ! IE]><P style="margin-left:30px;margin-top:-15px;margin-right:-1px;margin-bottom:-14px;" class="p128 ft75"><![endif]>offset=2</P></TD>
+	<TD rowspan=2 class="tr20 td123"><!--[if lte IE 7]><P style="margin-left:2px;margin-top:0px;margin-right:-2px;margin-bottom:0px;" class="p127 ft9"><![endif]--><!--[if gte IE 8]><P style="margin-left:2px;margin-top:0px;margin-right:-2px;margin-bottom:0px;" class="p127 ft9"><![endif]--><![if ! IE]><P style="margin-left:2px;margin-top:0px;margin-right:-2px;margin-bottom:0px;" class="p127 ft9"><![endif]>order</P></TD>
+	<TD class="tr5 td49"><P class="p107 ft9">3</P></TD>
+	<TD class="tr5 td125"><P class="p86 ft9">400</P></TD>
+	<TD class="tr5 td124"><P class="p122 ft9">500</P></TD>
+	<TD class="tr5 td37"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr5 td49"><P class="p107 ft9">4</P></TD>
+	<TD rowspan=2 class="tr5 td125"><P class="p50 ft71">100</P></TD>
+	<TD rowspan=2 class="tr5 td124"><P class="p122 ft9">0</P></TD>
+	<TD rowspan=2 class="tr5 td49"><P class="p107 ft9">4</P></TD>
+	<TD rowspan=2 class="tr5 td125"><P class="p50 ft71">100</P></TD>
+	<TD rowspan=2 class="tr5 td124"><P class="p122 ft71">300</P></TD>
+	<TD class="tr14 td37"><P class="p5 ft48">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr21 td123"><P class="p5 ft76">&nbsp;</P></TD>
+	<TD class="tr21 td128"><P class="p5 ft76">&nbsp;</P></TD>
+	<TD class="tr21 td123"><P class="p5 ft76">&nbsp;</P></TD>
+	<TD class="tr21 td37"><P class="p5 ft76">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td123"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td49"><P class="p107 ft9">5</P></TD>
+	<TD class="tr6 td125"><P class="p86 ft71">500</P></TD>
+	<TD class="tr6 td124"><P class="p122 ft9">0</P></TD>
+	<TD class="tr6 td128"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td123"><P class="p5 ft39">&nbsp;</P></TD>
+	<TD class="tr6 td49"><P class="p107 ft9">5</P></TD>
+	<TD class="tr6 td125"><P class="p86 ft71">500</P></TD>
+	<TD class="tr6 td124"><P class="p122 ft9">400</P></TD>
+	<TD class="tr6 td37"><P class="p5 ft39">&nbsp;</P></TD>
+</TR>
+</TABLE>
+<P class="p129 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">ntile</SPAN><SPAN class="ft60">(n) </SPAN>− divide rows within a partition as equally as possible into <SPAN class="ft60">n </SPAN>groups, and assign each row its group number.</P>
+</DIV>
+<DIV id="id2_7_3">
+<P class="p130 ft2">Note: You usually want to use <SPAN class="ft77">RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING with last_value()</SPAN>. With the default window frame for <SPAN class="ft77">ORDER BY, RANGE UNBOUNDED PRECEDING, last_value() </SPAN>returns the value for</P>
+<P class="p131 ft4">the current row.</P>
+<P class="p132 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">nth_value</SPAN><SPAN class="ft60">(expr, n) </SPAN>− the value for the <NOBR><SPAN class="ft60">n-</SPAN>th</NOBR> row within the window frame; <SPAN class="ft60">n </SPAN>must be an integer</P>
+<P class="p133 ft32">nth_value(sold, 2) OVER (PARTITION BY city ORDER BY month RANGE BETWEEN UNBOUNDED</P>
+</DIV>
+</DIV>
+<DIV id="id2_8">
+<DIV id="id2_8_1">
+<P class="p0 ft32">ntile(3)</P>
+</DIV>
+<DIV id="id2_8_2">
+<P class="p0 ft32">PRECEDING AND UNBOUNDED FOLLOWING)</P>
+</DIV>
+</DIV>
+<DIV id="id2_9">
+<DIV id="id2_9_1">
+<P class="p134 ft4"><SPAN class="ft18">∙ </SPAN><SPAN class="ft23">sum</SPAN><SPAN class="ft60">(expr) </SPAN>− sum of values within the window frame</P>
+<P class="p135 ft79">ORDER BY and Window Frame: <SPAN class="ft74">Aggregate functions do not require an </SPAN><SPAN class="ft78">ORDER BY</SPAN><SPAN class="ft74">. They accept window frame definition </SPAN><SPAN class="ft78">(ROWS, RANGE, GROUPS).</SPAN></P>
+</DIV>
+<DIV id="id2_9_2">
+<TABLE cellpadding=0 cellspacing=0 class="t22">
+<TR>
+	<TD class="tr7 td129"><P class="p103 ft9">city</P></TD>
+	<TD class="tr7 td98"><P class="p89 ft9">sold</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td129"><P class="p5 ft9">Rome</P></TD>
+	<TD class="tr5 td98"><P class="p120 ft9">100</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td129"><P class="p5 ft9">Paris</P></TD>
+	<TD class="tr5 td98"><P class="p120 ft9">100</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td129"><P class="p5 ft9">London</P></TD>
+	<TD class="tr6 td98"><P class="p120 ft9">200</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td129"><P class="p5 ft9">Moscow</P></TD>
+	<TD class="tr5 td98"><P class="p120 ft9">200</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td129"><P class="p5 ft9">Berlin</P></TD>
+	<TD class="tr5 td98"><P class="p120 ft9">200</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td129"><P class="p5 ft9">Madrid</P></TD>
+	<TD class="tr6 td98"><P class="p120 ft9">300</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td129"><P class="p5 ft9">Oslo</P></TD>
+	<TD class="tr5 td98"><P class="p120 ft9">300</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td129"><P class="p5 ft9">Dublin</P></TD>
+	<TD class="tr5 td98"><P class="p120 ft9">300</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_9_3">
+<P class="p0 ft9">1</P>
+<P class="p31 ft9">2</P>
+<P class="p136 ft9">3</P>
+</DIV>
+<DIV id="id2_9_4">
+<P class="p0 ft9">1</P>
+<P class="p2 ft9">1</P>
+<P class="p0 ft9">1</P>
+<P class="p2 ft9">2</P>
+<P class="p2 ft9">2</P>
+<P class="p0 ft9">2</P>
+<P class="p2 ft71">3</P>
+<P class="p2 ft71">3</P>
+</DIV>
+<DIV id="id2_9_5">
+<P class="p99 ft18"><SPAN class="ft23">ORDER BY </SPAN>and Window Frame: <SPAN class="ft19">ntile(), lead(), and lag() </SPAN><SPAN class="ft4">require an </SPAN><SPAN class="ft19">ORDER BY</SPAN><SPAN class="ft4">. They do not accept window frame definition </SPAN><SPAN class="ft19">(ROWS, RANGE, GROUPS).</SPAN></P>
+</DIV>
+<DIV id="id2_9_6">
+<TABLE cellpadding=0 cellspacing=0 class="t23">
+<TR>
+	<TD class="tr0 td125"><P class="p137 ft9">city</P></TD>
+	<TD class="tr0 td125"><P class="p17 ft9">month</P></TD>
+	<TD class="tr0 td124"><P class="p57 ft9">sold</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td125"><P class="p60 ft71">Paris</P></TD>
+	<TD class="tr6 td125"><P class="p138 ft9">1</P></TD>
+	<TD class="tr6 td124"><P class="p91 ft9">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td125"><P class="p60 ft71">Paris</P></TD>
+	<TD class="tr5 td125"><P class="p138 ft9">2</P></TD>
+	<TD class="tr5 td130"><P class="p91 ft9">300</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td125"><P class="p60 ft71">Paris</P></TD>
+	<TD class="tr5 td125"><P class="p138 ft9">3</P></TD>
+	<TD class="tr5 td124"><P class="p91 ft9">400</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td125"><P class="p60 ft9">Rome</P></TD>
+	<TD class="tr6 td125"><P class="p138 ft9">2</P></TD>
+	<TD class="tr6 td124"><P class="p91 ft9">200</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td125"><P class="p60 ft9">Rome</P></TD>
+	<TD class="tr5 td125"><P class="p138 ft9">3</P></TD>
+	<TD class="tr5 td131"><P class="p91 ft9">300</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td125"><P class="p60 ft9">Rome</P></TD>
+	<TD class="tr5 td125"><P class="p138 ft9">4</P></TD>
+	<TD class="tr5 td124"><P class="p91 ft9">500</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td125"><P class="p60 ft9">Rome</P></TD>
+	<TD class="tr6 td125"><P class="p138 ft9">5</P></TD>
+	<TD class="tr6 td124"><P class="p91 ft9">300</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td132"><P class="p60 ft71">London</P></TD>
+	<TD class="tr5 td125"><P class="p138 ft9">1</P></TD>
+	<TD class="tr5 td124"><P class="p91 ft9">100</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_9_7">
+<P class="p0 ft9">nth_value</P>
+<P class="p139 ft9">300</P>
+<P class="p140 ft9">300</P>
+<P class="p140 ft9">300</P>
+<P class="p139 ft9">300</P>
+<P class="p140 ft9">300</P>
+<P class="p140 ft9">300</P>
+<P class="p139 ft9">300</P>
+<P class="p141 ft9">NULL</P>
+</DIV>
+<DIV id="id2_9_8">
+<P class="p0 ft18"><SPAN class="ft23">ORDER BY </SPAN>and Window Frame: <SPAN class="ft4">first_value(), </SPAN><SPAN class="ft19">last_value(), and nth_value() </SPAN><SPAN class="ft4">do not require an </SPAN><SPAN class="ft19">ORDER BY</SPAN><SPAN class="ft4">. They accept window frame definition </SPAN><SPAN class="ft19">(ROWS, RANGE, GROUPS).</SPAN></P>
+</DIV>
+</DIV>
+<DIV id="id2_10">
+<DIV id="id2_10_1">
+<P class="p0 ft52">Try out the interactive <A href="https://learnsql.com/course/window-functions"><SPAN class="ft51">Window Functions </SPAN></A>course at <A href="https://learnsql.com/"><SPAN class="ft51">LearnSQL.com</SPAN></A><A href="https://learnsql.com/">, </A>and check out our other SQL courses.</P>
+</DIV>
+<DIV id="id2_10_2">
+<P class="p77 ft53">LearnSQL.com is owned by Vertabelo SA vertabelo.com | CC <NOBR>BY-NC-ND</NOBR> Vertabelo SA</P>
+</DIV>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

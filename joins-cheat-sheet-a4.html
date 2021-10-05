@@ -1,0 +1,1554 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Join-SQL</TITLE>
+<META name="generator" content="BCL easyConverter SDK 5.0.252">
+<META name="author" content="LearnSQL.com">
+<META name="title" content="A4 SQL JOINs Cheat Sheet">
+<META name="subject" content="This 2-page A4 SQL JOINs Cheat Sheet will come in handy for all who need to work with more than one table - we'll show you how to join them!">
+<META name="keywords" content="sql joins;sql cheat sheet;sql joins cheat sheets">
+<STYLE type="text/css">
+
+body {margin-top: 0px;margin-left: 0px;}
+
+#page_1 {position:relative; overflow: hidden;margin: 14px 0px 0px 0px;padding: 0px;border: none;width: 1123px;height: 780px;}
+#page_1 #id1_1 {border:none;margin: 0px 0px 0px 20px;padding: 0px;border:none;width: 1103px;overflow: hidden;}
+#page_1 #id1_1 #id1_1_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 565px;overflow: hidden;}
+#page_1 #id1_1 #id1_1_2 {float:left;border:none;margin: 55px 0px 0px 0px;padding: 0px;border:none;width: 538px;overflow: hidden;}
+#page_1 #id1_2 {border:none;margin: 1px 0px 0px 24px;padding: 0px;border:none;width: 1073px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 561px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 244px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_3 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 268px;overflow: hidden;}
+#page_1 #id1_3 {border:none;margin: 0px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_1 #id1_3 #id1_3_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 561px;overflow: hidden;}
+#page_1 #id1_3 #id1_3_2 {float:left;border:none;margin: 11px 0px 0px 0px;padding: 0px;border:none;width: 538px;overflow: hidden;}
+#page_1 #id1_4 {border:none;margin: 1px 0px 0px 24px;padding: 0px;border:none;width: 1070px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_1 {float:left;border:none;margin: 3px 0px 0px 0px;padding: 0px;border:none;width: 282px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_2 {float:left;border:none;margin: 33px 0px 0px 0px;padding: 0px;border:none;width: 216px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_3 {float:left;border:none;margin: 0px 0px 0px 63px;padding: 0px;border:none;width: 255px;overflow: hidden;}
+#page_1 #id1_4 #id1_4_4 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 254px;overflow: hidden;}
+#page_1 #id1_5 {border:none;margin: 33px 0px 0px 24px;padding: 0px;border:none;width: 1077px;overflow: hidden;}
+#page_1 #id1_5 #id1_5_1 {float:left;border:none;margin: 1px 0px 0px 0px;padding: 0px;border:none;width: 906px;overflow: hidden;}
+#page_1 #id1_5 #id1_5_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 171px;overflow: hidden;}
+
+#page_1 #p1dimg1 {position:absolute;top:7px;left:0px;z-index:-1;width:1123px;height:773px;}
+#page_1 #p1dimg1 #p1img1 {width:1123px;height:773px;}
+
+
+
+
+#page_2 {position:relative; overflow: hidden;margin: 14px 0px 0px 0px;padding: 0px;border: none;width: 1123px;height: 780px;}
+#page_2 #id2_1 {border:none;margin: 0px 0px 0px 20px;padding: 0px;border:none;width: 1103px;overflow: hidden;}
+#page_2 #id2_2 {border:none;margin: 19px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_2 #id2_2 #id2_2_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 289px;overflow: hidden;}
+#page_2 #id2_2 #id2_2_2 {float:left;border:none;margin: 34px 0px 0px 0px;padding: 0px;border:none;width: 272px;overflow: hidden;}
+#page_2 #id2_2 #id2_2_3 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 538px;overflow: hidden;}
+#page_2 #id2_3 {border:none;margin: -2px 0px 0px 24px;padding: 0px;border:none;width: 1070px;overflow: hidden;}
+#page_2 #id2_3 #id2_3_1 {float:left;border:none;margin: 2px 0px 0px 0px;padding: 0px;border:none;width: 517px;overflow: hidden;}
+#page_2 #id2_3 #id2_3_2 {float:left;border:none;margin: 0px 0px 0px 68px;padding: 0px;border:none;width: 485px;overflow: hidden;}
+#page_2 #id2_4 {border:none;margin: 0px 0px 0px 24px;padding: 0px;border:none;width: 1099px;overflow: hidden;}
+#page_2 #id2_4 #id2_4_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 561px;overflow: hidden;}
+#page_2 #id2_4 #id2_4_2 {float:left;border:none;margin: 3px 0px 0px 0px;padding: 0px;border:none;width: 176px;overflow: hidden;}
+#page_2 #id2_4 #id2_4_3 {float:left;border:none;margin: 3px 0px 0px 0px;padding: 0px;border:none;width: 174px;overflow: hidden;}
+#page_2 #id2_4 #id2_4_4 {float:left;border:none;margin: 3px 0px 0px 0px;padding: 0px;border:none;width: 188px;overflow: hidden;}
+#page_2 #id2_5 {border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 1123px;overflow: hidden;}
+#page_2 #id2_5 #id2_5_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 320px;overflow: hidden;}
+#page_2 #id2_5 #id2_5_2 {float:left;border:none;margin: 25px 0px 0px 0px;padding: 0px;border:none;width: 132px;overflow: hidden;}
+#page_2 #id2_5 #id2_5_3 {float:left;border:none;margin: 49px 0px 0px 133px;padding: 0px;border:none;width: 538px;overflow: hidden;}
+#page_2 #id2_6 {border:none;margin: 8px 0px 0px 24px;padding: 0px;border:none;width: 1056px;overflow: hidden;}
+#page_2 #id2_6 #id2_6_1 {float:left;border:none;margin: 8px 0px 0px 0px;padding: 0px;border:none;width: 563px;overflow: hidden;}
+#page_2 #id2_6 #id2_6_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 493px;overflow: hidden;}
+#page_2 #id2_7 {border:none;margin: 0px 0px 0px 94px;padding: 0px;border:none;width: 986px;overflow: hidden;}
+#page_2 #id2_7 #id2_7_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 162px;overflow: hidden;}
+#page_2 #id2_7 #id2_7_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 209px;overflow: hidden;}
+#page_2 #id2_7 #id2_7_3 {float:left;border:none;margin: 0px 0px 0px 120px;padding: 0px;border:none;width: 495px;overflow: hidden;}
+#page_2 #id2_8 {border:none;margin: 30px 0px 0px 24px;padding: 0px;border:none;width: 1077px;overflow: hidden;}
+#page_2 #id2_8 #id2_8_1 {float:left;border:none;margin: 1px 0px 0px 0px;padding: 0px;border:none;width: 906px;overflow: hidden;}
+#page_2 #id2_8 #id2_8_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 171px;overflow: hidden;}
+
+#page_2 #p2dimg1 {position:absolute;top:7px;left:0px;z-index:-1;width:1123px;height:773px;}
+#page_2 #p2dimg1 #p2img1 {width:1123px;height:773px;}
+
+
+
+
+.ft0{font: bold 32px 'Arial';line-height: 37px;}
+.ft1{font: bold 16px 'Arial';color: #0078ff;line-height: 19px;}
+.ft2{font: 10px 'Times New Roman';line-height: 12px;}
+.ft3{font: 10px 'Arial';line-height: 13px;}
+.ft4{font: bold 10px 'Times New Roman';line-height: 12px;}
+.ft5{font: 1px 'Times New Roman';line-height: 1px;}
+.ft6{font: 10px 'Times New Roman';line-height: 11px;}
+.ft7{font: 10px 'Times New Roman';line-height: 10px;}
+.ft8{font: 8px 'Times New Roman';line-height: 10px;}
+.ft9{font: 9px 'Times New Roman';line-height: 13px;}
+.ft10{font: bold 9px 'Arial';line-height: 12px;}
+.ft11{font: 9px 'Arial';line-height: 13px;}
+.ft12{font: bold 10px 'Arial';line-height: 12px;}
+.ft13{font: 10px 'Times New Roman';color: #0078ff;line-height: 12px;}
+.ft14{font: 10px 'Times New Roman';color: #0078ff;line-height: 10px;}
+.ft15{font: 10px 'Times New Roman';color: #0078ff;line-height: 11px;}
+.ft16{font: 1px 'Times New Roman';line-height: 11px;}
+.ft17{font: bold 10px 'Arial';line-height: 11px;}
+.ft18{font: 10px 'Arial';line-height: 11px;}
+.ft19{font: bold 10px 'Times New Roman';color: #d75da2;line-height: 12px;}
+.ft20{font: bold 10px 'Times New Roman';color: #d75da2;line-height: 11px;}
+.ft21{font: 1px 'Times New Roman';line-height: 9px;}
+.ft22{font: 10px 'Times New Roman';line-height: 9px;}
+.ft23{font: bold 8px 'Times New Roman';color: #d75da2;line-height: 11px;}
+.ft24{font: 1px 'Times New Roman';line-height: 8px;}
+.ft25{font: bold 8px 'Arial';color: #0078ff;line-height: 8px;}
+.ft26{font: 1px 'Times New Roman';line-height: 10px;}
+.ft27{font: bold 8px 'Arial';color: #0078ff;line-height: 9px;}
+.ft28{font: 10px 'Arial';line-height: 12px;}
+.ft29{font: 10px 'Times New Roman';line-height: 13px;}
+.ft30{font: bold 10px 'Times New Roman';color: #d75da2;line-height: 13px;}
+.ft31{font: 10px 'Times New Roman';color: #0078ff;line-height: 13px;}
+.ft32{font: bold 18px 'Arial';color: #ffffff;line-height: 21px;}
+.ft33{font: 18px 'Arial';color: #ffffff;line-height: 21px;}
+.ft34{font: bold 8px 'Arial';color: #ffffff;line-height: 12px;}
+.ft35{font: bold 9px 'Arial';line-height: 11px;}
+.ft36{font: 9px 'Arial';line-height: 12px;}
+.ft37{font: 10px 'Times New Roman';margin-left: 45px;line-height: 12px;}
+.ft38{font: 10px 'Times New Roman';margin-left: 33px;line-height: 12px;}
+.ft39{font: bold 9px 'Times New Roman';line-height: 12px;}
+.ft40{font: 1px 'Times New Roman';line-height: 3px;}
+.ft41{font: 7px 'Times New Roman';line-height: 8px;}
+.ft42{font: 10px 'Times New Roman';line-height: 5px;}
+.ft43{font: 7px 'Times New Roman';line-height: 5px;}
+.ft44{font: bold 9px 'Arial';color: #ff7700;line-height: 13px;}
+.ft45{font: bold 9px 'Arial';color: #d75da2;line-height: 13px;}
+.ft46{font: 9px 'Times New Roman';line-height: 14px;}
+.ft47{font: 9px 'Arial';line-height: 14px;}
+.ft48{font: bold 10px 'Times New Roman';color: #d75da2;line-height: 10px;}
+.ft49{font: bold 10px 'Times New Roman';color: #ff7700;line-height: 10px;}
+.ft50{font: 10px 'Times New Roman';line-height: 8px;}
+.ft51{font: 1px 'Times New Roman';line-height: 4px;}
+.ft52{font: bold 10px 'Arial';color: #d75da2;line-height: 12px;}
+.ft53{font: bold 10px 'Arial';color: #0078ff;line-height: 12px;}
+.ft54{font: bold 10px 'Times New Roman';color: #ff7700;line-height: 12px;}
+.ft55{font: 6px 'Times New Roman';line-height: 6px;}
+.ft56{font: 7px 'Times New Roman';line-height: 6px;}
+.ft57{font: bold 10px 'Arial';color: #ff7700;line-height: 12px;}
+.ft58{font: bold 10px 'Times New Roman';color: #ff7700;line-height: 13px;}
+.ft59{font: 1px 'Times New Roman';line-height: 5px;}
+.ft60{font: 10px 'Times New Roman';color: #0078ff;line-height: 14px;}
+.ft61{font: 10px 'Times New Roman';line-height: 14px;}
+.ft62{font: bold 10px 'Times New Roman';color: #0078ff;line-height: 12px;}
+
+.p0{text-align: left;margin-top: 0px;margin-bottom: 0px;}
+.p1{text-align: left;padding-left: 4px;margin-top: 18px;margin-bottom: 0px;}
+.p2{text-align: left;padding-left: 4px;margin-top: 4px;margin-bottom: 0px;}
+.p3{text-align: left;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p4{text-align: center;padding-right: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p5{text-align: center;padding-right: 45px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p6{text-align: right;padding-right: 47px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p7{text-align: center;padding-right: 4px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p8{text-align: left;padding-left: 32px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p9{text-align: center;padding-right: 44px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p10{text-align: right;padding-right: 36px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p11{text-align: center;padding-right: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p12{text-align: center;padding-right: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p13{text-align: left;padding-left: 4px;padding-right: 53px;margin-top: 3px;margin-bottom: 0px;}
+.p14{text-align: left;padding-left: 4px;padding-right: 49px;margin-top: 1px;margin-bottom: 0px;}
+.p15{text-align: left;padding-left: 4px;margin-top: 10px;margin-bottom: 0px;}
+.p16{text-align: left;padding-left: 4px;margin-top: 3px;margin-bottom: 0px;}
+.p17{text-align: center;padding-left: 23px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p18{text-align: right;padding-right: 16px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p19{text-align: left;padding-left: 1px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p20{text-align: center;padding-right: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p21{text-align: right;padding-right: 31px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p22{text-align: right;padding-right: 18px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p23{text-align: center;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p24{text-align: left;padding-left: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p25{text-align: left;padding-left: 4px;margin-top: 0px;margin-bottom: 0px;}
+.p26{text-align: left;padding-left: 4px;margin-top: 1px;margin-bottom: 0px;}
+.p27{text-align: left;padding-right: 25px;margin-top: 4px;margin-bottom: 0px;}
+.p28{text-align: center;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p29{text-align: left;padding-left: 4px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p30{text-align: left;padding-left: 8px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p31{text-align: right;padding-right: 22px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p32{text-align: center;padding-right: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p33{text-align: right;padding-right: 23px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p34{text-align: center;padding-right: 13px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p35{text-align: left;margin-top: 25px;margin-bottom: 0px;}
+.p36{text-align: left;padding-right: 42px;margin-top: 3px;margin-bottom: 0px;}
+.p37{text-align: center;padding-left: 24px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p38{text-align: center;padding-left: 25px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p39{text-align: center;padding-right: 8px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p40{text-align: right;padding-right: 17px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p41{text-align: center;padding-left: 6px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p42{text-align: left;padding-left: 22px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p43{text-align: left;margin-top: 24px;margin-bottom: 0px;}
+.p44{text-align: left;padding-right: 43px;margin-top: 2px;margin-bottom: 0px;}
+.p45{text-align: left;margin-top: 12px;margin-bottom: 0px;}
+.p46{text-align: left;padding-right: 55px;margin-top: 4px;margin-bottom: 0px;}
+.p47{text-align: left;padding-right: 52px;margin-top: 8px;margin-bottom: 0px;}
+.p48{text-align: left;padding-right: 166px;margin-top: 0px;margin-bottom: 0px;}
+.p49{text-align: left;padding-left: 12px;margin-top: 0px;margin-bottom: 0px;}
+.p50{text-align: center;padding-left: 2px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p51{text-align: right;padding-right: 35px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p52{text-align: left;padding-left: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p53{text-align: left;padding-right: 53px;margin-top: 3px;margin-bottom: 0px;}
+.p54{text-align: left;margin-top: 3px;margin-bottom: 0px;}
+.p55{text-align: left;padding-right: 39px;margin-top: 4px;margin-bottom: 0px;}
+.p56{text-align: left;padding-right: 32px;margin-top: 5px;margin-bottom: 0px;}
+.p57{text-align: right;padding-right: 27px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p58{text-align: left;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p59{text-align: left;padding-left: 6px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p60{text-align: left;margin-top: 6px;margin-bottom: 0px;}
+.p61{text-align: left;padding-left: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p62{text-align: center;padding-right: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p63{text-align: center;padding-left: 15px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p64{text-align: center;padding-left: 21px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p65{text-align: left;padding-left: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p66{text-align: center;padding-left: 13px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p67{text-align: left;margin-top: 0px;margin-bottom: 0px;text-indent: 9px;}
+.p68{text-align: left;margin-top: 4px;margin-bottom: 0px;}
+.p69{text-align: left;padding-left: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p70{text-align: center;padding-right: 18px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p71{text-align: left;padding-left: 18px;margin-top: 1px;margin-bottom: 0px;}
+.p72{text-align: left;padding-left: 21px;margin-top: 0px;margin-bottom: 0px;}
+.p73{text-align: left;padding-left: 21px;margin-top: 1px;margin-bottom: 0px;}
+.p74{text-align: left;padding-right: 29px;margin-top: 5px;margin-bottom: 0px;}
+.p75{text-align: center;padding-right: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p76{text-align: left;padding-left: 18px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p77{text-align: center;padding-left: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p78{text-align: center;padding-right: 26px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p79{text-align: right;padding-right: 51px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p80{text-align: center;padding-right: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p81{text-align: center;padding-right: 35px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p82{text-align: right;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p83{text-align: right;padding-right: 41px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p84{text-align: right;padding-right: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p85{text-align: center;padding-left: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p86{text-align: center;padding-right: 21px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p87{text-align: left;margin-top: 11px;margin-bottom: 0px;}
+.p88{text-align: left;margin-top: 5px;margin-bottom: 0px;}
+.p89{text-align: center;padding-right: 46px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p90{text-align: left;padding-left: 25px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p91{text-align: left;padding-left: 55px;margin-top: 0px;margin-bottom: 0px;}
+.p92{text-align: left;padding-left: 12px;padding-right: 99px;margin-top: 0px;margin-bottom: 0px;text-indent: -11px;}
+.p93{text-align: left;padding-right: 44px;margin-top: 0px;margin-bottom: 0px;text-indent: 12px;}
+.p94{text-align: left;padding-right: 36px;margin-top: 0px;margin-bottom: 0px;text-indent: 12px;}
+.p95{text-align: center;padding-right: 20px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p96{text-align: left;padding-left: 41px;margin-top: 0px;margin-bottom: 0px;}
+.p97{text-align: left;padding-left: 12px;padding-right: 97px;margin-top: 0px;margin-bottom: 0px;text-indent: -11px;}
+.p98{text-align: left;padding-right: 42px;margin-top: 0px;margin-bottom: 0px;text-indent: 12px;}
+.p99{text-align: left;padding-right: 34px;margin-top: 0px;margin-bottom: 0px;text-indent: 12px;}
+.p100{text-align: left;padding-left: 30px;margin-top: 0px;margin-bottom: 0px;}
+.p101{text-align: left;padding-left: 12px;padding-right: 111px;margin-top: 0px;margin-bottom: 0px;text-indent: -11px;}
+.p102{text-align: left;padding-right: 56px;margin-top: 0px;margin-bottom: 0px;text-indent: 12px;}
+.p103{text-align: left;padding-right: 49px;margin-top: 0px;margin-bottom: 0px;text-indent: 12px;}
+.p104{text-align: center;padding-right: 19px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p105{text-align: left;padding-left: 24px;margin-top: 0px;margin-bottom: 0px;}
+.p106{text-align: left;padding-left: 60px;margin-top: 1px;margin-bottom: 0px;}
+.p107{text-align: left;padding-left: 72px;padding-right: 75px;margin-top: 0px;margin-bottom: 0px;}
+.p108{text-align: left;padding-left: 60px;padding-right: 158px;margin-top: 0px;margin-bottom: 0px;}
+.p109{text-align: right;padding-right: 74px;margin-top: 1px;margin-bottom: 0px;}
+.p110{text-align: center;padding-right: 24px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p111{text-align: right;padding-right: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p112{text-align: center;padding-right: 2px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p113{text-align: center;padding-right: 16px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p114{text-align: right;padding-right: 26px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p115{text-align: center;padding-left: 54px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p116{text-align: right;padding-right: 24px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p117{text-align: left;padding-left: 12px;padding-right: 32px;margin-top: 0px;margin-bottom: 0px;}
+.p118{text-align: left;padding-right: 102px;margin-top: 0px;margin-bottom: 0px;}
+.p119{text-align: right;padding-right: 15px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p120{text-align: center;padding-left: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p121{text-align: center;padding-right: 15px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p122{text-align: left;padding-left: 24px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p123{text-align: center;padding-right: 23px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p124{text-align: right;padding-right: 72px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p125{text-align: right;padding-right: 69px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p126{text-align: left;padding-left: 13px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p127{text-align: center;padding-left: 16px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p128{text-align: right;padding-right: 25px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+
+.td0{padding: 0px;margin: 0px;width: 54px;vertical-align: bottom;}
+.td1{padding: 0px;margin: 0px;width: 60px;vertical-align: bottom;}
+.td2{padding: 0px;margin: 0px;width: 80px;vertical-align: bottom;}
+.td3{padding: 0px;margin: 0px;width: 88px;vertical-align: bottom;}
+.td4{padding: 0px;margin: 0px;width: 39px;vertical-align: bottom;}
+.td5{padding: 0px;margin: 0px;width: 127px;vertical-align: bottom;}
+.td6{padding: 0px;margin: 0px;width: 218px;vertical-align: bottom;}
+.td7{padding: 0px;margin: 0px;width: 83px;vertical-align: bottom;}
+.td8{padding: 0px;margin: 0px;width: 111px;vertical-align: bottom;}
+.td9{padding: 0px;margin: 0px;width: 97px;vertical-align: bottom;}
+.td10{padding: 0px;margin: 0px;width: 30px;vertical-align: bottom;}
+.td11{padding: 0px;margin: 0px;width: 188px;vertical-align: bottom;}
+.td12{padding: 0px;margin: 0px;width: 56px;vertical-align: bottom;}
+.td13{padding: 0px;margin: 0px;width: 55px;vertical-align: bottom;}
+.td14{padding: 0px;margin: 0px;width: 40px;vertical-align: bottom;}
+.td15{padding: 0px;margin: 0px;width: 57px;vertical-align: bottom;}
+.td16{padding: 0px;margin: 0px;width: 246px;vertical-align: bottom;}
+.td17{padding: 0px;margin: 0px;width: 51px;vertical-align: bottom;}
+.td18{padding: 0px;margin: 0px;width: 109px;vertical-align: bottom;}
+.td19{padding: 0px;margin: 0px;width: 103px;vertical-align: bottom;}
+.td20{padding: 0px;margin: 0px;width: 67px;vertical-align: bottom;}
+.td21{padding: 0px;margin: 0px;width: 42px;vertical-align: bottom;}
+.td22{padding: 0px;margin: 0px;width: 64px;vertical-align: bottom;}
+.td23{border-right: #0078ff 1px solid;padding: 0px;margin: 0px;width: 245px;vertical-align: bottom;}
+.td24{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 51px;vertical-align: bottom;}
+.td25{border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 67px;vertical-align: bottom;}
+.td26{border-right: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 41px;vertical-align: bottom;}
+.td27{padding: 0px;margin: 0px;width: 105px;vertical-align: bottom;}
+.td28{padding: 0px;margin: 0px;width: 106px;vertical-align: bottom;}
+.td29{padding: 0px;margin: 0px;width: 48px;vertical-align: bottom;}
+.td30{padding: 0px;margin: 0px;width: 46px;vertical-align: bottom;}
+.td31{border-right: #0078ff 1px solid;padding: 0px;margin: 0px;width: 47px;vertical-align: bottom;}
+.td32{border-right: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 105px;vertical-align: bottom;}
+.td33{padding: 0px;margin: 0px;width: 53px;vertical-align: bottom;}
+.td34{border-left: #0078ff 1px solid;border-bottom: #0078ff 1px solid;padding: 0px;margin: 0px;width: 52px;vertical-align: bottom;}
+.td35{border-left: #e9edf5 1px solid;padding: 0px;margin: 0px;width: 54px;vertical-align: bottom;background: #e9edf5;}
+.td36{padding: 0px;margin: 0px;width: 56px;vertical-align: bottom;background: #e9edf5;}
+.td37{padding: 0px;margin: 0px;width: 105px;vertical-align: bottom;background: #e9edf5;}
+.td38{border-left: #e9edf5 1px solid;padding: 0px;margin: 0px;width: 54px;vertical-align: bottom;background: #a0e5cd;}
+.td39{padding: 0px;margin: 0px;width: 62px;vertical-align: bottom;background: #e9edf5;}
+.td40{padding: 0px;margin: 0px;width: 43px;vertical-align: bottom;background: #e9edf5;}
+.td41{border-left: #e9edf5 1px solid;padding: 0px;margin: 0px;width: 54px;vertical-align: bottom;background: #80bbff;}
+.td42{border-left: #e9edf5 1px solid;padding: 0px;margin: 0px;width: 54px;vertical-align: bottom;background: #ffbb80;}
+.td43{padding: 0px;margin: 0px;width: 108px;vertical-align: bottom;}
+.td44{padding: 0px;margin: 0px;width: 100px;vertical-align: bottom;}
+.td45{padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+.td46{padding: 0px;margin: 0px;width: 69px;vertical-align: bottom;}
+.td47{padding: 0px;margin: 0px;width: 62px;vertical-align: bottom;}
+.td48{padding: 0px;margin: 0px;width: 47px;vertical-align: bottom;}
+.td49{padding: 0px;margin: 0px;width: 110px;vertical-align: bottom;}
+.td50{padding: 0px;margin: 0px;width: 0px;vertical-align: bottom;}
+.td51{padding: 0px;margin: 0px;width: 52px;vertical-align: bottom;}
+.td52{padding: 0px;margin: 0px;width: 73px;vertical-align: bottom;}
+.td53{padding: 0px;margin: 0px;width: 66px;vertical-align: bottom;}
+.td54{padding: 0px;margin: 0px;width: 58px;vertical-align: bottom;}
+.td55{padding: 0px;margin: 0px;width: 74px;vertical-align: bottom;}
+.td56{padding: 0px;margin: 0px;width: 78px;vertical-align: bottom;}
+.td57{padding: 0px;margin: 0px;width: 130px;vertical-align: bottom;}
+.td58{padding: 0px;margin: 0px;width: 27px;vertical-align: bottom;}
+.td59{padding: 0px;margin: 0px;width: 206px;vertical-align: bottom;}
+.td60{padding: 0px;margin: 0px;width: 71px;vertical-align: bottom;}
+.td61{padding: 0px;margin: 0px;width: 61px;vertical-align: bottom;}
+.td62{padding: 0px;margin: 0px;width: 23px;vertical-align: bottom;}
+.td63{padding: 0px;margin: 0px;width: 94px;vertical-align: bottom;}
+.td64{padding: 0px;margin: 0px;width: 215px;vertical-align: bottom;}
+.td65{padding: 0px;margin: 0px;width: 84px;vertical-align: bottom;}
+.td66{padding: 0px;margin: 0px;width: 82px;vertical-align: bottom;}
+.td67{padding: 0px;margin: 0px;width: 133px;vertical-align: bottom;}
+.td68{padding: 0px;margin: 0px;width: 36px;vertical-align: bottom;}
+.td69{padding: 0px;margin: 0px;width: 77px;vertical-align: bottom;}
+.td70{padding: 0px;margin: 0px;width: 44px;vertical-align: bottom;}
+.td71{padding: 0px;margin: 0px;width: 28px;vertical-align: bottom;}
+.td72{padding: 0px;margin: 0px;width: 59px;vertical-align: bottom;}
+.td73{padding: 0px;margin: 0px;width: 65px;vertical-align: bottom;}
+.td74{padding: 0px;margin: 0px;width: 137px;vertical-align: bottom;}
+.td75{padding: 0px;margin: 0px;width: 37px;vertical-align: bottom;}
+.td76{padding: 0px;margin: 0px;width: 49px;vertical-align: bottom;}
+.td77{border-bottom: #a3e4cd 1px solid;padding: 0px;margin: 0px;width: 65px;vertical-align: bottom;}
+.td78{padding: 0px;margin: 0px;width: 102px;vertical-align: bottom;}
+.td79{padding: 0px;margin: 0px;width: 50px;vertical-align: bottom;}
+.td80{padding: 0px;margin: 0px;width: 52px;vertical-align: bottom;background: #ffbb80;}
+.td81{padding: 0px;margin: 0px;width: 52px;vertical-align: bottom;background: #80bbff;}
+.td82{padding: 0px;margin: 0px;width: 52px;vertical-align: bottom;background: #a0e5cd;}
+.td83{padding: 0px;margin: 0px;width: 52px;vertical-align: bottom;background: #ebaed1;}
+.td84{padding: 0px;margin: 0px;width: 45px;vertical-align: bottom;}
+.td85{padding: 0px;margin: 0px;width: 33px;vertical-align: bottom;}
+.td86{padding: 0px;margin: 0px;width: 99px;vertical-align: bottom;}
+.td87{padding: 0px;margin: 0px;width: 34px;vertical-align: bottom;}
+.td88{padding: 0px;margin: 0px;width: 126px;vertical-align: bottom;}
+.td89{padding: 0px;margin: 0px;width: 159px;vertical-align: bottom;}
+
+.tr0{height: 17px;}
+.tr1{height: 28px;}
+.tr2{height: 11px;}
+.tr3{height: 10px;}
+.tr4{height: 15px;}
+.tr5{height: 18px;}
+.tr6{height: 12px;}
+.tr7{height: 9px;}
+.tr8{height: 8px;}
+.tr9{height: 21px;}
+.tr10{height: 27px;}
+.tr11{height: 3px;}
+.tr12{height: 6px;}
+.tr13{height: 5px;}
+.tr14{height: 13px;}
+.tr15{height: 14px;}
+.tr16{height: 4px;}
+.tr17{height: 16px;}
+.tr18{height: 29px;}
+.tr19{height: 24px;}
+
+.t0{width: 321px;margin-left: 100px;margin-top: 6px;font: 10px 'Times New Roman';}
+.t1{width: 509px;margin-left: 4px;font: 10px 'Times New Roman';}
+.t2{width: 509px;font: 10px 'Times New Roman';}
+.t3{width: 512px;font: 10px 'Times New Roman';}
+.t4{width: 268px;font: 10px 'Times New Roman';}
+.t5{width: 216px;font: 10px 'Times New Roman';}
+.t6{width: 254px;font: 10px 'Times New Roman';}
+.t7{width: 205px;margin-left: 19px;font: 10px 'Times New Roman';}
+.t8{width: 505px;margin-left: 3px;margin-top: 11px;font: 10px 'Times New Roman';}
+.t9{width: 338px;margin-left: 83px;font: 10px 'Times New Roman';}
+.t10{width: 485px;font: 10px 'Times New Roman';}
+.t11{width: 350px;margin-left: 83px;font: 10px 'Times New Roman';}
+.t12{width: 466px;margin-left: 20px;font: 10px 'Times New Roman';}
+.t13{width: 152px;margin-left: 10px;margin-top: 5px;font: 7px 'Times New Roman';}
+.t14{width: 152px;margin-left: 9px;margin-top: 5px;font: 7px 'Times New Roman';}
+.t15{width: 151px;margin-left: 10px;margin-top: 5px;font: 7px 'Times New Roman';}
+.t16{width: 132px;font: 10px 'Times New Roman';}
+.t17{width: 493px;font: 10px 'Times New Roman';}
+.t18{width: 154px;margin-left: 2px;font: 10px 'Times New Roman';}
+.t19{width: 152px;margin-left: 57px;font: 10px 'Times New Roman';}
+.t20{width: 199px;font: 10px 'Times New Roman';}
+.t21{width: 495px;font: 10px 'Times New Roman';}
+
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV id="page_1">
+<DIV id="p1dimg1">
+<IMG src="data:image/png;base64,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klICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAA0kHtAQAAvMDF5XXtCb1Wy0XL80rzC83b0Wq5GPDVXFMCAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAA0qTrutobAKCUUi4ur4d9aCAAbO2g9gAAABjP+c1V7Qm9Tg6PGp9Xe8KonL4DAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABIk67ram8AgFJKubi8Xi0XtVcAQCmlHNQeAADAC9ze3dee0Gs+m7Y8r5Qyn03Pb65qr+h1cnjU+Lz2398BX83pOwAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACBNuq6rvQEASinl4vJ6tVzUXgEApZRyUHsAAADw3dfP32pP6PXx04faE0bl9B0AAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQPHkWnnF7dz+fTS8ur2sP6bVaLszbReML25/38Huk9hAAGJhSAgCAVnz89KH2BL5TSgAA++T27r72hF7z2bTleaWU+Wx69qX2iH6nx6Xxee2/vwO+ms8pAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQ3CUcnvFwu8nVclF7yDrm7ajxhY3P89hZAN4kpQTPuL279wfBHZ3fXNWesM7J4VHLC08Oj2pPeIbfIwC8SU7fAQAAJNeUAAD2SeNXcRufV0o5Pa69YK3G57X//g5IKQEA7JPbu/vaE3rNZ9OW55WHP+h/Oau9ot/xaePz9uD9HY7TdwAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJHcJh2e8q+cGvJKTw6PaE57R/sKW+T0CwJuklOAZt3f3jT8dov155zdXtVesc3J41PLCk8Ojxt/fh98jtYcAwMCUEgDAPmn83000Pq+UUo5Pay9Yq+15jb+/w/7LO59TAgAASEoJAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAIA06bqu9gYAKKWUi8vr1XJRewUA+2rY5yl58iw8Y9jfcu/T2ZfaC9Y6PW564elx7QXP8XsEgDfJ6TsAAIDkmhIAANR3e3dfewL/RSkBAEB9TjK3xuk7AACApJQAAACSUgIAAEhKCQAAICklAACApJQAAADSpOu62hsAoJRSLi6vV8tF7RUAUIrnKcGzbu/u57Npyw+Da39e+XJWe8Vax6dNLzw+bfz9ffg9UnsIAAzM6TsAAICklAAAAJJSAgAASEoJAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAIA06bqu9gYAKKWUi8vr1XJRewUAlOKaEgAAwFNKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAADSQe0BAAC8wMXlde0JvVbLRcvzSvMLzdvRarkY8NVcUwIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAADSpOu62hsAoJRSLi6vh31oIABs7aD2AAAAGM/5zVXtCb1ODo8an1d7wqicvgMAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEiTrutqbwCAUkq5uLxeLRe1VwBAKaUc1B4AAMAL3N7d157Qaz6btjyvlDKfTc9vrmqv6HVyeNT4vPbf3wFfzek7AACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACANOm6rvYGACillIvL69VyUXsFAJRSykHtAQAAwHdfP3+rPaHXx08fak8YldN3AAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQPLkWQAAaMV7e7pry5QSAMA+ub27rz2h13w2bXleKWU+m559qT2i3+lxaXxe++/vgK/m9B0AAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAECadF1XewMAlFLKxeX1armovQIASinloPYAAABe4PbuvvaEXvPZtOV5pZT5bFq+nNVe0e/4tPF5e/D+DsfpOwAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgDTpuq72BgAopZSLy+vVclF7BQCUUspB7QEAADCev/79R+0JvX757dfaE/ib03cAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABA8uRZAADeEU93ZUOuKQEAAG/B7d39gK+mlAAAAJJSAgAASEoJAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAICklAAAANJB7QEAAGzq9u6+9gR4L5QSAMDemM+mtSfAe+H0HQAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQDqoPQAAgBe4uLyuPaHXarloeV5pfqF5O1otFwO+mmtKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAAadJ1Xe0NAFBKKReX18M+Xh0AtnZQewAAAIzn7EvtBf1Oj8v5zVXtFb1ODo9qTxiV03cAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABp0nVd7Q0AUEopF5fXq+Wi9goAKKWUg9oDAAB4gdu7+9oTes1n05bnlVLms+lf//6j9opev/z26/nNVe0VvU4Oj9p/fwd8NafvAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgDTpuq72BgAopZSLy+vVclF7BQCUUspB7QEAADCe85ur2hN6nRweNT6v9oRRKSVo1MXlde0J66yWi5YXmrcjF3YAwOeUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgOTJswAAvCMnh0e1J6zT+Lx3ZdJ1Xe0NAFBKKReX16vlovYKaN3t3X3tCb3ms2nL80op89m0fDmrvaLf8en5zVXtEb1ODo/24P0djtN3AAAASSkBAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAAadJ1Xe0NAFBKKReX16vlovYKACillIPaAwAAYDznN1e1J/Q6OTxqfF7tCaNy+g4AACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABIk67ram8AgFJKubi8Xi0XtVcAQCmlHNQeAADAC9ze3dee0Gs+m7Y8r5Qyn03PvtQe0e/0uHz9/K32il4fP31o//0d8NWcvgMAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEiTrutqbwCAUkq5uLxeLRe1VwBAKaUc1B4AAADj+evff9Se0OuX3379+vlb7RW9Pn76UHvCqJy+AwAASEoJAAAgKSUAAICklAAAAJJSAgAASEoJAAAgKSUAAICklAAAAJJSAgAASAe1BwAAwHh++e3X2hPW+fjpQ+0JfKeUAAD2ye3dfe0JveazacvzSinz2fT85qr2il4nh0dfP3+rvaLXx08f2n9/B3w1p+8AAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACANOm6rvYGACillIvL69VyUXsFAJRSykHtAQAAMKIvZ7UX9Ds+/fr5W+0RvT5++lB7wqicvgMAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEgHtQcAAMCIjk9rL1jn46cPtSfwnVICANgnt3f3tSf0ms+mLc8rpcxn0/Obq9orep0cHn39/K32il4fP31o//0d8NWcvgMAAEhKCQAAICklAACApJQAAACSUgIAAEhKCQAAICklAACApJQAAACSUgIAAEiTrutqbwCAUkq5uLxeLRe1VwBAKaUc1B4AAADjOftSe0G/0+PW570rTt8BAAAkpQQAAJCUEgAAQFJKAAAASSkBAAAkpQQAAJCUEgAAQFJKAAAAadJ1Xe0NAFBKKReX16vlovYKACillIPaAwAAeIHbu/vaE3rNZ9OW55XmF5q3o/lsOuCrOX0HAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQlBIAAEBSSgAAAEkpAQAAJKUEAACQDmoPAADgBeazae0J6zQ+rzS/0Lx2uKYEAACQJl3X1d4AAADQFteUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABIk/LPrvYGAACAtrimBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkJQSAABAUkoAAABJKQEAACSlBAAAkA5qD+Dt6H6vvWB0k3/VXjCKd/jOjuOd/P0DAHtqUv7Z1d4AAADQFqfvAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAAklICAABISgkAACApJQAAgKSUAAAA0v8D5yTDm28mb68AAAAASUVORK5CYII=" id="p1img1"></DIV>
+
+
+<DIV id="id1_1">
+<DIV id="id1_1_1">
+<P class="p0 ft0">SQL JOINs Cheat Sheet</P>
+<P class="p1 ft1">JOINING TABLES</P>
+<P class="p2 ft3"><SPAN class="ft2">JOIN </SPAN>combines data from two tables.</P>
+<TABLE cellpadding=0 cellspacing=0 class="t0">
+<TR>
+	<TD class="tr0 td0"><P class="p3 ft4">TOY</P></TD>
+	<TD rowspan=2 class="tr1 td1"><P class="p4 ft2">toy_name</P></TD>
+	<TD rowspan=2 class="tr1 td2"><P class="p5 ft2">cat_id</P></TD>
+	<TD class="tr0 td3"><P class="p6 ft4">CAT</P></TD>
+	<TD class="tr0 td4"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td0"><P class="p7 ft6">toy_id</P></TD>
+	<TD colspan=2 class="tr2 td5"><P class="p8 ft6">cat_id cat_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td0"><P class="p7 ft7">1</P></TD>
+	<TD class="tr3 td1"><P class="p4 ft7">ball</P></TD>
+	<TD class="tr3 td2"><P class="p9 ft7">3</P></TD>
+	<TD class="tr3 td3"><P class="p10 ft7">1</P></TD>
+	<TD class="tr3 td4"><P class="p11 ft7">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td0"><P class="p7 ft6">2</P></TD>
+	<TD class="tr2 td1"><P class="p12 ft6">spring</P></TD>
+	<TD class="tr2 td2"><P class="p5 ft8">NULL</P></TD>
+	<TD class="tr2 td3"><P class="p10 ft6">2</P></TD>
+	<TD class="tr2 td4"><P class="p12 ft6">Hugo</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td0"><P class="p7 ft6">3</P></TD>
+	<TD class="tr2 td1"><P class="p4 ft6">mouse</P></TD>
+	<TD class="tr2 td2"><P class="p9 ft6">1</P></TD>
+	<TD class="tr2 td3"><P class="p10 ft6">3</P></TD>
+	<TD class="tr2 td4"><P class="p12 ft6">Sam</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td0"><P class="p7 ft7">4</P></TD>
+	<TD class="tr3 td1"><P class="p4 ft7">mouse</P></TD>
+	<TD class="tr3 td2"><P class="p9 ft7">4</P></TD>
+	<TD class="tr3 td3"><P class="p10 ft7">4</P></TD>
+	<TD class="tr3 td4"><P class="p11 ft7">Misty</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td0"><P class="p7 ft2">5</P></TD>
+	<TD class="tr4 td1"><P class="p4 ft2">ball</P></TD>
+	<TD class="tr4 td2"><P class="p9 ft2">1</P></TD>
+	<TD class="tr4 td3"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr4 td4"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+</TABLE>
+<P class="p13 ft11"><SPAN class="ft9">JOIN </SPAN>typically combines rows with equal values for the specified columns. <SPAN class="ft10">Usually</SPAN>, one table contains a <SPAN class="ft10">primary key</SPAN>, which is a column or columns that uniquely identify rows in the table (the <SPAN class="ft9">cat_id </SPAN>column in the <SPAN class="ft9">cat </SPAN>table).</P>
+<P class="p14 ft3">The other table has a column or columns that <SPAN class="ft12">refer to the primary key columns </SPAN>in the first table (the <SPAN class="ft2">cat_id </SPAN>column in the <SPAN class="ft2">toy </SPAN>table). Such columns are <SPAN class="ft12">foreign keys</SPAN>. The <SPAN class="ft2">JOIN </SPAN>condition is the equality between the primary key columns in one table and columns referring to them in the other table.</P>
+<P class="p15 ft1">JOIN</P>
+<P class="p16 ft3"><SPAN class="ft2">JOIN </SPAN>returns all rows that match the <SPAN class="ft2">ON </SPAN>condition. <SPAN class="ft2">JOIN </SPAN>is also called <SPAN class="ft2">INNER JOIN</SPAN>.</P>
+<TABLE cellpadding=0 cellspacing=0 class="t1">
+<TR>
+	<TD colspan=2 class="tr5 td6"><P class="p3 ft13">SELECT <SPAN class="ft2">*</SPAN></P></TD>
+	<TD class="tr5 td7"><P class="p17 ft2">toy_id</P></TD>
+	<TD colspan=2 class="tr5 td8"><P class="p18 ft2">toy_name cat_id</P></TD>
+	<TD colspan=2 class="tr5 td9"><P class="p19 ft2">cat_id cat_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td10"><P class="p3 ft14">FROM</P></TD>
+	<TD class="tr3 td11"><P class="p3 ft7">toy</P></TD>
+	<TD class="tr3 td7"><P class="p17 ft7">5</P></TD>
+	<TD class="tr3 td12"><P class="p20 ft7">ball</P></TD>
+	<TD class="tr3 td13"><P class="p21 ft7">1</P></TD>
+	<TD class="tr3 td14"><P class="p22 ft7">1</P></TD>
+	<TD class="tr3 td15"><P class="p23 ft7">Kitty</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 class="tr6 td6"><P class="p3 ft13">JOIN <SPAN class="ft2">cat</SPAN></P></TD>
+	<TD class="tr6 td7"><P class="p17 ft2">3</P></TD>
+	<TD class="tr6 td12"><P class="p20 ft2">mouse</P></TD>
+	<TD class="tr6 td13"><P class="p21 ft2">1</P></TD>
+	<TD class="tr6 td14"><P class="p22 ft2">1</P></TD>
+	<TD class="tr6 td15"><P class="p23 ft2">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td10"><P class="p24 ft15">ON</P></TD>
+	<TD class="tr2 td11"><P class="p3 ft6">toy.cat_id = cat.cat_id;</P></TD>
+	<TD class="tr2 td7"><P class="p17 ft6">1</P></TD>
+	<TD class="tr2 td12"><P class="p20 ft6">ball</P></TD>
+	<TD class="tr2 td13"><P class="p21 ft6">3</P></TD>
+	<TD class="tr2 td14"><P class="p22 ft6">3</P></TD>
+	<TD class="tr2 td15"><P class="p23 ft6">Sam</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td10"><P class="p3 ft16">&nbsp;</P></TD>
+	<TD class="tr2 td11"><P class="p3 ft16">&nbsp;</P></TD>
+	<TD class="tr2 td7"><P class="p17 ft6">4</P></TD>
+	<TD class="tr2 td12"><P class="p20 ft6">mouse</P></TD>
+	<TD class="tr2 td13"><P class="p21 ft6">4</P></TD>
+	<TD class="tr2 td14"><P class="p22 ft6">4</P></TD>
+	<TD class="tr2 td15"><P class="p23 ft6">Misty</P></TD>
+</TR>
+</TABLE>
+<P class="p25 ft18">There is also another, older syntax, but it <SPAN class="ft17">isn't recommended</SPAN>.</P>
+<P class="p25 ft3">List joined tables in the <SPAN class="ft2">FROM </SPAN>clause, and place the conditions in the <SPAN class="ft2">WHERE </SPAN>clause.</P>
+<P class="p26 ft13">SELECT <SPAN class="ft2">*</SPAN></P>
+<P class="p25 ft2"><SPAN class="ft13">FROM </SPAN>toy, cat</P>
+</DIV>
+<DIV id="id1_1_2">
+<P class="p0 ft1">LEFT JOIN</P>
+<P class="p27 ft3"><SPAN class="ft2">LEFT JOIN </SPAN>returns all rows from the <SPAN class="ft12">left table </SPAN>with matching rows from the right table. Rows without a match are filled with <SPAN class="ft2">NULL</SPAN>s. <SPAN class="ft2">LEFT JOIN </SPAN>is also called <SPAN class="ft2">LEFT OUTER JOIN</SPAN>.</P>
+<TABLE cellpadding=0 cellspacing=0 class="t2">
+<TR>
+	<TD class="tr0 td16"><P class="p3 ft13">SELECT <SPAN class="ft2">*</SPAN></P></TD>
+	<TD class="tr0 td17"><P class="p28 ft2">toy_id</P></TD>
+	<TD colspan=2 class="tr0 td18"><P class="p29 ft2">toy_name cat_id</P></TD>
+	<TD colspan=2 class="tr0 td19"><P class="p30 ft2">cat_id cat_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td16"><P class="p3 ft14">FROM <SPAN class="ft7">toy</SPAN></P></TD>
+	<TD class="tr3 td17"><P class="p31 ft7">5</P></TD>
+	<TD class="tr3 td20"><P class="p12 ft7">ball</P></TD>
+	<TD class="tr3 td21"><P class="p32 ft7">1</P></TD>
+	<TD class="tr3 td22"><P class="p4 ft7">1</P></TD>
+	<TD class="tr3 td4"><P class="p20 ft7">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td16"><P class="p3 ft19">LEFT JOIN <SPAN class="ft2">cat</SPAN></P></TD>
+	<TD class="tr6 td17"><P class="p31 ft2">3</P></TD>
+	<TD class="tr6 td20"><P class="p12 ft2">mouse</P></TD>
+	<TD class="tr6 td21"><P class="p32 ft2">1</P></TD>
+	<TD class="tr6 td22"><P class="p4 ft2">1</P></TD>
+	<TD class="tr6 td4"><P class="p20 ft2">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td16"><P class="p24 ft6"><SPAN class="ft20">ON </SPAN>toy.cat_id = cat.cat_id;</P></TD>
+	<TD class="tr2 td17"><P class="p31 ft6">1</P></TD>
+	<TD class="tr2 td20"><P class="p12 ft6">ball</P></TD>
+	<TD class="tr2 td21"><P class="p32 ft6">3</P></TD>
+	<TD class="tr2 td22"><P class="p32 ft6">3</P></TD>
+	<TD class="tr2 td4"><P class="p20 ft6">Sam</P></TD>
+</TR>
+<TR>
+	<TD class="tr7 td16"><P class="p3 ft21">&nbsp;</P></TD>
+	<TD class="tr7 td17"><P class="p33 ft22">4</P></TD>
+	<TD class="tr7 td20"><P class="p12 ft22">mouse</P></TD>
+	<TD class="tr7 td21"><P class="p32 ft22">4</P></TD>
+	<TD class="tr7 td22"><P class="p32 ft22">4</P></TD>
+	<TD class="tr7 td4"><P class="p20 ft22">Misty</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td16"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td17"><P class="p33 ft2">2</P></TD>
+	<TD class="tr6 td20"><P class="p12 ft2">spring</P></TD>
+	<TD class="tr6 td21"><P class="p32 ft8">NULL</P></TD>
+	<TD class="tr6 td22"><P class="p34 ft23">NULL</P></TD>
+	<TD class="tr6 td4"><P class="p20 ft23">NULL</P></TD>
+</TR>
+<TR>
+	<TD class="tr7 td23"><P class="p3 ft21">&nbsp;</P></TD>
+	<TD class="tr8 td24"><P class="p3 ft24">&nbsp;</P></TD>
+	<TD class="tr8 td25"><P class="p3 ft25">whole left table</P></TD>
+	<TD class="tr8 td26"><P class="p3 ft24">&nbsp;</P></TD>
+	<TD class="tr7 td22"><P class="p3 ft21">&nbsp;</P></TD>
+	<TD class="tr7 td4"><P class="p3 ft21">&nbsp;</P></TD>
+</TR>
+</TABLE>
+<P class="p35 ft1">RIGHT JOIN</P>
+<P class="p36 ft3"><SPAN class="ft2">RIGHT JOIN </SPAN>returns all rows from the <SPAN class="ft12">right table </SPAN>with matching rows from the left table. Rows without a match are filled with <SPAN class="ft2">NULL</SPAN>s. <SPAN class="ft2">RIGHT JOIN </SPAN>is also called <SPAN class="ft2">RIGHT OUTER JOIN</SPAN>.</P>
+<TABLE cellpadding=0 cellspacing=0 class="t3">
+<TR>
+	<TD class="tr0 td6"><P class="p3 ft13">SELECT <SPAN class="ft2">*</SPAN></P></TD>
+	<TD class="tr0 td7"><P class="p37 ft2">toy_id</P></TD>
+	<TD colspan=2 class="tr0 td27"><P class="p3 ft2">toy_name cat_id</P></TD>
+	<TD colspan=2 class="tr0 td28"><P class="p30 ft2">cat_id cat_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td6"><P class="p3 ft15">FROM <SPAN class="ft6">toy</SPAN></P></TD>
+	<TD class="tr2 td7"><P class="p38 ft6">5</P></TD>
+	<TD class="tr2 td15"><P class="p20 ft6">ball</P></TD>
+	<TD class="tr2 td29"><P class="p39 ft6">1</P></TD>
+	<TD class="tr2 td30"><P class="p40 ft6">1</P></TD>
+	<TD class="tr2 td1"><P class="p41 ft6">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td6"><P class="p3 ft20">RIGHT JOIN <SPAN class="ft6">cat</SPAN></P></TD>
+	<TD class="tr2 td7"><P class="p38 ft6">3</P></TD>
+	<TD class="tr2 td15"><P class="p20 ft6">mouse</P></TD>
+	<TD class="tr2 td29"><P class="p39 ft6">1</P></TD>
+	<TD class="tr2 td30"><P class="p40 ft6">1</P></TD>
+	<TD class="tr2 td1"><P class="p41 ft6">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td6"><P class="p24 ft6"><SPAN class="ft20">ON </SPAN>toy.cat_id = cat.cat_id;</P></TD>
+	<TD class="tr2 td7"><P class="p37 ft23">NULL</P></TD>
+	<TD class="tr2 td15"><P class="p20 ft23">NULL</P></TD>
+	<TD class="tr2 td29"><P class="p39 ft23">NULL</P></TD>
+	<TD class="tr2 td30"><P class="p22 ft6">2</P></TD>
+	<TD class="tr2 td1"><P class="p41 ft6">Hugo</P></TD>
+</TR>
+<TR>
+	<TD class="tr7 td6"><P class="p3 ft21">&nbsp;</P></TD>
+	<TD class="tr7 td7"><P class="p17 ft22">1</P></TD>
+	<TD class="tr7 td15"><P class="p20 ft22">ball</P></TD>
+	<TD class="tr7 td29"><P class="p39 ft22">3</P></TD>
+	<TD class="tr7 td30"><P class="p22 ft22">3</P></TD>
+	<TD class="tr7 td1"><P class="p41 ft22">Sam</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td6"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td7"><P class="p17 ft2">4</P></TD>
+	<TD class="tr6 td15"><P class="p20 ft2">mouse</P></TD>
+	<TD class="tr6 td29"><P class="p39 ft2">4</P></TD>
+	<TD class="tr6 td30"><P class="p22 ft2">4</P></TD>
+	<TD class="tr6 td1"><P class="p41 ft2">Misty</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td6"><P class="p3 ft26">&nbsp;</P></TD>
+	<TD class="tr3 td7"><P class="p3 ft26">&nbsp;</P></TD>
+	<TD class="tr3 td15"><P class="p3 ft26">&nbsp;</P></TD>
+	<TD class="tr3 td31"><P class="p3 ft26">&nbsp;</P></TD>
+	<TD colspan=2 class="tr7 td32"><P class="p42 ft27">whole right table</P></TD>
+</TR>
+</TABLE>
+<P class="p43 ft1">FULL JOIN</P>
+<P class="p44 ft3"><SPAN class="ft2">FULL JOIN </SPAN>returns all rows from the <SPAN class="ft12">left table </SPAN>and all rows from the <SPAN class="ft12">right table</SPAN>. It fills the <NOBR>non-matching</NOBR> rows with <SPAN class="ft2">NULL</SPAN>s. <SPAN class="ft2">FULL JOIN </SPAN>is also called <SPAN class="ft2">FULL OUTER JOIN</SPAN>.</P>
+</DIV>
+</DIV>
+<DIV id="id1_2">
+<DIV id="id1_2_1">
+<P class="p0 ft2"><SPAN class="ft13">WHERE </SPAN>toy.cat_id = cat.cat_id;</P>
+<P class="p45 ft1">JOIN CONDITIONS</P>
+<P class="p46 ft3">The <SPAN class="ft2">JOIN </SPAN>condition doesn't have to be an equality – it can be any condition you want. <SPAN class="ft2">JOIN </SPAN>doesn't interpret the <SPAN class="ft2">JOIN </SPAN>condition, it only checks if the rows satisfy the given condition.</P>
+<P class="p47 ft28">To refer to a column in the <SPAN class="ft2">JOIN </SPAN>query, you have to use the full column name: first the table name, then a dot (<SPAN class="ft2">.</SPAN>) and the column name:</P>
+</DIV>
+<DIV id="id1_2_2">
+<P class="p48 ft31">SELECT <SPAN class="ft29">* </SPAN>FROM <SPAN class="ft29">toy </SPAN><SPAN class="ft30">FULL JOIN </SPAN><SPAN class="ft29">cat</SPAN></P>
+<P class="p49 ft2"><SPAN class="ft19">ON </SPAN>toy.cat_id = cat.cat_id;</P>
+</DIV>
+<DIV id="id1_2_3">
+<TABLE cellpadding=0 cellspacing=0 class="t4">
+<TR>
+	<TD class="tr0 td33"><P class="p50 ft2">toy_id</P></TD>
+	<TD colspan=2 class="tr0 td18"><P class="p29 ft2">toy_name cat_id</P></TD>
+	<TD colspan=2 class="tr0 td28"><P class="p30 ft2">cat_id cat_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td33"><P class="p31 ft6">5</P></TD>
+	<TD class="tr2 td20"><P class="p12 ft6">ball</P></TD>
+	<TD class="tr2 td21"><P class="p32 ft6">1</P></TD>
+	<TD class="tr2 td22"><P class="p51 ft6">1</P></TD>
+	<TD class="tr2 td21"><P class="p4 ft6">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td33"><P class="p31 ft7">3</P></TD>
+	<TD class="tr3 td20"><P class="p12 ft7">mouse</P></TD>
+	<TD class="tr3 td21"><P class="p32 ft7">1</P></TD>
+	<TD class="tr3 td22"><P class="p51 ft7">1</P></TD>
+	<TD class="tr3 td21"><P class="p4 ft7">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td33"><P class="p50 ft23">NULL</P></TD>
+	<TD class="tr2 td20"><P class="p12 ft23">NULL</P></TD>
+	<TD class="tr2 td21"><P class="p32 ft23">NULL</P></TD>
+	<TD class="tr2 td22"><P class="p10 ft6">2</P></TD>
+	<TD class="tr2 td21"><P class="p4 ft6">Hugo</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td33"><P class="p33 ft6">1</P></TD>
+	<TD class="tr2 td20"><P class="p12 ft6">ball</P></TD>
+	<TD class="tr2 td21"><P class="p32 ft6">3</P></TD>
+	<TD class="tr2 td22"><P class="p10 ft6">3</P></TD>
+	<TD class="tr2 td21"><P class="p4 ft6">Sam</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td33"><P class="p33 ft7">4</P></TD>
+	<TD class="tr3 td20"><P class="p12 ft7">mouse</P></TD>
+	<TD class="tr3 td21"><P class="p32 ft7">4</P></TD>
+	<TD class="tr3 td22"><P class="p10 ft7">4</P></TD>
+	<TD class="tr3 td21"><P class="p4 ft7">Misty</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td33"><P class="p33 ft2">2</P></TD>
+	<TD class="tr6 td20"><P class="p12 ft2">spring</P></TD>
+	<TD class="tr6 td21"><P class="p32 ft8">NULL</P></TD>
+	<TD class="tr6 td22"><P class="p52 ft19">NULL</P></TD>
+	<TD class="tr6 td21"><P class="p4 ft23">NULL</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td34"><P class="p3 ft24">&nbsp;</P></TD>
+	<TD class="tr8 td25"><P class="p3 ft25">whole left table</P></TD>
+	<TD class="tr8 td26"><P class="p3 ft24">&nbsp;</P></TD>
+	<TD colspan=2 class="tr8 td32"><P class="p42 ft25">whole right table</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id1_3">
+<DIV id="id1_3_1">
+<P class="p49 ft2"><SPAN class="ft13">ON </SPAN>cat.cat_id = toy.cat_id</P>
+<P class="p53 ft3">You can omit the table name and use just the column name if the name of the column is unique within all columns in the joined tables.</P>
+</DIV>
+<DIV id="id1_3_2">
+<P class="p0 ft1">CROSS JOIN</P>
+<P class="p54 ft3"><SPAN class="ft2">CROSS JOIN </SPAN>returns <SPAN class="ft12">all possible combinations </SPAN>of rows from the left and right tables.</P>
+</DIV>
+</DIV>
+<DIV id="id1_4">
+<DIV id="id1_4_1">
+<P class="p0 ft1">NATURAL JOIN</P>
+<P class="p55 ft3">If the tables have columns with <SPAN class="ft12">the same name</SPAN>, you can use <SPAN class="ft2">NATURAL JOIN </SPAN>instead of <SPAN class="ft2">JOIN</SPAN>.</P>
+<P class="p0 ft13">SELECT <SPAN class="ft2">*</SPAN></P>
+<P class="p0 ft13">FROM <SPAN class="ft2">toy</SPAN></P>
+<P class="p54 ft13">NATURAL JOIN <SPAN class="ft2">cat;</SPAN></P>
+<P class="p56 ft3">The common column appears only once in the result table. <SPAN class="ft12">Note: </SPAN><SPAN class="ft2">NATURAL JOIN </SPAN>is rarely used in real life.</P>
+</DIV>
+<DIV id="id1_4_2">
+<TABLE cellpadding=0 cellspacing=0 class="t5">
+<TR>
+	<TD class="tr0 td35"><P class="p50 ft2">cat_id</P></TD>
+	<TD class="tr0 td36"><P class="p7 ft2">toy_id</P></TD>
+	<TD colspan=2 class="tr0 td37"><P class="p3 ft2">toy_name cat_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td38"><P class="p50 ft7">1</P></TD>
+	<TD class="tr3 td36"><P class="p57 ft7">5</P></TD>
+	<TD class="tr3 td39"><P class="p24 ft7">ball</P></TD>
+	<TD class="tr3 td40"><P class="p3 ft7">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td38"><P class="p33 ft7">1</P></TD>
+	<TD class="tr3 td36"><P class="p57 ft7">3</P></TD>
+	<TD class="tr3 td39"><P class="p58 ft7">mouse</P></TD>
+	<TD class="tr3 td40"><P class="p3 ft7">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td41"><P class="p50 ft2">3</P></TD>
+	<TD class="tr6 td36"><P class="p57 ft2">1</P></TD>
+	<TD class="tr6 td39"><P class="p24 ft2">ball</P></TD>
+	<TD class="tr6 td40"><P class="p59 ft2">Sam</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td42"><P class="p50 ft2">4</P></TD>
+	<TD class="tr6 td36"><P class="p57 ft2">4</P></TD>
+	<TD class="tr6 td39"><P class="p58 ft2">mouse</P></TD>
+	<TD class="tr6 td40"><P class="p3 ft2">Misty</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id1_4_3">
+<P class="p0 ft13">SELECT <SPAN class="ft2">*</SPAN></P>
+<P class="p0 ft13">FROM <SPAN class="ft2">toy</SPAN></P>
+<P class="p54 ft19">CROSS JOIN <SPAN class="ft2">cat;</SPAN></P>
+<P class="p60 ft3">Other syntax:</P>
+<P class="p0 ft13">SELECT <SPAN class="ft2">*</SPAN></P>
+<P class="p54 ft2"><SPAN class="ft19">FROM </SPAN>toy, cat;</P>
+</DIV>
+<DIV id="id1_4_4">
+<TABLE cellpadding=0 cellspacing=0 class="t6">
+<TR>
+	<TD class="tr0 td30"><P class="p3 ft2">toy_id</P></TD>
+	<TD colspan=2 class="tr0 td43"><P class="p3 ft2">toy_name cat_id</P></TD>
+	<TD colspan=2 class="tr0 td44"><P class="p61 ft2">cat_id cat_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td30"><P class="p4 ft7">1</P></TD>
+	<TD class="tr3 td13"><P class="p62 ft7">ball</P></TD>
+	<TD class="tr3 td33"><P class="p20 ft7">3</P></TD>
+	<TD class="tr3 td45"><P class="p63 ft7">1</P></TD>
+	<TD class="tr3 td46"><P class="p64 ft7">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td30"><P class="p4 ft6">2</P></TD>
+	<TD class="tr2 td13"><P class="p39 ft6">spring</P></TD>
+	<TD class="tr2 td33"><P class="p65 ft6">NULL</P></TD>
+	<TD class="tr2 td45"><P class="p63 ft6">1</P></TD>
+	<TD class="tr2 td46"><P class="p64 ft6">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td30"><P class="p4 ft6">3</P></TD>
+	<TD class="tr2 td13"><P class="p62 ft6">mouse</P></TD>
+	<TD class="tr2 td33"><P class="p20 ft6">1</P></TD>
+	<TD class="tr2 td45"><P class="p63 ft6">1</P></TD>
+	<TD class="tr2 td46"><P class="p64 ft6">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td30"><P class="p4 ft7">4</P></TD>
+	<TD class="tr3 td13"><P class="p62 ft7">mouse</P></TD>
+	<TD class="tr3 td33"><P class="p20 ft7">4</P></TD>
+	<TD class="tr3 td45"><P class="p66 ft7">1</P></TD>
+	<TD class="tr3 td46"><P class="p64 ft7">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td30"><P class="p32 ft6">5</P></TD>
+	<TD class="tr2 td13"><P class="p62 ft6">ball</P></TD>
+	<TD class="tr2 td33"><P class="p20 ft6">1</P></TD>
+	<TD class="tr2 td45"><P class="p66 ft6">1</P></TD>
+	<TD class="tr2 td46"><P class="p64 ft6">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td30"><P class="p32 ft6">1</P></TD>
+	<TD class="tr2 td13"><P class="p62 ft6">ball</P></TD>
+	<TD class="tr2 td33"><P class="p20 ft6">3</P></TD>
+	<TD class="tr2 td45"><P class="p66 ft6">2</P></TD>
+	<TD class="tr2 td46"><P class="p64 ft6">Hugo</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td30"><P class="p32 ft7">2</P></TD>
+	<TD class="tr3 td13"><P class="p62 ft7">spring</P></TD>
+	<TD class="tr3 td33"><P class="p65 ft7">NULL</P></TD>
+	<TD class="tr3 td45"><P class="p66 ft7">2</P></TD>
+	<TD class="tr3 td46"><P class="p64 ft7">Hugo</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td30"><P class="p32 ft6">3</P></TD>
+	<TD class="tr2 td13"><P class="p62 ft6">mouse</P></TD>
+	<TD class="tr2 td33"><P class="p20 ft6">1</P></TD>
+	<TD class="tr2 td45"><P class="p66 ft6">2</P></TD>
+	<TD class="tr2 td46"><P class="p64 ft6">Hugo</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td30"><P class="p32 ft6">4</P></TD>
+	<TD class="tr2 td13"><P class="p62 ft6">mouse</P></TD>
+	<TD class="tr2 td33"><P class="p20 ft6">4</P></TD>
+	<TD class="tr2 td45"><P class="p66 ft6">2</P></TD>
+	<TD class="tr2 td46"><P class="p64 ft6">Hugo</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td30"><P class="p32 ft7">5</P></TD>
+	<TD class="tr3 td13"><P class="p62 ft7">ball</P></TD>
+	<TD class="tr3 td33"><P class="p20 ft7">1</P></TD>
+	<TD class="tr3 td45"><P class="p66 ft7">2</P></TD>
+	<TD class="tr3 td46"><P class="p64 ft7">Hugo</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td30"><P class="p32 ft6">1</P></TD>
+	<TD class="tr2 td13"><P class="p62 ft6">ball</P></TD>
+	<TD class="tr2 td33"><P class="p20 ft6">3</P></TD>
+	<TD class="tr2 td45"><P class="p66 ft6">3</P></TD>
+	<TD class="tr2 td46"><P class="p64 ft6">Sam</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td30"><P class="p32 ft2">···</P></TD>
+	<TD class="tr4 td13"><P class="p62 ft2">···</P></TD>
+	<TD class="tr4 td33"><P class="p20 ft2">···</P></TD>
+	<TD class="tr4 td45"><P class="p66 ft2">···</P></TD>
+	<TD class="tr4 td46"><P class="p64 ft2">···</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id1_5">
+<DIV id="id1_5_1">
+<P class="p0 ft33">Try out the interactive <A href="https://learnsql.com/course/joins"><SPAN class="ft32">SQL JOINs </SPAN></A>course at <A href="https://learnsql.com/"><SPAN class="ft32">LearnSQL.com</SPAN></A><A href="https://learnsql.com/">, </A>and check out our other SQL courses.</P>
+</DIV>
+<DIV id="id1_5_2">
+<P class="p67 ft34">LearnSQL.com is owned by Vertabelo SA vertabelo.com | CC <NOBR>BY-NC-ND</NOBR> Vertabelo SA</P>
+</DIV>
+</DIV>
+</DIV>
+<DIV id="page_2">
+<DIV id="p2dimg1">
+<IMG src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABGMAAAMFCAIAAABfxayaAAAgAElEQVR4nO3dPW8j2Xao4c0eRSPAgXCgQJMY4E3s4ARKmRlMGB7A4QD6Gz64MAjBMOZ3NDChAYdKBGdKFTjwSS6Bm0wHDaMDA32iO1M3YA+bvVT8UKnIvYp8nmim9TFL7NK03t67do2apikAAACseVd7AAAAGLDRaDQajWpPcfpGfy6jPx/1v3hx1P8aAACcomUsndt2rU3p0vzU5aN2fuDyY3e+T1+sKQEAQEdnu5q0fYWn25u2vPXIq0lLSgkAAHiFzt2yzwdWiaJWSgkAAOhN81P7Brn9EyhJLLlPCQAA6KjzXUPhA5PU0TprSgAAUMFog77ef9OHvPEzryfN/pkUQujlByYMJ6UEAADHtrOItv/Ky7e+fIc9T5t47WdeT5puPbOpr452qN2elBIAABzVPg3T4VS943xI/AxHf8zR0bhPCQAAjicu0Xz7CKbWdHn5mKbOhdPtiU+j0Wj7By5jKdui0BspJQAAGJhVt2y8m2hrj23/nJs+ydf3/KmUtq13J9ZLdt8BAEAK+99ZtM9xDivd1pF2f9oNRfRyP163QyCqU0oAAFBNh1PsevxPr/65W03tmT1vPwSiCqUEAABH0q1zeqyj3r39ObNpuU8JAACOpGma7dmz59rOzvuUjmwVSycQSCtKCQAA6uiw5+1ANx3xkt13AADQj9eu8Lz2wUrDzaR9blXa8+CHoy1bWVMCAICOXu6m2/OBSFveP7zz+n9i53ON6tq/YV5bO81P33xI64f3fqqeUgIAgMNaL5ydtyot37qpiKrfmNR5SSfUzvb37KD3pznZfQcAAN3ludco1XJTa7HskzF5HriklAAA4E16j6WXG/AOMUM3O0tm07nh+3x45w88hNQ7HQEAAKqwpgQAABA50QEAAKjjOKfYdWNNCQAAqGCfBytVpJQAAIAKkqwdbWL3HQAAUMd6LCVZSlpx9h0AAEBk9x0AAECklAAAACKlBAAAECklAAA4ktFoNBqNak/BXpzoAAAABxcCaf2H8C1vevnWVn6kPwSnhAMAwGGtaudl0rwModHo62KGBaiKlBIAAHS0/gigTc9R3SeTtqfRy7dKqSNwnxIAAPSg9wenLivoZV/Za3ccSgkAAA7lVQtKpKKUAADgULZsk7ODLjn3KQEAQA823ae08qpzHajOKeEAAHBYr11QWr715X1K+/wKfVFKAAAAkfuUAAAAIqUEAAAQKSUAAIBIKQEAAERKCQAAIFJKAAAAkVICAACIlBIAAECklAAAACKlBEAKD0+L2iMAwFdKCQAAIFJKAAAAkVICAACIlBIAAECklAAAACKlBAAAECklAACASCkBAABESgkAACBSSgAAAJFSAgAAiJQSAABApJQAAAAipQQAABApJQAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQKSUAAIBIKQEAAERKCQAAIFJKAAAAkVICAACIlBIAAECklAAAACKlBAAAECklAACASCkBAABESgkAACBSSgAAAJFSAgAAiJQSAABApJQAAAAipQQAABApJQAAgEgpAQAARBe1BygPT4vaI3BGZpNx7RG68G1yYgZ6HQLAWbGmBAAAECklAACASCkBAABESgkAACBSSgAAAJFSAgAAiJQSAABApJQAAACi+k+e9QRGGK7ZZOypuADASapfSml/zMr8I2Da2dIOtjLQMs88dubZAAA6q19KwE5p+zN/G+ckLwEgP/cpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQKSUAAIBo1DRN7RkAoDw8LTyTF4A8LmoPwKl5/+G59gjb3N3c1h6hi7Sv6kBfTwCAney+AwAAiJQSAABApJQAAAAi9ylxLr5rSinl51+S3vCzw6j2ADBA94+1J6A/82m5fyzzae05gHOilDgXv45KGewJBGlPdIDM/FR9YvyGAkemlAA4TQ9Pi9oj0JvZZGxNCTgy9ykBAABESgkAACBSSgAAAJH7lOjZQI9MSM6rCgBwZPVL6eOnv9Yeod311fdme63rq++TH8s70LuB076q82neb+HMrq++rz0C8DoOCOFoZpNx7RH4wu47AACASCkBAABE9XffwTGl3cYGAEAqSonzkv8+JS0HfbHX/8Tk/x84cGKUElTTGkWtPwrIJ+gg7S34s8nYbK81m4zvH8USHFbOb//X6vGvyZQSHMnL2vFHPgBAWkoJDiWkkS4CABgQpQT9sGQEAHBK6pdS5icwmq2D88kDS0YA1JX2vrJiNk5C/VLixCQ/e+AtPVMxjTJnWNpoB+hR2qMU0w5WzMbwKSVoZzcdACs5lyAyr42YrTMVl4dS4nxt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ABApJQAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQKSUAAIBIKQEAAERKCQAAILqoPQAA9OzhaVF7BACqmU3GvXwepQTAqenrz0gAzpnddwAAAJFSAgAAiOy+gwE4k5suZpPx+XyltUcAAHawpgQAABApJQAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQXdQeANhtNhnXHuFIzucrBQCSU0owAO8/PNce4Rjubm7P5yutPQIAsIPddwAAAJFSAgAAiJQSAABApJQAAAAipQQAABApJQAAgEgpAQAAREoJAAAgGjVNU3sGACgPT4vZZFx7CgD44qL2AMBu94+1JziK+fSMvlIAIDm77wAAACKlBAAAECklAACASCkBAABESgkAACBSSgAAAJFSAgAAiJQSAABApJQAAACiUdM0tWcAgPLwtJhNxrWnAIAvLmoPAOz2/sNz7RGO4e7m9ny+0tojAAA72H0HAAAQKSUAAIBIKQEAAERKCQAAIFJKAAAAkVICAACIlBIAAECklAAAACKlBAAAEI2apqk9AwCUh6fFbDKuPQUAfGFNCQAAIFJKAAAAkVICAACIlBIAAECklAAAACKlBAAAECklAACASCkBAABESgkAACBSSgAAAJFSAgAAiJQSAABApJQAAAAipQQAABApJQAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAoou+PtHD06KvTwXAsMwm49ojAEDPeislf0wCAAAnw+47AACASCkBAABESgkAACBSSgAAAJFSAgAAiJQSAABA1Nsp4QCQigf9wcrQn+bi25n99Xi1W1MCAACIlBIAAECklAAAACKlBAAAECklAACASCkBAABESgkAACBSSgAAAJEnzwJwmob+qE3gQGaTsUfZvsX5vICjpmlqzwAA5eFp0W/bpP2DPO0PGWkHK7lnK+nHK/7iADqxpgQAQGr9hmj+sk0u+QvY498LuE8JAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQKSUAAIBIKQEAAESePAvAaerx4YO9Sztb2sFK7tlK+vGADkZN09SeAQDKw9PCz5ps8f7Dc+0RNrq7uc08Xinl7ua29ggwPNaUAABIrd8Q1Y3syX1KAAAAkVICAACIlBIAAECklAAAACKlBAAAECklAACASCkBAABESgkAACAaNU1TewYAKA9Pi9lkXHsKAPjiovYAAHAQHz99rj1Cu+ury5yzpR2slHJ9dXn/WHuIzebTvNfb0vXVZe0R3qTf3/38v1/JZf5/Ren1arf7DgAAIFJKAAAAkVICAACI3KcEAEBl//Ifv2560z//w3fHnARWlBIAAMfTGkVyiISUEgAABxTSSBQxFEoJAICerdeRNGKglBIAAD1QR5wYpQTAacr8qM20s6UdrJQyn9aeYKvML91BqSNOmFICAAbg/rH2BJvNp6nHK712ZpWbjnrv5LMt276cyQuolAAA2MbCEedJKe3w8LSoPQK9mU3GtUfoyHV4YoZ7KQLnQx2BUgIAOF+bHvmqjkApAQCcsnfvfv2X/9j4VkUEmyglAIBT9ttv3yU/ORByeld7AAAAgHSUEgAAQKSUAAAAIqUEAAAQOdEBABiA5GcSJB8P6EApDdJsMk77KNLMs9G7zL/dmWfjOD5++lx7hHbXV5c5Z0s7WMk9W0k/Xinl+uqy9ggwPKOmaWrPAADl4Wkxm4x7/IRpf3JN+1N12sFK7tlK+vGKUoJOrCntkPPvpDP/ZXny2WqP0FHml9RsHQz3UgSA8+FEBwAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIs9TAuA0ZX7UZtrZ0g5Wcs9W0o8HdDBqmqb2DABQHp4WnskLQB7WlGAIHu9rT7DBdF57AgCAg3CfEgAAQKSUAAAAIqUEAAAQKSXOQ9r7fAAASMmJDpyH6fz+8eu/zaf1JgEAYAiUEudiVUfvPzzfP962vgkAAJaUEmfn7ua23Hz91xBOqgkAgKKUYBlO7z88L/91VU2SCQDgnCklKGXZS6WUUt6X5+W/Lu9r0ksAAOdp1DRN7RkgneUSk16CY3p4Wswm49pTAMAX1pR2+Pjpc+0RWlxfXeYcrJRyfXVZe4QeLJeY3n94nk9vSymrc/OqJVPaU86n88yXYubZao8AAOyglGCju5vb5eLSspfK78lkiQkA4OQpJdhmtbi0/OdlI9VfYgIA4MCUEufh8b5M550/urWXiiUmAIDTpZQ4F6tzwEsp//e/uhwFvuql1UF560tMegkA4JQoJc7DdH639m/Lo8BLKe8/fPmVVTuVXc2zunmptZd2fjgAAIOglDhHq8hZWbXT6mTwlZflEzbjhXezxAQAcAKUEpSy/uTZD89/+/ff/Mp6OK33z8vNeOvvo5cAAAZNKcE31pNp+Q+rI8LLt9VUSplPWzbjrd5UbMkDABgspQTtQjIt/zUEz+8hdFtKeV/i4lKxJQ8AYLBGTdPUngEGYLXE9DKHlnbe3VT0Emz18LSYTca1pwCAL5QSvE7rXrvwDuFYiA0rUa9IppBheag+eqSUAEjF7jt4nfWD70pbMi3vXPrbv28/E6K82JJX9AYAQD5KibNw/9hzjbTexRTeunrTpjWlpflUMgEApGP3HeditQoUbNlH1+GTtzyp6cUx4sGWnXUvV5+ykXb0yO47AFJRSpy71oLqnE+tS0w7b20K0nbRS0qJHiklAFJRStAi5NNrw6l1iem1vbQubTspJXqklABIxX1K0KJ1UWjTW7d8+HodhZuX+hsWAID+KSXYrXM4vTwob/UrYgkAIDOlBK/22nB6ucS0PEm89Z0BAMjAfUrQs53htL7EpJdgxX1KAKSilHb4+Olz7RFaXF9d5hyslHJ9dVl7hFy2hNPLY/c2JdOmI86ru7u5zXwpZp6t9ggZKSUAUrH7Dg5rn616q1+0xAQAkIRSgqPaHk6tvyicAACOTylBTa0VFEop7dY7AIATppQgnS2HQAAAcBzvag8AAACQjlICAACIlBIAAECklAAAACKlBAAAEI2apqk9AwCUh6fFbDKuPQUAfOGUcBiA//73/6w9Qrs//OmPtUcAADgIu+8AAAAipQQAABApJQAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQOTJszAAHvAKAHBk1pQAAAAipQQAABApJQAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIg8TwkAYJAenha1R2g3m4zTzpZf/lcv+YSzybivT2VNCQAAIFJKAAAAkVICAACIlBIAAEDkRAfOVOY7EcsQ7pU03lv0eLMpAHAg1pQAAAAipQQAABApJQAAgEgpAQAARE50AAAYpMzHw2SeLb/8r17+CXuhlAAABun9h+faI7S7u7lNO1t++V+95BPe3dz29ansvgMAAIiUEgAAQGT3HWcq//7a5BMaDwA4bUqJc/V4X3uCrabz2hPscP9Ye4LN5tPaEwAAw2f3HQAAQKSUAAAAIqUEAAAQKSUAAIDIiQ4AAIPU4xM2e5d5tvzyv3r5J+yFUgIAGKS0x5DOp3lnyy//q5d8wh6PwLX7DgAAIFJKAAAAkVICAACI3KfEuZrOa08wbD1uAgYASEgpca4e72tPsNV0/vHT59pDbHR9dZn8Vs7Mr14p5frqsvYIAMAOdt8BAABESgkAACBSSgAAAJFSAgAAiJzoAAAwSJmPIc08W375X738E/bCmhIAAK4G4L0AAAL2SURBVECklAAAACKlBAAAECklAACAaNQ0Te0ZAKA8PC1mk3HtKQDgC2ffca4e72tPsNV0XnuCHd5/eK49wkZ3N7e1RwAABs/uOwAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQjZqmqT0DAJSHp8VsMq49BQB8cVF7AKjk8b72BFtN5x8/fa49xEbXV5fvPzzXnmKju5vbzK9eKeX66rL2CADADnbfAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQKSUAAIBIKQEAAESjpmlqzwAA5eFpMZuMa08BAF9c1B4A6rh/rD3BVvNp7Ql2ef/hufYIG93d3NYeAQAYPLvvAAAAIqUEAAAQKSUAAIBIKQEAAERKCQAAIFJKAAAAkVICAACIlBIAAECklAAAAKJR0zS1ZwCA8vC0mE3GtacAgC+sKQEAAETWlAAAACJrSgAAAJFSAgAAiJQSAABApJQAAAAipQQAABApJQAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQKSUAAIBIKQEAAERKCQAAIFJKAAAAkVICAACIlBIAAECklAAAACKlBAAAECklAACASCkBAABEo/JPTe0ZAAAAcrGmBAAAECklAACASCkBAABESgkAACBSSgAAAJFSAgAAiJQSAABApJQAAAAipQQAABApJQAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQKSUAAIBIKQEAAERKCQAAIFJKAAAAkVICAACIlBIAAECklAAAACKlBAAAECklAACASCkBAABESgkAACBSSgAAANFF7QE4Hc1PtSc4utGfa09wFGf4O3scZ3L9AMBAjco/NbVnAAAAyMXuOwAAgEgpAQAAREoJAAAgUkoAAACRUgIAAIiUEgAAQKSUAAAAIqUEAAAQKSUAAIBIKQEAAERKCQAAIFJKAAAAkVICAACI/j/eBn1zwEQx4AAAAABJRU5ErkJggg==" id="p2img1"></DIV>
+
+
+<DIV id="id2_1">
+<P class="p0 ft0">SQL JOINs Cheat Sheet</P>
+</DIV>
+<DIV id="id2_2">
+<DIV id="id2_2_1">
+<P class="p0 ft1">COLUMN AND TABLE ALIASES</P>
+<P class="p68 ft36">Aliases give a temporary name to a <SPAN class="ft35">table </SPAN>or a <SPAN class="ft35">column </SPAN>in a table.</P>
+<TABLE cellpadding=0 cellspacing=0 class="t7">
+<TR>
+	<TD class="tr0 td47"><P class="p32 ft4">CAT <SPAN class="ft19">AS c</SPAN></P></TD>
+	<TD class="tr0 td29"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr1 td48"><P class="p12 ft2">mom_id</P></TD>
+	<TD rowspan=2 class="tr1 td29"><P class="p28 ft2">owner_id</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 class="tr2 td49"><P class="p69 ft6">cat_id cat_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td47"><P class="p4 ft6">1</P></TD>
+	<TD class="tr2 td29"><P class="p70 ft6">Kitty</P></TD>
+	<TD class="tr2 td48"><P class="p12 ft6">5</P></TD>
+	<TD class="tr2 td29"><P class="p28 ft6">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td47"><P class="p4 ft6">2</P></TD>
+	<TD class="tr2 td29"><P class="p70 ft6">Hugo</P></TD>
+	<TD class="tr2 td48"><P class="p12 ft6">1</P></TD>
+	<TD class="tr2 td29"><P class="p28 ft6">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td47"><P class="p4 ft6">3</P></TD>
+	<TD class="tr2 td29"><P class="p70 ft6">Sam</P></TD>
+	<TD class="tr2 td48"><P class="p12 ft6">2</P></TD>
+	<TD class="tr2 td29"><P class="p28 ft6">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td47"><P class="p4 ft2">4</P></TD>
+	<TD class="tr4 td29"><P class="p70 ft2">Misty</P></TD>
+	<TD class="tr4 td48"><P class="p12 ft2">1</P></TD>
+	<TD class="tr4 td29"><P class="p28 ft8">NULL</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_2_2">
+<P class="p0 ft4">OWNER <SPAN class="ft19">AS o</SPAN></P>
+<P class="p71 ft2">id name</P>
+<P class="p72 ft2"><SPAN class="ft2">1</SPAN><SPAN class="ft37">John Smith</SPAN></P>
+<P class="p73 ft2"><SPAN class="ft2">2</SPAN><SPAN class="ft38">Danielle Davis</SPAN></P>
+</DIV>
+<DIV id="id2_2_3">
+<P class="p0 ft1">MULTIPLE JOINS</P>
+<P class="p74 ft3">You can join more than two tables together. First, two tables are joined, then the third table is joined to the result of the previous joining.</P>
+<TABLE cellpadding=0 cellspacing=0 class="t8">
+<TR>
+	<TD class="tr5 td50"></TD>
+	<TD class="tr5 td51"><P class="p75 ft4">TOY AS t</P></TD>
+	<TD class="tr5 td15"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr5 td52"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr9 td53"><P class="p52 ft12">CAT AS c</P></TD>
+	<TD class="tr5 td54"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr5 td48"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr5 td55"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD colspan=2 rowspan=3 class="tr10 td56"><P class="p76 ft39">OWNER AS o</P></TD>
+</TR>
+<TR>
+	<TD class="tr11 td50"></TD>
+	<TD rowspan=2 class="tr7 td51"><P class="p7 ft22">toy_id</P></TD>
+	<TD colspan=2 rowspan=2 class="tr7 td57"><P class="p3 ft22">toy_name cat_id</P></TD>
+	<TD class="tr11 td54"><P class="p3 ft40">&nbsp;</P></TD>
+	<TD class="tr11 td48"><P class="p3 ft40">&nbsp;</P></TD>
+	<TD class="tr11 td55"><P class="p3 ft40">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td50"></TD>
+	<TD rowspan=2 class="tr6 td53"><P class="p77 ft2">cat_id</P></TD>
+	<TD rowspan=2 class="tr6 td54"><P class="p11 ft2">cat_name</P></TD>
+	<TD rowspan=2 class="tr6 td48"><P class="p12 ft2">mom_id</P></TD>
+	<TD rowspan=2 class="tr6 td55"><P class="p78 ft2">owner_id</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td50"></TD>
+	<TD rowspan=2 class="tr2 td51"><P class="p7 ft6">1</P></TD>
+	<TD rowspan=2 class="tr2 td15"><P class="p20 ft6">ball</P></TD>
+	<TD rowspan=2 class="tr2 td52"><P class="p79 ft6">3</P></TD>
+	<TD rowspan=2 class="tr2 td17"><P class="p23 ft6">id</P></TD>
+	<TD rowspan=2 class="tr2 td58"><P class="p80 ft6">name</P></TD>
+</TR>
+<TR>
+	<TD class="tr13 td50"></TD>
+	<TD rowspan=2 class="tr14 td53"><P class="p77 ft2">1</P></TD>
+	<TD rowspan=2 class="tr14 td54"><P class="p11 ft2">Kitty</P></TD>
+	<TD rowspan=2 class="tr14 td48"><P class="p12 ft2">5</P></TD>
+	<TD rowspan=2 class="tr14 td55"><P class="p78 ft2">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td50"></TD>
+	<TD rowspan=2 class="tr14 td51"><P class="p7 ft2">2</P></TD>
+	<TD rowspan=2 class="tr14 td15"><P class="p20 ft2">spring</P></TD>
+	<TD rowspan=2 class="tr14 td52"><P class="p81 ft8">NULL</P></TD>
+	<TD rowspan=2 class="tr14 td17"><P class="p22 ft2">1</P></TD>
+	<TD class="tr8 td58"><P class="p80 ft41">John</P></TD>
+</TR>
+<TR>
+	<TD class="tr13 td50"></TD>
+	<TD class="tr13 td53"><P class="p77 ft42">2</P></TD>
+	<TD class="tr13 td54"><P class="p11 ft42">Hugo</P></TD>
+	<TD class="tr13 td48"><P class="p12 ft42">1</P></TD>
+	<TD class="tr13 td55"><P class="p78 ft42">2</P></TD>
+	<TD class="tr13 td58"><P class="p80 ft43">Smith</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id2_3">
+<DIV id="id2_3_1">
+<P class="p0 ft47">A <SPAN class="ft44">column alias </SPAN>renames a column in the result. A <SPAN class="ft45">table alias </SPAN>renames a table within the query. If you define a table alias, you must use it instead of the table name everywhere in the query. The <SPAN class="ft46">AS </SPAN>keyword is optional in defining aliases.</P>
+<TABLE cellpadding=0 cellspacing=0 class="t9">
+<TR>
+	<TD class="tr15 td59"><P class="p3 ft13">SELECT</P></TD>
+	<TD class="tr15 td60"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr15 td61"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td59"><P class="p24 ft49"><SPAN class="ft48">o</SPAN><SPAN class="ft7">.name </SPAN>AS owner_name<SPAN class="ft7">,</SPAN></P></TD>
+	<TD class="tr3 td60"><P class="p3 ft7">cat_name</P></TD>
+	<TD class="tr3 td61"><P class="p3 ft49">owner_name</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_3_2">
+<TABLE cellpadding=0 cellspacing=0 class="t10">
+<TR>
+	<TD class="tr14 td62"><P class="p40 ft6">3</P></TD>
+	<TD class="tr14 td22"><P class="p28 ft6">mouse</P></TD>
+	<TD class="tr14 td62"><P class="p82 ft6">1</P></TD>
+	<TD rowspan=2 class="tr9 td18"><P class="p18 ft2">3</P></TD>
+	<TD rowspan=2 class="tr9 td22"><P class="p28 ft2">Sam</P></TD>
+	<TD rowspan=2 class="tr9 td62"><P class="p82 ft2">2</P></TD>
+	<TD rowspan=2 class="tr9 td63"><P class="p83 ft2">2</P></TD>
+	<TD rowspan=2 class="tr9 td30"><P class="p84 ft2">2</P></TD>
+	<TD class="tr14 td4"><P class="p85 ft41">Danielle</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td62"><P class="p40 ft50">4</P></TD>
+	<TD class="tr8 td22"><P class="p28 ft50">mouse</P></TD>
+	<TD class="tr8 td62"><P class="p82 ft50">4</P></TD>
+	<TD class="tr8 td4"><P class="p85 ft41">Davis</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr4 td62"><P class="p40 ft2">5</P></TD>
+	<TD rowspan=2 class="tr4 td22"><P class="p28 ft2">ball</P></TD>
+	<TD rowspan=2 class="tr4 td62"><P class="p82 ft2">1</P></TD>
+	<TD class="tr2 td18"><P class="p18 ft6">4</P></TD>
+	<TD class="tr2 td22"><P class="p28 ft6">Misty</P></TD>
+	<TD class="tr2 td62"><P class="p82 ft6">1</P></TD>
+	<TD class="tr2 td63"><P class="p41 ft8">NULL</P></TD>
+	<TD class="tr2 td30"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr2 td4"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr16 td18"><P class="p3 ft51">&nbsp;</P></TD>
+	<TD class="tr16 td22"><P class="p3 ft51">&nbsp;</P></TD>
+	<TD class="tr16 td62"><P class="p3 ft51">&nbsp;</P></TD>
+	<TD class="tr16 td63"><P class="p3 ft51">&nbsp;</P></TD>
+	<TD class="tr16 td30"><P class="p3 ft51">&nbsp;</P></TD>
+	<TD class="tr16 td4"><P class="p3 ft51">&nbsp;</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id2_4">
+<DIV id="id2_4_1">
+<TABLE cellpadding=0 cellspacing=0 class="t11">
+<TR>
+	<TD class="tr15 td64"><P class="p24 ft2"><SPAN class="ft19">c</SPAN>.cat_name</P></TD>
+	<TD class="tr15 td17"><P class="p86 ft2">Kitty</P></TD>
+	<TD class="tr15 td65"><P class="p28 ft2">John Smith</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td64"><P class="p3 ft15">FROM <SPAN class="ft6">cat </SPAN><SPAN class="ft20">AS c</SPAN></P></TD>
+	<TD class="tr2 td17"><P class="p86 ft6">Sam</P></TD>
+	<TD class="tr2 td65"><P class="p28 ft6">Danielle Davis</P></TD>
+</TR>
+<TR>
+	<TD class="tr14 td64"><P class="p3 ft2"><SPAN class="ft13">JOIN </SPAN>owner <SPAN class="ft19">AS o</SPAN></P></TD>
+	<TD class="tr14 td17"><P class="p86 ft2">Hugo</P></TD>
+	<TD class="tr14 td65"><P class="p28 ft2">Danielle Davis</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td64"><P class="p24 ft2"><SPAN class="ft13">ON </SPAN><SPAN class="ft19">c</SPAN>.owner_id = <SPAN class="ft19">o</SPAN>.id;</P></TD>
+	<TD class="tr4 td17"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr4 td65"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+</TABLE>
+<P class="p87 ft1">SELF JOIN</P>
+<P class="p88 ft3">You can join a table to itself, for example, to show a <NOBR>parent-child</NOBR> relationship.</P>
+<TABLE cellpadding=0 cellspacing=0 class="t12">
+<TR>
+	<TD colspan=2 class="tr17 td43"><P class="p3 ft19"><SPAN class="ft4">CAT </SPAN>AS child</P></TD>
+	<TD class="tr17 td0"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr10 td66"><P class="p89 ft2">mom_id</P></TD>
+	<TD colspan=2 class="tr17 td67"><P class="p90 ft19"><SPAN class="ft4">CAT </SPAN>AS mom</P></TD>
+	<TD class="tr17 td33"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr10 td68"><P class="p28 ft2">mom_id</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td33"><P class="p80 ft6">cat_id</P></TD>
+	<TD colspan=2 class="tr2 td18"><P class="p3 ft6">cat_name owner_id</P></TD>
+	<TD class="tr2 td69"><P class="p64 ft6">cat_id</P></TD>
+	<TD colspan=2 class="tr2 td18"><P class="p3 ft6">cat_name owner_id</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td33"><P class="p80 ft6">1</P></TD>
+	<TD class="tr2 td13"><P class="p62 ft6">Kitty</P></TD>
+	<TD class="tr2 td0"><P class="p32 ft6">1</P></TD>
+	<TD class="tr2 td66"><P class="p89 ft6">5</P></TD>
+	<TD class="tr2 td69"><P class="p64 ft6">1</P></TD>
+	<TD class="tr2 td12"><P class="p39 ft6">Kitty</P></TD>
+	<TD class="tr2 td33"><P class="p34 ft6">1</P></TD>
+	<TD class="tr2 td68"><P class="p28 ft6">5</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td33"><P class="p75 ft6">2</P></TD>
+	<TD class="tr2 td13"><P class="p62 ft6">Hugo</P></TD>
+	<TD class="tr2 td0"><P class="p32 ft6">2</P></TD>
+	<TD class="tr2 td66"><P class="p89 ft6">1</P></TD>
+	<TD class="tr2 td69"><P class="p64 ft6">2</P></TD>
+	<TD class="tr2 td12"><P class="p39 ft6">Hugo</P></TD>
+	<TD class="tr2 td33"><P class="p34 ft6">2</P></TD>
+	<TD class="tr2 td68"><P class="p28 ft6">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td33"><P class="p80 ft7">3</P></TD>
+	<TD class="tr3 td13"><P class="p62 ft7">Sam</P></TD>
+	<TD class="tr3 td0"><P class="p32 ft7">2</P></TD>
+	<TD class="tr3 td66"><P class="p89 ft7">2</P></TD>
+	<TD class="tr3 td69"><P class="p64 ft7">3</P></TD>
+	<TD class="tr3 td12"><P class="p39 ft7">Sam</P></TD>
+	<TD class="tr3 td33"><P class="p34 ft7">2</P></TD>
+	<TD class="tr3 td68"><P class="p28 ft7">2</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td33"><P class="p80 ft2">4</P></TD>
+	<TD class="tr4 td13"><P class="p62 ft2">Misty</P></TD>
+	<TD class="tr4 td0"><P class="p32 ft8">NULL</P></TD>
+	<TD class="tr4 td66"><P class="p89 ft2">1</P></TD>
+	<TD class="tr4 td69"><P class="p64 ft2">4</P></TD>
+	<TD class="tr4 td12"><P class="p39 ft2">Misty</P></TD>
+	<TD class="tr4 td33"><P class="p34 ft8">NULL</P></TD>
+	<TD class="tr4 td68"><P class="p28 ft2">1</P></TD>
+</TR>
+</TABLE>
+<P class="p54 ft3">Each occurrence of the table must be given a <SPAN class="ft52">different alias</SPAN>. Each column reference must be preceded with an</P>
+</DIV>
+<DIV id="id2_4_2">
+<P class="p91 ft53">JOIN & JOIN</P>
+<P class="p92 ft13">SELECT <SPAN class="ft2">t.toy_name, c.cat_name,</SPAN></P>
+<P class="p93 ft29">o.name <SPAN class="ft31">AS </SPAN>owner_name <SPAN class="ft31">FROM </SPAN>toy t</P>
+<P class="p0 ft54">JOIN <SPAN class="ft2">cat c</SPAN></P>
+<P class="p94 ft2"><SPAN class="ft13">ON </SPAN>t.cat_id = c.cat_id <SPAN class="ft54">JOIN </SPAN>owner o</P>
+<P class="p49 ft2"><SPAN class="ft13">ON </SPAN>c.owner_id = o.id;</P>
+<TABLE cellpadding=0 cellspacing=0 class="t13">
+<TR>
+	<TD class="tr14 td51"><P class="p95 ft41">toy_name</P></TD>
+	<TD class="tr14 td70"><P class="p4 ft41">cat_name</P></TD>
+	<TD colspan=2 class="tr14 td12"><P class="p30 ft41">owner_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td51"><P class="p95 ft41">ball</P></TD>
+	<TD class="tr3 td70"><P class="p4 ft41">Kitty</P></TD>
+	<TD class="tr3 td71"><P class="p30 ft41">John</P></TD>
+	<TD class="tr3 td71"><P class="p3 ft41">Smith</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td51"><P class="p95 ft41">mouse</P></TD>
+	<TD class="tr2 td70"><P class="p4 ft41">Kitty</P></TD>
+	<TD class="tr2 td71"><P class="p30 ft41">John</P></TD>
+	<TD class="tr2 td71"><P class="p3 ft41">Smith</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td51"><P class="p95 ft41">ball</P></TD>
+	<TD class="tr2 td70"><P class="p4 ft41">Sam</P></TD>
+	<TD colspan=2 class="tr2 td12"><P class="p3 ft41">Danielle Davis</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_4_3">
+<P class="p96 ft53">JOIN & LEFT JOIN</P>
+<P class="p97 ft13">SELECT <SPAN class="ft2">t.toy_name, c.cat_name,</SPAN></P>
+<P class="p98 ft29">o.name <SPAN class="ft31">AS </SPAN>owner_name <SPAN class="ft31">FROM </SPAN>toy t</P>
+<P class="p0 ft54">JOIN <SPAN class="ft2">cat c</SPAN></P>
+<P class="p99 ft2"><SPAN class="ft13">ON </SPAN>t.cat_id = c.cat_id <SPAN class="ft54">LEFT JOIN </SPAN>owner o</P>
+<P class="p49 ft2"><SPAN class="ft13">ON </SPAN>c.owner_id = o.id;</P>
+<TABLE cellpadding=0 cellspacing=0 class="t14">
+<TR>
+	<TD class="tr14 td51"><P class="p95 ft41">toy_name</P></TD>
+	<TD class="tr14 td70"><P class="p4 ft41">cat_name</P></TD>
+	<TD colspan=2 class="tr14 td12"><P class="p30 ft41">owner_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td51"><P class="p95 ft41">ball</P></TD>
+	<TD class="tr3 td70"><P class="p4 ft41">Kitty</P></TD>
+	<TD class="tr3 td71"><P class="p30 ft41">John</P></TD>
+	<TD class="tr3 td71"><P class="p3 ft41">Smith</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td51"><P class="p95 ft41">mouse</P></TD>
+	<TD class="tr2 td70"><P class="p4 ft41">Kitty</P></TD>
+	<TD class="tr2 td71"><P class="p30 ft41">John</P></TD>
+	<TD class="tr2 td71"><P class="p3 ft41">Smith</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td51"><P class="p95 ft41">ball</P></TD>
+	<TD class="tr2 td70"><P class="p4 ft41">Sam</P></TD>
+	<TD colspan=2 class="tr2 td12"><P class="p28 ft41">Danielle Davis</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td51"><P class="p95 ft41">mouse</P></TD>
+	<TD class="tr3 td70"><P class="p4 ft41">Misty</P></TD>
+	<TD colspan=2 class="tr3 td12"><P class="p28 ft55">NULL</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_4_4">
+<P class="p100 ft53">LEFT JOIN & LEFT JOIN</P>
+<P class="p101 ft13">SELECT <SPAN class="ft2">t.toy_name, c.cat_name,</SPAN></P>
+<P class="p102 ft29">o.name <SPAN class="ft31">AS </SPAN>owner_name <SPAN class="ft31">FROM </SPAN>toy t</P>
+<P class="p0 ft54">LEFT JOIN <SPAN class="ft2">cat c</SPAN></P>
+<P class="p103 ft2"><SPAN class="ft13">ON </SPAN>t.cat_id = c.cat_id <SPAN class="ft54">LEFT JOIN </SPAN>owner o</P>
+<P class="p49 ft2"><SPAN class="ft13">ON </SPAN>c.owner_id = o.id;</P>
+<TABLE cellpadding=0 cellspacing=0 class="t15">
+<TR>
+	<TD class="tr14 td17"><P class="p104 ft41">toy_name</P></TD>
+	<TD class="tr14 td70"><P class="p4 ft41">cat_name</P></TD>
+	<TD class="tr14 td12"><P class="p28 ft41">owner_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td17"><P class="p104 ft41">ball</P></TD>
+	<TD class="tr3 td70"><P class="p4 ft41">Kitty</P></TD>
+	<TD class="tr3 td12"><P class="p28 ft41">John Smith</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td17"><P class="p104 ft41">mouse</P></TD>
+	<TD class="tr2 td70"><P class="p4 ft41">Kitty</P></TD>
+	<TD class="tr2 td12"><P class="p28 ft41">John Smith</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td17"><P class="p104 ft41">ball</P></TD>
+	<TD class="tr2 td70"><P class="p4 ft41">Sam</P></TD>
+	<TD class="tr2 td12"><P class="p28 ft41">Danielle Davis</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td17"><P class="p104 ft41">mouse</P></TD>
+	<TD class="tr3 td70"><P class="p4 ft41">Misty</P></TD>
+	<TD class="tr3 td12"><P class="p28 ft55">NULL</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td17"><P class="p104 ft56">spring</P></TD>
+	<TD class="tr12 td70"><P class="p4 ft55">NULL</P></TD>
+	<TD class="tr12 td12"><P class="p28 ft55">NULL</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id2_5">
+<DIV id="id2_5_1">
+<P class="p105 ft57">appropriate table alias<SPAN class="ft3">.</SPAN></P>
+<P class="p106 ft13">SELECT</P>
+<P class="p107 ft29"><SPAN class="ft58">child</SPAN>.cat_name <SPAN class="ft31">AS </SPAN>child_name, <SPAN class="ft58">mom</SPAN>.cat_name <SPAN class="ft31">AS </SPAN>mom_name</P>
+<P class="p108 ft13">FROM <SPAN class="ft2">cat </SPAN>AS <SPAN class="ft19">child </SPAN>JOIN <SPAN class="ft2">cat </SPAN>AS <SPAN class="ft19">mom</SPAN></P>
+<P class="p109 ft2"><SPAN class="ft13">ON </SPAN><SPAN class="ft54">child</SPAN>.mom_id = <SPAN class="ft54">mom</SPAN>.cat_id;</P>
+</DIV>
+<DIV id="id2_5_2">
+<TABLE cellpadding=0 cellspacing=0 class="t16">
+<TR>
+	<TD class="tr5 td65"><P class="p110 ft2">child_name</P></TD>
+	<TD class="tr5 td29"><P class="p28 ft2">mom_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td65"><P class="p110 ft6">Hugo</P></TD>
+	<TD class="tr2 td29"><P class="p28 ft6">Kitty</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td65"><P class="p110 ft6">Sam</P></TD>
+	<TD class="tr2 td29"><P class="p28 ft6">Hugo</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td65"><P class="p110 ft2">Misty</P></TD>
+	<TD class="tr4 td29"><P class="p28 ft2">Kitty</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_5_3">
+<P class="p0 ft1">JOIN WITH MULTIPLE CONDITIONS</P>
+<P class="p54 ft36">You can use multiple JOIN conditions using the <SPAN class="ft39">ON </SPAN>keyword once and the <SPAN class="ft39">AND </SPAN>keywords as many times as you need.</P>
+</DIV>
+</DIV>
+<DIV id="id2_6">
+<DIV id="id2_6_1">
+<P class="p0 ft1"><NOBR>NON-EQUI</NOBR> SELF JOIN</P>
+<P class="p68 ft3">You can use a <NOBR><SPAN class="ft57">non-equality</SPAN></NOBR><SPAN class="ft57"> </SPAN>in the ON condition, for example, to show <SPAN class="ft12">all different pairs </SPAN>of rows.</P>
+</DIV>
+<DIV id="id2_6_2">
+<TABLE cellpadding=0 cellspacing=0 class="t17">
+<TR>
+	<TD class="tr0 td51"><P class="p3 ft12">CAT AS c</P></TD>
+	<TD colspan=2 rowspan=2 class="tr18 td27"><P class="p111 ft2">cat_name mom_id</P></TD>
+	<TD rowspan=2 class="tr18 td72"><P class="p12 ft2">owner_id</P></TD>
+	<TD rowspan=2 class="tr18 td70"><P class="p39 ft2">age</P></TD>
+	<TD class="tr0 td73"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD colspan=2 class="tr0 td74"><P class="p19 ft4">OWNER AS o</P></TD>
+	<TD rowspan=2 class="tr18 td45"><P class="p66 ft2">age</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td51"><P class="p112 ft2">cat_id</P></TD>
+	<TD class="tr6 td73"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td75"><P class="p12 ft2">id</P></TD>
+	<TD class="tr6 td44"><P class="p113 ft2">name</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr7 td51"><P class="p112 ft22">1</P></TD>
+	<TD rowspan=2 class="tr7 td12"><P class="p39 ft22">Kitty</P></TD>
+	<TD rowspan=2 class="tr7 td76"><P class="p114 ft22">5</P></TD>
+	<TD rowspan=2 class="tr7 td72"><P class="p12 ft22">1</P></TD>
+	<TD rowspan=2 class="tr7 td70"><P class="p39 ft22">17</P></TD>
+	<TD class="tr13 td77"><P class="p3 ft59">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr7 td75"><P class="p12 ft22">1</P></TD>
+	<TD rowspan=2 class="tr7 td44"><P class="p113 ft22">John Smith</P></TD>
+	<TD rowspan=2 class="tr7 td45"><P class="p66 ft22">18</P></TD>
+</TR>
+<TR>
+	<TD class="tr11 td73"><P class="p3 ft40">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td51"><P class="p112 ft7">2</P></TD>
+	<TD class="tr3 td12"><P class="p39 ft7">Hugo</P></TD>
+	<TD class="tr3 td76"><P class="p114 ft7">1</P></TD>
+	<TD class="tr3 td72"><P class="p12 ft7">2</P></TD>
+	<TD class="tr3 td70"><P class="p39 ft7">10</P></TD>
+	<TD colspan=2 class="tr3 td78"><P class="p115 ft7">2</P></TD>
+	<TD class="tr3 td44"><P class="p113 ft7">Danielle Davis</P></TD>
+	<TD class="tr3 td45"><P class="p66 ft7">10</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id2_7">
+<DIV id="id2_7_1">
+<TABLE cellpadding=0 cellspacing=0 class="t18">
+<TR>
+	<TD class="tr14 td51"><P class="p7 ft4">TOY <SPAN class="ft19">AS a</SPAN></P></TD>
+	<TD colspan=2 rowspan=2 class="tr19 td78"><P class="p3 ft2">toy_name cat_id</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td51"><P class="p112 ft6">toy_id</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td51"><P class="p116 ft2">3</P></TD>
+	<TD class="tr6 td79"><P class="p58 ft2">mouse</P></TD>
+	<TD class="tr6 td80"><P class="p28 ft2">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr7 td51"><P class="p116 ft22">5</P></TD>
+	<TD class="tr7 td79"><P class="p24 ft22">ball</P></TD>
+	<TD class="tr7 td80"><P class="p33 ft22">1</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td51"><P class="p116 ft2">1</P></TD>
+	<TD class="tr6 td79"><P class="p24 ft2">ball</P></TD>
+	<TD class="tr6 td81"><P class="p28 ft2">3</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td51"><P class="p116 ft6">4</P></TD>
+	<TD class="tr2 td79"><P class="p58 ft6">mouse</P></TD>
+	<TD class="tr2 td82"><P class="p28 ft6">4</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td51"><P class="p116 ft2">2</P></TD>
+	<TD class="tr6 td79"><P class="p59 ft2">spring</P></TD>
+	<TD class="tr6 td83"><P class="p28 ft8">NULL</P></TD>
+</TR>
+</TABLE>
+<P class="p0 ft13">SELECT</P>
+<P class="p117 ft61">a.toy_name <SPAN class="ft60">AS </SPAN>toy_a, b.toy_name <SPAN class="ft60">AS </SPAN>toy_b</P>
+<P class="p118 ft2"><SPAN class="ft13">FROM </SPAN>toy a <SPAN class="ft13">JOIN </SPAN>toy b</P>
+<P class="p49 ft54"><SPAN class="ft13">ON </SPAN>a.cat_id &lt; b.cat_id<SPAN class="ft2">;</SPAN></P>
+</DIV>
+<DIV id="id2_7_2">
+<TABLE cellpadding=0 cellspacing=0 class="t19">
+<TR>
+	<TD class="tr14 td54"><P class="p12 ft4">TOY <SPAN class="ft62">AS b</SPAN></P></TD>
+	<TD colspan=2 rowspan=2 class="tr19 td63"><P class="p3 ft2">toy_id toy_name</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td54"><P class="p11 ft6">cat_id</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td54"><P class="p11 ft2">1</P></TD>
+	<TD class="tr6 td68"><P class="p119 ft2">3</P></TD>
+	<TD class="tr6 td54"><P class="p120 ft2">mouse</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td54"><P class="p11 ft7">1</P></TD>
+	<TD class="tr3 td68"><P class="p119 ft7">5</P></TD>
+	<TD class="tr3 td54"><P class="p120 ft7">ball</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td54"><P class="p11 ft6">3</P></TD>
+	<TD class="tr2 td68"><P class="p119 ft6">1</P></TD>
+	<TD class="tr2 td54"><P class="p120 ft6">ball</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td54"><P class="p11 ft6">4</P></TD>
+	<TD class="tr2 td68"><P class="p119 ft6">4</P></TD>
+	<TD class="tr2 td54"><P class="p120 ft6">mouse</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td54"><P class="p11 ft8">NULL</P></TD>
+	<TD class="tr4 td68"><P class="p119 ft2">2</P></TD>
+	<TD class="tr4 td54"><P class="p120 ft2">spring</P></TD>
+</TR>
+</TABLE>
+<TABLE cellpadding=0 cellspacing=0 class="t20">
+<TR>
+	<TD class="tr17 td47"><P class="p32 ft19">cat_a_id</P></TD>
+	<TD class="tr17 td84"><P class="p121 ft19">toy_a</P></TD>
+	<TD class="tr17 td47"><P class="p121 ft62">cat_b_id</P></TD>
+	<TD class="tr17 td10"><P class="p28 ft62">toy_b</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td47"><P class="p32 ft2">1</P></TD>
+	<TD class="tr6 td84"><P class="p121 ft2">mouse</P></TD>
+	<TD class="tr6 td47"><P class="p32 ft2">3</P></TD>
+	<TD class="tr6 td10"><P class="p28 ft2">ball</P></TD>
+</TR>
+<TR>
+	<TD class="tr3 td47"><P class="p32 ft7">1</P></TD>
+	<TD class="tr3 td84"><P class="p121 ft7">ball</P></TD>
+	<TD class="tr3 td47"><P class="p32 ft7">3</P></TD>
+	<TD class="tr3 td10"><P class="p28 ft7">ball</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td47"><P class="p32 ft6">1</P></TD>
+	<TD class="tr2 td84"><P class="p121 ft6">mouse</P></TD>
+	<TD class="tr2 td47"><P class="p32 ft6">4</P></TD>
+	<TD class="tr2 td10"><P class="p28 ft6">mouse</P></TD>
+</TR>
+<TR>
+	<TD class="tr2 td47"><P class="p32 ft6">1</P></TD>
+	<TD class="tr2 td84"><P class="p121 ft6">ball</P></TD>
+	<TD class="tr2 td47"><P class="p32 ft6">4</P></TD>
+	<TD class="tr2 td10"><P class="p28 ft6">mouse</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td47"><P class="p32 ft2">3</P></TD>
+	<TD class="tr4 td84"><P class="p121 ft2">ball</P></TD>
+	<TD class="tr4 td47"><P class="p32 ft2">4</P></TD>
+	<TD class="tr4 td10"><P class="p28 ft2">mouse</P></TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV id="id2_7_3">
+<TABLE cellpadding=0 cellspacing=0 class="t21">
+<TR>
+	<TD class="tr14 td33"><P class="p122 ft2">3</P></TD>
+	<TD class="tr14 td52"><P class="p123 ft2">Sam</P></TD>
+	<TD class="tr14 td85"><P class="p114 ft2">2</P></TD>
+	<TD class="tr14 td33"><P class="p114 ft2">2</P></TD>
+	<TD class="tr14 td86"><P class="p124 ft2">5</P></TD>
+	<TD class="tr14 td44"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr14 td79"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr14 td87"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td33"><P class="p122 ft2">4</P></TD>
+	<TD class="tr4 td52"><P class="p123 ft2">Misty</P></TD>
+	<TD class="tr4 td85"><P class="p114 ft2">1</P></TD>
+	<TD class="tr4 td33"><P class="p75 ft8">NULL</P></TD>
+	<TD class="tr4 td86"><P class="p125 ft2">11</P></TD>
+	<TD class="tr4 td44"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr4 td79"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr4 td87"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr10 td33"><P class="p3 ft13">SELECT</P></TD>
+	<TD class="tr10 td52"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr10 td85"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr10 td33"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr10 td86"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr10 td44"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr10 td79"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr10 td87"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 class="tr6 td88"><P class="p24 ft2">cat_name,</P></TD>
+	<TD class="tr6 td85"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td33"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td86"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td44"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td79"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td87"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD colspan=3 class="tr6 td89"><P class="p24 ft2">o.name <SPAN class="ft13">AS </SPAN>owner_name,</P></TD>
+	<TD class="tr6 td33"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td86"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td44"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td79"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td87"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr15 td33"><P class="p24 ft2">c.age</P></TD>
+	<TD class="tr15 td52"><P class="p3 ft2"><SPAN class="ft13">AS </SPAN>cat_age,</P></TD>
+	<TD class="tr15 td85"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr15 td33"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr15 td86"><P class="p38 ft2">cat_name</P></TD>
+	<TD class="tr15 td44"><P class="p113 ft2">owner_name</P></TD>
+	<TD class="tr15 td79"><P class="p126 ft2">age</P></TD>
+	<TD class="tr15 td87"><P class="p127 ft2">age</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td33"><P class="p24 ft2">o.age</P></TD>
+	<TD class="tr6 td52"><P class="p3 ft2"><SPAN class="ft13">AS </SPAN>owner_age</P></TD>
+	<TD class="tr6 td85"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td33"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td86"><P class="p38 ft2">Kitty</P></TD>
+	<TD class="tr6 td44"><P class="p113 ft2">John Smith</P></TD>
+	<TD class="tr6 td79"><P class="p31 ft2">17</P></TD>
+	<TD class="tr6 td87"><P class="p127 ft2">18</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 class="tr2 td88"><P class="p3 ft15">FROM <SPAN class="ft6">cat c</SPAN></P></TD>
+	<TD class="tr2 td85"><P class="p3 ft16">&nbsp;</P></TD>
+	<TD class="tr2 td33"><P class="p3 ft16">&nbsp;</P></TD>
+	<TD class="tr2 td86"><P class="p38 ft6">Sam</P></TD>
+	<TD class="tr2 td44"><P class="p113 ft6">Danielle Davis</P></TD>
+	<TD class="tr2 td79"><P class="p128 ft6">5</P></TD>
+	<TD class="tr2 td87"><P class="p127 ft6">10</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 class="tr2 td88"><P class="p3 ft6"><SPAN class="ft15">JOIN </SPAN>owner o</P></TD>
+	<TD class="tr2 td85"><P class="p3 ft16">&nbsp;</P></TD>
+	<TD class="tr2 td33"><P class="p3 ft16">&nbsp;</P></TD>
+	<TD class="tr2 td86"><P class="p3 ft16">&nbsp;</P></TD>
+	<TD class="tr2 td44"><P class="p3 ft16">&nbsp;</P></TD>
+	<TD class="tr2 td79"><P class="p3 ft16">&nbsp;</P></TD>
+	<TD class="tr2 td87"><P class="p3 ft16">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD colspan=3 class="tr6 td89"><P class="p24 ft4"><SPAN class="ft62">ON </SPAN>c.owner_id = o.id</P></TD>
+	<TD class="tr6 td33"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td86"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td44"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td79"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr6 td87"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 class="tr4 td88"><P class="p59 ft4"><SPAN class="ft62">AND </SPAN>c.age &lt; o.age<SPAN class="ft2">;</SPAN></P></TD>
+	<TD class="tr4 td85"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr4 td33"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr4 td86"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr4 td44"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr4 td79"><P class="p3 ft5">&nbsp;</P></TD>
+	<TD class="tr4 td87"><P class="p3 ft5">&nbsp;</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id2_8">
+<DIV id="id2_8_1">
+<P class="p0 ft33">Try out the interactive <A href="https://learnsql.com/course/joins"><SPAN class="ft32">SQL JOINs </SPAN></A>course at <A href="https://learnsql.com/"><SPAN class="ft32">LearnSQL.com</SPAN></A><A href="https://learnsql.com/">, </A>and check out our other SQL courses.</P>
+</DIV>
+<DIV id="id2_8_2">
+<P class="p67 ft34">LearnSQL.com is owned by Vertabelo SA vertabelo.com | CC <NOBR>BY-NC-ND</NOBR> Vertabelo SA</P>
+</DIV>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

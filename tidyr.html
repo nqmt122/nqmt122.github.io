@@ -1,0 +1,1875 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>tidyr</TITLE>
+<META name="generator" content="BCL easyConverter SDK 5.0.252">
+<STYLE type="text/css">
+
+body {margin-top: 0px;margin-left: 0px;}
+
+#page_1 {position:relative; overflow: hidden;margin: 0px 0px 21px 25px;padding: 0px;border: none;width: 1442px;height: 1112px;}
+#page_1 #id1_1 {border:none;margin: 42px 0px 0px 4px;padding: 0px;border:none;width: 1387px;overflow: hidden;}
+#page_1 #id1_1 #id1_1_1 {float:left;border:none;margin: 11px 0px 0px 0px;padding: 0px;border:none;width: 361px;overflow: hidden;}
+#page_1 #id1_1 #id1_1_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 1026px;overflow: hidden;}
+#page_1 #id1_2 {border:none;margin: 0px 0px 0px 16px;padding: 0px;border:none;width: 1382px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 126px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_2 {float:left;border:none;margin: 25px 0px 0px 42px;padding: 0px;border:none;width: 188px;overflow: hidden;}
+#page_1 #id1_2 #id1_2_3 {float:left;border:none;margin: 2px 0px 0px 0px;padding: 0px;border:none;width: 1026px;overflow: hidden;}
+#page_1 #id1_3 {border:none;margin: 0px 0px 0px 7px;padding: 0px;border:none;width: 1387px;overflow: hidden;}
+#page_1 #id1_3 #id1_3_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 357px;overflow: hidden;}
+#page_1 #id1_3 #id1_3_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 1030px;overflow: hidden;}
+#page_1 #id1_4 {border:none;margin: 8px 0px 0px 403px;padding: 0px;border:none;width: 1039px;overflow: hidden;}
+
+#page_1 #p1dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:1442px;height:1112px;}
+#page_1 #p1dimg1 #p1img1 {width:1442px;height:1112px;}
+
+
+
+
+.dclr {clear:both;float:none;height:1px;margin:0px;padding:0px;overflow:hidden;}
+
+.ft0{font: 33px 'Arial';color: #164f86;line-height: 38px;}
+.ft1{font: 16px 'Arial';color: #164f86;line-height: 18px;}
+.ft2{font: bold 16px 'Arial';line-height: 20px;}
+.ft3{font: 16px 'Arial';line-height: 19px;}
+.ft4{font: 15px 'Arial';line-height: 17px;}
+.ft5{font: bold 16px 'Arial';margin-left: 3px;line-height: 20px;}
+.ft6{font: bold 16px 'Arial';margin-left: 3px;line-height: 21px;}
+.ft7{font: 16px 'Arial';line-height: 20px;}
+.ft8{font: bold 16px 'Arial';margin-left: 3px;line-height: 19px;}
+.ft9{font: 16px 'Arial';line-height: 18px;}
+.ft10{font: 32px 'Arial';color: #164f86;line-height: 36px;}
+.ft11{font: 1px 'Arial';line-height: 1px;}
+.ft12{font: bold 16px 'Arial';line-height: 19px;}
+.ft13{font: 1px 'Arial';line-height: 11px;}
+.ft14{font: 20px 'Courier New';line-height: 22px;}
+.ft15{font: 19px 'Arial';color: #ffffff;line-height: 18px;}
+.ft16{font: 20px 'Courier New';line-height: 18px;}
+.ft17{font: 51px 'Arial';color: #164f86;line-height: 58px;}
+.ft18{font: bold 18px 'Arial';line-height: 21px;}
+.ft19{font: 1px 'Arial';line-height: 3px;}
+.ft20{font: bold 19px 'Arial';line-height: 22px;}
+.ft21{font: 1px 'Arial';line-height: 6px;}
+.ft22{font: 1px 'Arial';line-height: 7px;}
+.ft23{font: 33px 'Arial';color: #164f86;line-height: 26px;}
+.ft24{font: 1px 'Arial';line-height: 12px;}
+.ft25{font: 1px 'Arial';line-height: 14px;}
+.ft26{font: 16px 'Arial';line-height: 14px;}
+.ft27{font: bold 15px 'Arial';color: #164f86;line-height: 19px;}
+.ft28{font: 7px 'Courier New';color: #164f86;line-height: 8px;}
+.ft29{font: 7px 'Courier New';color: #164f86;line-height: 7px;}
+.ft30{font: 7px 'Courier New';color: #164f86;line-height: 6px;}
+.ft31{font: 7px 'Courier New';color: #164f86;line-height: 5px;}
+.ft32{font: 7px 'Courier New';color: #164f86;margin-left: 40px;line-height: 5px;}
+.ft33{font: bold 16px 'Arial';color: #164f86;line-height: 19px;}
+.ft34{font: 7px 'Courier New';line-height: 8px;}
+.ft35{font: 13px 'Arial';color: #a6aaa9;line-height: 16px;}
+.ft36{font: 1px 'Arial';line-height: 9px;}
+.ft37{font: bold 10px 'Helvetica';color: #ffffff;line-height: 12px;}
+.ft38{font: bold 11px 'Helvetica';color: #ffffff;line-height: 14px;}
+.ft39{font: 10px 'Helvetica';line-height: 13px;}
+.ft40{font: 11px 'Helvetica';line-height: 14px;}
+.ft41{font: bold 11px 'Helvetica';line-height: 14px;}
+.ft42{font: 11px 'Helvetica';color: #164f86;line-height: 14px;}
+.ft43{font: 11px 'Helvetica';color: #ff7c00;line-height: 14px;}
+.ft44{font: 11px 'Helvetica';color: #ffffff;line-height: 14px;}
+.ft45{font: bold 17px 'Arial';line-height: 19px;}
+.ft46{font: 14px 'Arial';line-height: 16px;}
+.ft47{font: 1px 'Arial';line-height: 13px;}
+.ft48{font: 11px 'Helvetica';line-height: 13px;}
+.ft49{font: bold 11px 'Helvetica';line-height: 13px;}
+.ft50{font: 11px 'Helvetica';color: #164f86;line-height: 13px;}
+.ft51{font: 11px 'Helvetica';color: #ff7c00;line-height: 13px;}
+.ft52{font: 11px 'Helvetica';color: #ffffff;line-height: 13px;}
+.ft53{font: 16px 'Arial';line-height: 16px;}
+.ft54{font: italic 17px 'Arial';color: #164f86;line-height: 20px;}
+.ft55{font: 1px 'Arial';line-height: 10px;}
+.ft56{font: italic 15px 'Arial';color: #164f86;line-height: 17px;}
+.ft57{font: bold 9px 'Helvetica';color: #ffffff;line-height: 11px;}
+.ft58{font: 10px 'Helvetica';color: #ffffff;line-height: 13px;}
+.ft59{font: bold 18px 'Arial';line-height: 19px;}
+.ft60{font: 10px 'Helvetica';line-height: 12px;}
+.ft61{font: 11px 'Helvetica';color: #ffffff;line-height: 12px;}
+.ft62{font: 11px 'Helvetica';line-height: 12px;}
+.ft63{font: 16px 'Arial';line-height: 17px;}
+.ft64{font: 13px 'Arial';color: #164f86;line-height: 13px;}
+.ft65{font: 13px 'Arial';color: #f1c166;line-height: 13px;}
+.ft66{font: 1px 'Arial';line-height: 4px;}
+.ft67{font: bold 15px 'Arial';line-height: 19px;}
+.ft68{font: 15px 'Arial';line-height: 18px;}
+.ft69{font: 16px 'Arial';margin-left: 7px;line-height: 18px;}
+.ft70{font: bold 16px 'Arial';color: #4c4c4c;line-height: 19px;}
+.ft71{font: bold 13px 'Arial';color: #ffffff;line-height: 16px;}
+.ft72{font: italic bold 15px 'Arial';color: #164f86;line-height: 13px;}
+.ft73{font: italic 15px 'Arial';color: #164f86;line-height: 13px;}
+.ft74{font: 12px 'Courier New';color: #164f86;line-height: 11px;}
+.ft75{font: italic 16px 'Arial';color: #164f86;line-height: 13px;}
+.ft76{font: italic bold 16px 'Arial';color: #164f86;line-height: 13px;}
+.ft77{font: italic 13px 'Arial';color: #164f86;line-height: 13px;}
+.ft78{font: 12px 'Courier New';color: #164f86;line-height: 15px;}
+.ft79{font: 12px 'Courier New';color: #164f86;line-height: 13px;}
+.ft80{font: italic 16px 'Arial';color: #164f86;line-height: 19px;}
+.ft81{font: 12px 'Courier New';color: #164f86;line-height: 9px;}
+.ft82{font: italic 16px 'Arial';color: #164f86;line-height: 15px;}
+.ft83{font: italic 15px 'Arial';color: #164f86;line-height: 15px;}
+.ft84{font: 15px 'Arial';color: #164f86;line-height: 18px;}
+.ft85{font: 1px 'Arial';line-height: 5px;}
+.ft86{font: 12px 'Arial';color: #164f86;line-height: 15px;}
+.ft87{font: 13px 'Arial';color: #f1c166;line-height: 16px;}
+.ft88{font: 32px 'Arial';color: #004479;line-height: 36px;}
+.ft89{font: 1px 'Arial';line-height: 8px;}
+.ft90{font: bold 19px 'Arial';line-height: 19px;}
+.ft91{font: bold 18px 'Arial';line-height: 20px;}
+.ft92{font: 9px 'Helvetica';line-height: 12px;}
+.ft93{font: 9px 'Helvetica';color: #a6aaa9;line-height: 9px;}
+.ft94{font: 9px 'Helvetica';line-height: 9px;}
+.ft95{font: 9px 'Helvetica';color: #a6aaa9;line-height: 12px;}
+.ft96{font: 8px 'Helvetica';line-height: 10px;}
+.ft97{font: 15px 'Arial';line-height: 15px;}
+.ft98{font: 32px 'Arial';color: #164f86;line-height: 33px;}
+.ft99{font: 15px 'Arial';color: #164f86;line-height: 17px;}
+.ft100{font: 11px 'Helvetica';color: #0365c0;line-height: 12px;}
+.ft101{font: 11px 'Helvetica';color: #164f86;line-height: 12px;}
+.ft102{font: 11px 'Helvetica';color: #ff7c00;line-height: 12px;}
+.ft103{font: 17px 'Arial';line-height: 19px;}
+.ft104{font: 11px 'Helvetica';color: #0365c0;line-height: 14px;}
+.ft105{font: italic 14px 'Arial';color: #164f86;line-height: 16px;}
+.ft106{font: 11px 'Arial';text-decoration: underline;line-height: 14px;}
+.ft107{font: 11px 'Arial';line-height: 14px;}
+
+.p0{text-align: left;margin-top: 0px;margin-bottom: 0px;}
+.p1{text-align: justify;padding-left: 4px;padding-right: 108px;margin-top: 14px;margin-bottom: 0px;}
+.p2{text-align: left;padding-left: 12px;padding-right: 67px;margin-top: 5px;margin-bottom: 0px;text-indent: -8px;}
+.p3{text-align: left;padding-left: 12px;padding-right: 85px;margin-top: 7px;margin-bottom: 0px;text-indent: -8px;}
+.p4{text-align: left;padding-left: 4px;margin-top: 3px;margin-bottom: 0px;}
+.p5{text-align: right;padding-right: 94px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p6{text-align: left;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p7{text-align: left;padding-left: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p8{text-align: left;padding-left: 4px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p9{text-align: right;padding-right: 17px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p10{text-align: right;padding-right: 16px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p11{text-align: right;padding-right: 88px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p12{text-align: left;padding-left: 28px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p13{text-align: right;padding-right: 184px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p14{text-align: left;padding-left: 6px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p15{text-align: left;padding-left: 2px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p16{text-align: left;padding-left: 31px;padding-right: 14px;margin-top: 208px;margin-bottom: 0px;text-indent: -8px;}
+.p17{text-align: right;padding-right: 38px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p18{text-align: right;padding-right: 2px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p19{text-align: right;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p20{text-align: right;padding-right: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p21{text-align: left;padding-left: 24px;margin-top: 19px;margin-bottom: 0px;}
+.p22{text-align: left;margin-top: 14px;margin-bottom: 0px;}
+.p23{text-align: left;padding-right: 42px;margin-top: 0px;margin-bottom: 0px;text-indent: 4px;}
+.p24{text-align: left;padding-left: 8px;margin-top: 10px;margin-bottom: 0px;}
+.p25{text-align: left;padding-left: 1px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p26{text-align: center;padding-left: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p27{text-align: left;padding-left: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p28{text-align: left;padding-left: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p29{text-align: center;padding-left: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p30{text-align: right;padding-right: 8px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p31{text-align: center;padding-right: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p32{text-align: center;padding-right: 24px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p33{text-align: center;padding-left: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p34{text-align: left;padding-left: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p35{text-align: center;padding-right: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p36{text-align: center;padding-right: 4px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p37{text-align: left;padding-left: 23px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p38{text-align: right;padding-right: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p39{text-align: left;padding-left: 32px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p40{text-align: right;padding-right: 1px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p41{text-align: center;padding-right: 6px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p42{text-align: center;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p43{text-align: left;padding-left: 52px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p44{text-align: right;padding-right: 6px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p45{text-align: center;padding-left: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p46{text-align: right;padding-right: 18px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p47{text-align: center;padding-left: 21px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p48{text-align: center;padding-left: 13px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p49{text-align: center;padding-right: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p50{text-align: right;padding-right: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p51{text-align: center;padding-right: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p52{text-align: center;padding-right: 43px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p53{text-align: right;padding-right: 23px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p54{text-align: center;padding-right: 35px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p55{text-align: center;padding-right: 34px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p56{text-align: center;padding-right: 8px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p57{text-align: center;padding-right: 42px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p58{text-align: left;padding-left: 35px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p59{text-align: left;padding-left: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p60{text-align: left;padding-left: 41px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p61{text-align: left;padding-left: 33px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p62{text-align: left;padding-left: 16px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p63{text-align: left;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p64{text-align: center;padding-left: 15px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p65{text-align: right;padding-right: 33px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p66{text-align: center;padding-left: 22px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p67{text-align: center;padding-right: 36px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p68{text-align: center;padding-right: 44px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p69{text-align: center;padding-right: 3px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p70{text-align: left;padding-left: 3px;margin-top: 0px;margin-bottom: 0px;}
+.p71{text-align: left;padding-left: 43px;padding-right: 57px;margin-top: 5px;margin-bottom: 0px;text-indent: -15px;}
+.p72{text-align: left;padding-left: 3px;margin-top: 6px;margin-bottom: 0px;}
+.p73{text-align: left;margin-top: 16px;margin-bottom: 0px;}
+.p74{text-align: center;padding-right: 1px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p75{text-align: center;padding-left: 2px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p76{text-align: left;padding-left: 36px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p77{text-align: center;padding-left: 4px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p78{text-align: center;padding-right: 47px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p79{text-align: left;padding-left: 70px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p80{text-align: center;padding-right: 49px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p81{text-align: center;padding-right: 48px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p82{text-align: left;padding-left: 17px;margin-top: 8px;margin-bottom: 0px;}
+.p83{text-align: left;padding-left: 29px;padding-right: 54px;margin-top: 7px;margin-bottom: 0px;text-indent: -11px;}
+.p84{text-align: left;padding-left: 17px;margin-top: 6px;margin-bottom: 0px;}
+.p85{text-align: left;padding-left: 20px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p86{text-align: center;padding-right: 13px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p87{text-align: left;padding-left: 22px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p88{text-align: center;padding-right: 22px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p89{text-align: center;padding-left: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p90{text-align: left;padding-left: 26px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p91{text-align: left;padding-left: 11px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p92{text-align: left;padding-left: 38px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p93{text-align: center;padding-right: 5px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p94{text-align: center;padding-right: 57px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p95{text-align: center;padding-left: 46px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p96{text-align: center;padding-right: 26px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p97{text-align: left;padding-left: 19px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p98{text-align: center;padding-right: 85px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p99{text-align: left;padding-left: 39px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p100{text-align: left;padding-left: 24px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p101{text-align: right;padding-right: 60px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p102{text-align: center;padding-left: 48px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p103{text-align: left;padding-left: 21px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p104{text-align: left;padding-left: 60px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p105{text-align: left;padding-left: 8px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p106{text-align: right;padding-right: 27px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p107{text-align: center;padding-left: 27px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p108{text-align: center;padding-right: 12px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p109{text-align: center;padding-left: 24px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p110{text-align: right;padding-right: 22px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p111{text-align: center;padding-left: 25px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p112{text-align: center;padding-left: 26px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p113{text-align: left;padding-left: 25px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p114{text-align: left;padding-left: 18px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+
+.td0{padding: 0px;margin: 0px;width: 365px;vertical-align: bottom;}
+.td1{padding: 0px;margin: 0px;width: 176px;vertical-align: bottom;}
+.td2{padding: 0px;margin: 0px;width: 116px;vertical-align: bottom;}
+.td3{padding: 0px;margin: 0px;width: 60px;vertical-align: bottom;}
+.td4{padding: 0px;margin: 0px;width: 307px;vertical-align: bottom;}
+.td5{padding: 0px;margin: 0px;width: 717px;vertical-align: bottom;}
+.td6{padding: 0px;margin: 0px;width: 129px;vertical-align: bottom;}
+.td7{padding: 0px;margin: 0px;width: 236px;vertical-align: bottom;}
+.td8{padding: 0px;margin: 0px;width: 171px;vertical-align: bottom;}
+.td9{padding: 0px;margin: 0px;width: 198px;vertical-align: bottom;}
+.td10{padding: 0px;margin: 0px;width: 166px;vertical-align: bottom;}
+.td11{padding: 0px;margin: 0px;width: 202px;vertical-align: bottom;}
+.td12{padding: 0px;margin: 0px;width: 258px;vertical-align: bottom;}
+.td13{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 171px;vertical-align: bottom;}
+.td14{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 198px;vertical-align: bottom;}
+.td15{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 166px;vertical-align: bottom;}
+.td16{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 142px;vertical-align: bottom;}
+.td17{padding: 0px;margin: 0px;width: 535px;vertical-align: bottom;}
+.td18{padding: 0px;margin: 0px;width: 142px;vertical-align: bottom;}
+.td19{padding: 0px;margin: 0px;width: 69px;vertical-align: bottom;}
+.td20{padding: 0px;margin: 0px;width: 53px;vertical-align: bottom;}
+.td21{padding: 0px;margin: 0px;width: 20px;vertical-align: bottom;}
+.td22{padding: 0px;margin: 0px;width: 9px;vertical-align: bottom;}
+.td23{padding: 0px;margin: 0px;width: 73px;vertical-align: bottom;}
+.td24{padding: 0px;margin: 0px;width: 0px;vertical-align: bottom;}
+.td25{padding: 0px;margin: 0px;width: 566px;vertical-align: bottom;}
+.td26{padding: 0px;margin: 0px;width: 36px;vertical-align: bottom;}
+.td27{padding: 0px;margin: 0px;width: 38px;vertical-align: bottom;}
+.td28{padding: 0px;margin: 0px;width: 71px;vertical-align: bottom;}
+.td29{padding: 0px;margin: 0px;width: 50px;vertical-align: bottom;}
+.td30{padding: 0px;margin: 0px;width: 37px;vertical-align: bottom;}
+.td31{padding: 0px;margin: 0px;width: 57px;vertical-align: bottom;}
+.td32{padding: 0px;margin: 0px;width: 15px;vertical-align: bottom;}
+.td33{padding: 0px;margin: 0px;width: 59px;vertical-align: bottom;}
+.td34{padding: 0px;margin: 0px;width: 35px;vertical-align: bottom;}
+.td35{padding: 0px;margin: 0px;width: 25px;vertical-align: bottom;}
+.td36{padding: 0px;margin: 0px;width: 72px;vertical-align: bottom;}
+.td37{padding: 0px;margin: 0px;width: 327px;vertical-align: bottom;}
+.td38{padding: 0px;margin: 0px;width: 384px;vertical-align: bottom;}
+.td39{padding: 0px;margin: 0px;width: 262px;vertical-align: bottom;}
+.td40{padding: 0px;margin: 0px;width: 65px;vertical-align: bottom;}
+.td41{padding: 0px;margin: 0px;width: 196px;vertical-align: bottom;}
+.td42{padding: 0px;margin: 0px;width: 43px;vertical-align: bottom;}
+.td43{border-bottom: #53585f 1px solid;padding: 0px;margin: 0px;width: 15px;vertical-align: bottom;}
+.td44{padding: 0px;margin: 0px;width: 313px;vertical-align: bottom;}
+.td45{padding: 0px;margin: 0px;width: 158px;vertical-align: bottom;}
+.td46{padding: 0px;margin: 0px;width: 68px;vertical-align: bottom;}
+.td47{padding: 0px;margin: 0px;width: 240px;vertical-align: bottom;}
+.td48{padding: 0px;margin: 0px;width: 98px;vertical-align: bottom;}
+.td49{padding: 0px;margin: 0px;width: 45px;vertical-align: bottom;}
+.td50{padding: 0px;margin: 0px;width: 10px;vertical-align: bottom;}
+.td51{padding: 0px;margin: 0px;width: 16px;vertical-align: bottom;}
+.td52{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;}
+.td53{padding: 0px;margin: 0px;width: 64px;vertical-align: bottom;}
+.td54{padding: 0px;margin: 0px;width: 315px;vertical-align: bottom;}
+.td55{border-top: #53585f 1px solid;padding: 0px;margin: 0px;width: 10px;vertical-align: bottom;}
+.td56{padding: 0px;margin: 0px;width: 159px;vertical-align: bottom;}
+.td57{padding: 0px;margin: 0px;width: 290px;vertical-align: bottom;}
+.td58{padding: 0px;margin: 0px;width: 109px;vertical-align: bottom;}
+.td59{padding: 0px;margin: 0px;width: 94px;vertical-align: bottom;}
+.td60{padding: 0px;margin: 0px;width: 74px;vertical-align: bottom;}
+.td61{padding: 0px;margin: 0px;width: 11px;vertical-align: bottom;}
+.td62{padding: 0px;margin: 0px;width: 168px;vertical-align: bottom;}
+.td63{padding: 0px;margin: 0px;width: 229px;vertical-align: bottom;}
+.td64{border-bottom: #a6aaa9 1px solid;padding: 0px;margin: 0px;width: 11px;vertical-align: bottom;}
+.td65{border-bottom: #a6aaa9 1px solid;padding: 0px;margin: 0px;width: 50px;vertical-align: bottom;}
+.td66{border-bottom: #a6aaa9 1px solid;padding: 0px;margin: 0px;width: 64px;vertical-align: bottom;}
+.td67{border-right: #a6aaa9 1px solid;padding: 0px;margin: 0px;width: 167px;vertical-align: bottom;}
+.td68{border-right: #a6aaa9 1px solid;padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;}
+.td69{border-right: #a6aaa9 1px solid;padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;}
+.td70{border-right: #a6aaa9 1px solid;padding: 0px;margin: 0px;width: 73px;vertical-align: bottom;}
+.td71{border-right: #a6aaa9 1px solid;padding: 0px;margin: 0px;width: 113px;vertical-align: bottom;}
+.td72{border-right: #a6aaa9 1px solid;border-bottom: #a6aaa9 1px solid;padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;}
+.td73{padding: 0px;margin: 0px;width: 51px;vertical-align: bottom;}
+.td74{padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+.td75{padding: 0px;margin: 0px;width: 78px;vertical-align: bottom;}
+.td76{padding: 0px;margin: 0px;width: 24px;vertical-align: bottom;}
+.td77{padding: 0px;margin: 0px;width: 39px;vertical-align: bottom;}
+.td78{padding: 0px;margin: 0px;width: 22px;vertical-align: bottom;}
+.td79{padding: 0px;margin: 0px;width: 41px;vertical-align: bottom;}
+.td80{padding: 0px;margin: 0px;width: 40px;vertical-align: bottom;}
+.td81{padding: 0px;margin: 0px;width: 23px;vertical-align: bottom;}
+.td82{padding: 0px;margin: 0px;width: 54px;vertical-align: bottom;}
+.td83{padding: 0px;margin: 0px;width: 49px;vertical-align: bottom;}
+.td84{padding: 0px;margin: 0px;width: 48px;vertical-align: bottom;}
+.td85{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;}
+.td86{padding: 0px;margin: 0px;width: 2px;vertical-align: bottom;}
+.td87{padding: 0px;margin: 0px;width: 82px;vertical-align: bottom;}
+.td88{border-bottom: #53585f 1px solid;padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;}
+.td89{border-bottom: #53585f 1px solid;padding: 0px;margin: 0px;width: 2px;vertical-align: bottom;}
+.td90{padding: 0px;margin: 0px;width: 237px;vertical-align: bottom;}
+.td91{padding: 0px;margin: 0px;width: 200px;vertical-align: bottom;}
+.td92{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 51px;vertical-align: bottom;}
+.td93{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 31px;vertical-align: bottom;}
+.td94{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 16px;vertical-align: bottom;}
+.td95{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 43px;vertical-align: bottom;}
+.td96{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 69px;vertical-align: bottom;}
+.td97{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 78px;vertical-align: bottom;}
+.td98{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 24px;vertical-align: bottom;}
+.td99{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 39px;vertical-align: bottom;}
+.td100{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 22px;vertical-align: bottom;}
+.td101{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 35px;vertical-align: bottom;}
+.td102{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 41px;vertical-align: bottom;}
+.td103{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 40px;vertical-align: bottom;}
+.td104{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 23px;vertical-align: bottom;}
+.td105{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 37px;vertical-align: bottom;}
+.td106{border-bottom: #767c85 1px solid;padding: 0px;margin: 0px;width: 54px;vertical-align: bottom;}
+.td107{padding: 0px;margin: 0px;width: 328px;vertical-align: bottom;}
+.td108{padding: 0px;margin: 0px;width: 210px;vertical-align: bottom;}
+.td109{padding: 0px;margin: 0px;width: 298px;vertical-align: bottom;}
+.td110{padding: 0px;margin: 0px;width: 220px;vertical-align: bottom;}
+.td111{padding: 0px;margin: 0px;width: 257px;vertical-align: bottom;}
+.td112{padding: 0px;margin: 0px;width: 302px;vertical-align: bottom;}
+.td113{padding: 0px;margin: 0px;width: 157px;vertical-align: bottom;}
+.td114{padding: 0px;margin: 0px;width: 12px;vertical-align: bottom;}
+.td115{padding: 0px;margin: 0px;width: 104px;vertical-align: bottom;}
+.td116{border-bottom: #53585f 1px solid;padding: 0px;margin: 0px;width: 16px;vertical-align: bottom;}
+.td117{padding: 0px;margin: 0px;width: 112px;vertical-align: bottom;}
+.td118{padding: 0px;margin: 0px;width: 102px;vertical-align: bottom;}
+.td119{padding: 0px;margin: 0px;width: 61px;vertical-align: bottom;}
+.td120{padding: 0px;margin: 0px;width: 141px;vertical-align: bottom;}
+.td121{padding: 0px;margin: 0px;width: 162px;vertical-align: bottom;}
+.td122{padding: 0px;margin: 0px;width: 79px;vertical-align: bottom;}
+.td123{padding: 0px;margin: 0px;width: 80px;vertical-align: bottom;}
+.td124{padding: 0px;margin: 0px;width: 34px;vertical-align: bottom;}
+.td125{padding: 0px;margin: 0px;width: 66px;vertical-align: bottom;}
+.td126{padding: 0px;margin: 0px;width: 58px;vertical-align: bottom;}
+.td127{padding: 0px;margin: 0px;width: 548px;vertical-align: bottom;}
+.td128{padding: 0px;margin: 0px;width: 288px;vertical-align: bottom;}
+.td129{padding: 0px;margin: 0px;width: 139px;vertical-align: bottom;}
+.td130{padding: 0px;margin: 0px;width: 400px;vertical-align: bottom;}
+.td131{padding: 0px;margin: 0px;width: 296px;vertical-align: bottom;}
+.td132{padding: 0px;margin: 0px;width: 195px;vertical-align: bottom;}
+.td133{padding: 0px;margin: 0px;width: 183px;vertical-align: bottom;}
+
+.tr0{height: 50px;}
+.tr1{height: 20px;}
+.tr2{height: 31px;}
+.tr3{height: 29px;}
+.tr4{height: 11px;}
+.tr5{height: 18px;}
+.tr6{height: 21px;}
+.tr7{height: 58px;}
+.tr8{height: 37px;}
+.tr9{height: 40px;}
+.tr10{height: 3px;}
+.tr11{height: 25px;}
+.tr12{height: 6px;}
+.tr13{height: 7px;}
+.tr14{height: 19px;}
+.tr15{height: 26px;}
+.tr16{height: 12px;}
+.tr17{height: 14px;}
+.tr18{height: 30px;}
+.tr19{height: 9px;}
+.tr20{height: 17px;}
+.tr21{height: 8px;}
+.tr22{height: 24px;}
+.tr23{height: 16px;}
+.tr24{height: 13px;}
+.tr25{height: 27px;}
+.tr26{height: 10px;}
+.tr27{height: 15px;}
+.tr28{height: 22px;}
+.tr29{height: 4px;}
+.tr30{height: 23px;}
+.tr31{height: 5px;}
+.tr32{height: 33px;}
+
+.t0{width: 1024px;margin-left: 2px;font: 16px 'Arial';}
+.t1{width: 995px;font: 16px 'Arial';}
+.t2{width: 142px;font: 7px 'Courier New';color: #164f86;}
+.t3{width: 1026px;font: 11px 'Helvetica';}
+.t4{width: 293px;margin-left: 20px;margin-top: 3px;font: 12px 'Courier New';color: #164f86;}
+.t5{width: 1030px;font: 11px 'Helvetica';}
+
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV id="page_1">
+<DIV id="p1dimg1">
+<IMG src="data:image/png;base64,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pbLT3KKyhmLefNe139LpbNybIyz2uj/1ptd94r1//eF//TdqLAygacQcwHwRZ8yPxuYIjS2sNYabPxZJB/LnaPhMFRyqrD1lp783bcGJAEm+HWh9ZnoqR9hafyf0ut1rXnLlNS+58g/f844H7n77O2954+juM33+i9dfe3cFFOxeewEFu9deQMHutRew574WrQDIPtpsuIyl3h068otkTzFQxNIrvvUn/sqr3rT08roLAWg0MQfQNmN3eosxDu9WOLrLTl+ffIQR393tIGxrwpM29j3wEk/+Tk93WeNTnapXrAy/tavAy4oVcj995DU/faTy+6cAtIBFK8C8K379WcoVrMtgqMLeMoJtY4iCQzVk1hgAtF7iD2tgPg1nUuz512DxEcoaBOp14403NvBmKxtnS03y8zWifVlD7XacvXXZm0k2tB/RZpIN+Ue3mcItUfZW/+kzZ4sfOp/kNbqASs9/iY9it7VN0mY6r58az//YNi0oQP3qL1JA6fVbtALMNVM5oK02rgtLklHv62xaPra1ZVlDbRpn22NNXlW5JokYRrQp2H3CEQraW/0lrmir7gSO7V71osiZeP3UeP7HtpnzAtSv/tK7izmAObV1a4zpj1DWIMBYW2dObfujt6vJGnsYatOP/NawY89VAQA5MQcwv0zlgHbLf7g2BQcjgsURP4zlDjX5OKOHAgC2EnMAAG02yZypCaOEsobaNjTZc1UAwEZiDgCg5QruA9r8oQCAITeUBQDmSNyglUPtvYYQ8/3qi4xQb/faCyjYvfYCCnavvYCC3RVQsHvtBRTsXnsBBbvXXkDB7uUWIOYAAAAAWkLMAQBASEKy6bZ8u31vrfTuuxpB/erf1H3m6q+9gE3dZ+4Ebuqu/oIFFOxeb/1iDgAAtrHpr8YQQggxTPyn53bdw66671DApNS/3ZfVP6l666+9gFk/geqf8/ptQQoAwITG3B2m+hHq7V57AepX/0wXoH71T6m72RwAAABAS4g5AAAAgJYQcwAAzKMdNnibdOXzDjvM7WLp9Q7dd1HA9l+euLv6t+uu/km7V1B/7QXM+glUv/oH7M0BADCPdthhbtLFzwW77zBCwe67GEH96i9SQDX1116A+tVfpIAG1W82BwAAANASYg4AALa3w7ziXXQvPkK93WsvoGD32gso2L32Agp2V0DB7rUXULB77QUU7F57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" id="p1img1"></DIV>
+
+
+<DIV class="dclr"></DIV>
+<DIV id="id1_1">
+<DIV id="id1_1_1">
+<P class="p0 ft1"><SPAN class="ft0">Tibbles</SPAN>- an enhanced data frame</P>
+<P class="p1 ft3">The <SPAN class="ft2">tibble </SPAN>package provides a new S3 class for storing tabular data, the tibble. Tibbles inherit the data frame class, but improve three behaviors:</P>
+<P class="p2 ft3"><SPAN class="ft4">•</SPAN><SPAN class="ft5">Subsetting </SPAN>- [ always returns a new tibble, [[ and $ always return a vector.</P>
+<P class="p3 ft7"><SPAN class="ft4">•</SPAN><SPAN class="ft6">No partial matching </SPAN>- You must use full column names when subsetting</P>
+<P class="p4 ft9"><SPAN class="ft4">•</SPAN><SPAN class="ft8">Display </SPAN>- When you print a tibble, R provides a</P>
+</DIV>
+<DIV id="id1_1_2">
+<TABLE cellpadding=0 cellspacing=0 class="t0">
+<TR>
+	<TD colspan=2 class="tr0 td0"><P class="p5 ft10">Tidy Data with tidyr</P></TD>
+	<TD class="tr0 td1"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr0 td2"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr0 td3"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr0 td4"><P class="p7 ft0">Split Cells</P></TD>
+</TR>
+<TR>
+	<TD colspan=5 class="tr1 td5"><P class="p8 ft9"><SPAN class="ft12">Tidy data </SPAN>is a way to organize tabular data. It provides a consistent data structure across packages.</P></TD>
+	<TD rowspan=2 class="tr2 td4"><P class="p6 ft9">Use these functions to</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr3 td6"><P class="p9 ft9">A table is tidy if:</P></TD>
+	<TD class="tr4 td7"><P class="p6 ft13">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr3 td1"><P class="p6 ft9">Tidy data:</P></TD>
+	<TD colspan=2 rowspan=2 class="tr3 td1"><P class="p7 ft14">A * B <NOBR>-&gt;</NOBR> C</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td7"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr5 td4"><P class="p6 ft9">split or combine cells</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td6"><P class="p10 ft15">A B C</P></TD>
+	<TD class="tr5 td7"><P class="p11 ft15">A B C</P></TD>
+	<TD class="tr5 td1"><P class="p12 ft15">A B C</P></TD>
+	<TD class="tr5 td2"><P class="p6 ft15">A <SPAN class="ft16">* </SPAN>B</P></TD>
+	<TD class="tr5 td3"><P class="p6 ft15">C</P></TD>
+	<TD class="tr5 td4"><P class="p6 ft9">into individual, isolated</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td6"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr7 td7"><P class="p13 ft17">&</P></TD>
+	<TD class="tr6 td1"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td2"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td3"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td4"><P class="p6 ft9">values.</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td6"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr8 td1"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr8 td2"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr8 td3"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr9 td4"><P class="p14 ft4"><SPAN class="ft18">separate(</SPAN>data, col, into, sep = "[^[:alnum:]]</P></TD>
+</TR>
+<TR>
+	<TD class="tr10 td6"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td7"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td1"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td2"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td3"><P class="p6 ft19">&nbsp;</P></TD>
+</TR>
+</TABLE>
+<TABLE cellpadding=0 cellspacing=0 class="t1">
+<TR>
+	<TD class="tr1 td8"><P class="p14 ft9">Each <SPAN class="ft12">variable </SPAN>is in</P></TD>
+	<TD class="tr1 td9"><P class="p6 ft12"><SPAN class="ft9">Each </SPAN>observation<SPAN class="ft9">, or</SPAN></P></TD>
+	<TD class="tr1 td10"><P class="p6 ft9">Makes variables easy</P></TD>
+	<TD colspan=2 class="tr1 td11"><P class="p6 ft9">Preserves cases during</P></TD>
+	<TD class="tr1 td12"><P class="p6 ft4">+", remove = TRUE, convert = FALSE,</P></TD>
+</TR>
+<TR>
+	<TD class="tr11 td8"><P class="p14 ft9">its own <SPAN class="ft12">column</SPAN></P></TD>
+	<TD class="tr11 td9"><P class="p6 ft9"><SPAN class="ft12">case</SPAN>, is in its own <SPAN class="ft12">row</SPAN></P></TD>
+	<TD class="tr11 td10"><P class="p6 ft9">to access as vectors</P></TD>
+	<TD colspan=2 class="tr11 td11"><P class="p6 ft9">vectorized operations</P></TD>
+	<TD class="tr11 td12"><P class="p6 ft9">extra = "warn", fill = "warn", ...<SPAN class="ft20">)</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td13"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td14"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td15"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td16"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr13 td3"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr14 td12"><P class="p6 ft4">Separate each cell in a column to make</P></TD>
+</TR>
+<TR>
+	<TD colspan=3 rowspan=2 class="tr15 td17"><P class="p15 ft1"><SPAN class="ft23">Reshape Data</SPAN>- change the layout of values in a table</P></TD>
+	<TD class="tr16 td18"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td3"><P class="p6 ft24">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td18"><P class="p6 ft25">&nbsp;</P></TD>
+	<TD class="tr17 td3"><P class="p6 ft25">&nbsp;</P></TD>
+	<TD class="tr17 td12"><P class="p6 ft26">several columns.</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id1_2">
+<DIV id="id1_2_1">
+<P class="p0 ft3">concise view of the data that fits on one screen</P>
+<P class="p16 ft27">A large table to display</P>
+</DIV>
+<DIV id="id1_2_2">
+<TABLE cellpadding=0 cellspacing=0 class="t2">
+<TR>
+	<TD colspan=2 class="tr4 td19"><P class="p6 ft28"># A tibble: 234</P></TD>
+	<TD class="tr4 td20"><P class="p17 ft28">× 6</P></TD>
+	<TD class="tr4 td21"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr13 td22"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td3"><P class="p18 ft29">manufacturer</P></TD>
+	<TD colspan=2 class="tr13 td23"><P class="p19 ft29">model displ</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr16 td22"><P class="p6 ft28">1</P></TD>
+	<TD class="tr12 td3"><P class="p18 ft30">&lt;chr&gt;</P></TD>
+	<TD colspan=2 class="tr12 td23"><P class="p19 ft30">&lt;chr&gt; &lt;dbl&gt;</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td3"><P class="p18 ft30">audi</P></TD>
+	<TD class="tr12 td20"><P class="p20 ft30">a4</P></TD>
+	<TD class="tr12 td21"><P class="p19 ft30">1.8</P></TD>
+</TR>
+<TR>
+	<TD class="tr13 td22"><P class="p6 ft29">2</P></TD>
+	<TD class="tr13 td3"><P class="p18 ft29">audi</P></TD>
+	<TD class="tr13 td20"><P class="p20 ft29">a4</P></TD>
+	<TD class="tr13 td21"><P class="p19 ft29">1.8</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td22"><P class="p6 ft30">3</P></TD>
+	<TD class="tr12 td3"><P class="p18 ft30">audi</P></TD>
+	<TD class="tr12 td20"><P class="p20 ft30">a4</P></TD>
+	<TD class="tr12 td21"><P class="p19 ft30">2.0</P></TD>
+</TR>
+<TR>
+	<TD class="tr13 td22"><P class="p6 ft29">4</P></TD>
+	<TD class="tr13 td3"><P class="p18 ft29">audi</P></TD>
+	<TD class="tr13 td20"><P class="p20 ft29">a4</P></TD>
+	<TD class="tr13 td21"><P class="p19 ft29">2.0</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td22"><P class="p6 ft30">5</P></TD>
+	<TD class="tr12 td3"><P class="p18 ft30">audi</P></TD>
+	<TD class="tr12 td20"><P class="p20 ft30">a4</P></TD>
+	<TD class="tr12 td21"><P class="p19 ft30">2.8</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td22"><P class="p6 ft30">6</P></TD>
+	<TD class="tr12 td3"><P class="p18 ft30">audi</P></TD>
+	<TD class="tr12 td20"><P class="p20 ft30">a4</P></TD>
+	<TD class="tr12 td21"><P class="p19 ft30">2.8</P></TD>
+</TR>
+<TR>
+	<TD class="tr13 td22"><P class="p6 ft29">7</P></TD>
+	<TD class="tr13 td3"><P class="p18 ft29">audi</P></TD>
+	<TD class="tr13 td20"><P class="p20 ft29">a4</P></TD>
+	<TD class="tr13 td21"><P class="p19 ft29">3.1</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td22"><P class="p6 ft30">8</P></TD>
+	<TD class="tr12 td3"><P class="p18 ft30">audi</P></TD>
+	<TD class="tr12 td20"><P class="p20 ft30">a4 quattro</P></TD>
+	<TD class="tr12 td21"><P class="p19 ft30">1.8</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td22"><P class="p6 ft30">9</P></TD>
+	<TD class="tr12 td3"><P class="p18 ft30">audi</P></TD>
+	<TD class="tr12 td20"><P class="p20 ft30">a4 quattro</P></TD>
+	<TD class="tr12 td21"><P class="p19 ft30">1.8</P></TD>
+</TR>
+</TABLE>
+<P class="p0 ft31"><SPAN class="ft31">10</SPAN><SPAN class="ft32">audi a4 quattro 2.0</SPAN></P>
+<P class="p0 ft29"># ... with 224 more rows, and 3</P>
+<P class="p0 ft29"># more variables: year &lt;int&gt;,</P>
+<P class="p0 ft28"># cyl &lt;int&gt;, trans &lt;chr&gt;</P>
+<P class="p21 ft33">tibble display</P>
+<P class="p22 ft28">156 1999 6 auto(l4)</P>
+<P class="p0 ft28">157 1999 6 auto(l4)</P>
+<P class="p0 ft28">158 2008 6 auto(l4)</P>
+<P class="p0 ft31">159 2008 8 auto(s4)</P>
+<P class="p0 ft29">160 1999 4 manual(m5)</P>
+<P class="p0 ft30">161 1999 4 auto(l4)</P>
+<P class="p0 ft29">162 2008 4 manual(m5)</P>
+<P class="p0 ft29">163 2008 4 manual(m5)</P>
+<P class="p0 ft31">164 2008 4 auto(l4)</P>
+<P class="p0 ft29">165 2008 4 auto(l4)</P>
+<P class="p0 ft30">166 1999 4 auto(l4)</P>
+<P class="p23 ft34">[ reached getOption("max.print") <NOBR>--</NOBR> omitted 68 rows ]</P>
+<P class="p24 ft33">data frame display</P>
+</DIV>
+<DIV id="id1_2_3">
+<TABLE cellpadding=0 cellspacing=0 class="t3">
+<TR>
+	<TD class="tr6 td24"></TD>
+	<TD colspan=14 rowspan=2 class="tr18 td25"><P class="p6 ft9">Use <SPAN class="ft12">gather() </SPAN>and <SPAN class="ft12">spread() </SPAN>to reorganize the values of a table into a new layout.</P></TD>
+	<TD class="tr6 td26"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td27"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td28"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td30"><P class="p25 ft35">table3</P></TD>
+	<TD class="tr6 td31"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td32"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td33"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td35"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr19 td24"></TD>
+	<TD class="tr19 td26"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td27"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td28"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr20 td29"><P class="p26 ft37">country</P></TD>
+	<TD rowspan=2 class="tr20 td30"><P class="p27 ft38">year</P></TD>
+	<TD colspan=2 rowspan=2 class="tr20 td36"><P class="p28 ft38">rate</P></TD>
+	<TD rowspan=2 class="tr20 td33"><P class="p29 ft37">country</P></TD>
+	<TD rowspan=2 class="tr20 td34"><P class="p30 ft38">year</P></TD>
+	<TD rowspan=2 class="tr20 td30"><P class="p31 ft37">cases</P></TD>
+	<TD rowspan=2 class="tr20 td35"><P class="p27 ft37">pop</P></TD>
+</TR>
+<TR>
+	<TD class="tr21 td24"></TD>
+	<TD colspan=7 rowspan=2 class="tr22 td37"><P class="p15 ft9"><SPAN class="ft20">gather(</SPAN>data, key, value, ..., na.rm = FALSE,</P></TD>
+	<TD colspan=10 rowspan=2 class="tr22 td38"><P class="p6 ft9"><SPAN class="ft20">spread(</SPAN>data, key, value, fill = NA, convert = FALSE,</P></TD>
+</TR>
+<TR>
+	<TD class="tr23 td24"></TD>
+	<TD class="tr23 td29"><P class="p26 ft39">A</P></TD>
+	<TD class="tr23 td30"><P class="p7 ft40">1999</P></TD>
+	<TD colspan=2 class="tr23 td36"><P class="p32 ft43">0.7K<SPAN class="ft41">/</SPAN><SPAN class="ft42">19M</SPAN></P></TD>
+	<TD class="tr23 td33"><P class="p29 ft39">A</P></TD>
+	<TD class="tr23 td34"><P class="p30 ft40">1999</P></TD>
+	<TD class="tr23 td30"><P class="p31 ft40">0.7K</P></TD>
+	<TD class="tr23 td35"><P class="p33 ft44">19M</P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td24"></TD>
+	<TD colspan=6 rowspan=2 class="tr18 td39"><P class="p28 ft46">convert = FALSE, factor_key = FALSE<SPAN class="ft45">)</SPAN></P></TD>
+	<TD class="tr17 td40"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=6 rowspan=2 class="tr18 td41"><P class="p34 ft4">drop = TRUE, sep = NULL<SPAN class="ft18">)</SPAN></P></TD>
+	<TD class="tr17 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td26"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td27"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td28"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td29"><P class="p26 ft39">A</P></TD>
+	<TD class="tr17 td30"><P class="p7 ft40">2000</P></TD>
+	<TD class="tr17 td31"><P class="p35 ft42"><SPAN class="ft43">2K</SPAN><SPAN class="ft41">/</SPAN>20M</P></TD>
+	<TD class="tr24 td43"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr17 td33"><P class="p29 ft39">A</P></TD>
+	<TD class="tr17 td34"><P class="p30 ft40">2000</P></TD>
+	<TD class="tr17 td30"><P class="p36 ft40">2K</P></TD>
+	<TD class="tr17 td35"><P class="p33 ft44">20M</P></TD>
+</TR>
+<TR>
+	<TD class="tr23 td24"></TD>
+	<TD class="tr23 td40"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td26"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td27"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td28"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td29"><P class="p37 ft40">B</P></TD>
+	<TD class="tr23 td30"><P class="p38 ft40">1999</P></TD>
+	<TD colspan=2 class="tr23 td36"><P class="p32 ft42"><SPAN class="ft43">37K</SPAN><SPAN class="ft41">/</SPAN>172M</P></TD>
+	<TD class="tr23 td33"><P class="p39 ft40">B</P></TD>
+	<TD class="tr23 td34"><P class="p30 ft40">1999</P></TD>
+	<TD class="tr23 td30"><P class="p14 ft40">37K</P></TD>
+	<TD class="tr23 td35"><P class="p40 ft44">172</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td24"></TD>
+	<TD colspan=7 rowspan=2 class="tr25 td37"><P class="p28 ft9">gather() moves column names into a <SPAN class="ft12">key</SPAN></P></TD>
+	<TD colspan=9 rowspan=2 class="tr25 td44"><P class="p34 ft9">spread() moves the unique values of a <SPAN class="ft12">key</SPAN></P></TD>
+	<TD class="tr17 td28"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td29"><P class="p26 ft40">B</P></TD>
+	<TD class="tr17 td30"><P class="p7 ft40">2000</P></TD>
+	<TD colspan=2 class="tr17 td36"><P class="p32 ft42"><SPAN class="ft43">80K</SPAN><SPAN class="ft41">/</SPAN>174M</P></TD>
+	<TD class="tr17 td33"><P class="p29 ft40">B</P></TD>
+	<TD class="tr17 td34"><P class="p30 ft40">2000</P></TD>
+	<TD class="tr17 td30"><P class="p41 ft40">80K</P></TD>
+	<TD class="tr17 td35"><P class="p33 ft44">174</P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td24"></TD>
+	<TD class="tr24 td28"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td29"><P class="p26 ft48">C</P></TD>
+	<TD class="tr24 td30"><P class="p7 ft48">1999</P></TD>
+	<TD colspan=2 class="tr24 td36"><P class="p32 ft51">212K<SPAN class="ft49">/</SPAN><SPAN class="ft50">1T</SPAN></P></TD>
+	<TD class="tr24 td33"><P class="p42 ft48">C</P></TD>
+	<TD class="tr24 td34"><P class="p30 ft48">1999</P></TD>
+	<TD class="tr24 td30"><P class="p41 ft48">212K</P></TD>
+	<TD class="tr24 td35"><P class="p33 ft52">1T</P></TD>
+</TR>
+<TR>
+	<TD class="tr23 td24"></TD>
+	<TD colspan=7 class="tr23 td37"><P class="p28 ft53">column, gathering the column values into a</P></TD>
+	<TD colspan=10 class="tr23 td38"><P class="p34 ft53">column into the column names, spreading the</P></TD>
+	<TD class="tr23 td29"><P class="p26 ft40">C</P></TD>
+	<TD class="tr23 td30"><P class="p7 ft40">2000</P></TD>
+	<TD colspan=2 class="tr23 td36"><P class="p32 ft43">213K<SPAN class="ft41">/</SPAN><SPAN class="ft42">1T</SPAN></P></TD>
+	<TD class="tr23 td33"><P class="p42 ft40">C</P></TD>
+	<TD class="tr23 td34"><P class="p30 ft40">2000</P></TD>
+	<TD class="tr23 td30"><P class="p41 ft40">213K</P></TD>
+	<TD class="tr23 td35"><P class="p33 ft44">1T</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td24"></TD>
+	<TD colspan=4 class="tr6 td45"><P class="p28 ft9">single <SPAN class="ft12">value </SPAN>column.</P></TD>
+	<TD class="tr6 td46"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td26"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td40"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=10 class="tr6 td38"><P class="p34 ft9">values of a <SPAN class="ft12">value </SPAN>column across the new columns.</P></TD>
+	<TD class="tr6 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=6 rowspan=2 class="tr2 td47"><P class="p27 ft54">separate(table3, rate, sep = "/",</P></TD>
+	<TD class="tr6 td35"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr26 td24"></TD>
+	<TD colspan=2 rowspan=2 class="tr1 td48"><P class="p43 ft35">table4a</P></TD>
+	<TD class="tr26 td49"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td32"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td46"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td26"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td40"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td3"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD colspan=2 rowspan=2 class="tr1 td36"><P class="p34 ft35">table2</P></TD>
+	<TD class="tr26 td27"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td50"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td51"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td42"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td26"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td27"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td28"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td29"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td35"><P class="p6 ft55">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr26 td24"></TD>
+	<TD class="tr26 td49"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td32"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td46"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td26"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td40"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td3"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td27"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td50"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td51"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td42"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td26"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td27"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td28"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td29"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td30"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD colspan=4 rowspan=2 class="tr6 td10"><P class="p44 ft56">into = c("cases", "pop"))</P></TD>
+	<TD class="tr26 td30"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td35"><P class="p6 ft55">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td24"></TD>
+	<TD rowspan=2 class="tr20 td52"><P class="p45 ft37">country</P></TD>
+	<TD rowspan=2 class="tr20 td34"><P class="p20 ft38">1999</P></TD>
+	<TD rowspan=2 class="tr20 td49"><P class="p46 ft38">2000</P></TD>
+	<TD class="tr4 td32"><P class="p6 ft13">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr20 td46"><P class="p47 ft37">country</P></TD>
+	<TD rowspan=2 class="tr20 td26"><P class="p27 ft38">year</P></TD>
+	<TD rowspan=2 class="tr20 td40"><P class="p6 ft38">cases</P></TD>
+	<TD rowspan=2 class="tr20 td3"><P class="p48 ft37">country</P></TD>
+	<TD rowspan=2 class="tr20 td34"><P class="p8 ft38">year</P></TD>
+	<TD rowspan=2 class="tr20 td30"><P class="p49 ft37">type</P></TD>
+	<TD colspan=3 rowspan=2 class="tr20 td53"><P class="p6 ft38">count</P></TD>
+	<TD rowspan=2 class="tr20 td42"><P class="p36 ft37">country</P></TD>
+	<TD rowspan=2 class="tr20 td26"><P class="p50 ft38">year</P></TD>
+	<TD rowspan=2 class="tr20 td27"><P class="p51 ft57">cases</P></TD>
+	<TD rowspan=2 class="tr20 td28"><P class="p52 ft37">pop</P></TD>
+	<TD class="tr4 td29"><P class="p6 ft13">&nbsp;</P></TD>
+	<TD class="tr4 td30"><P class="p6 ft13">&nbsp;</P></TD>
+	<TD class="tr4 td30"><P class="p6 ft13">&nbsp;</P></TD>
+	<TD class="tr4 td35"><P class="p6 ft13">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td24"></TD>
+	<TD class="tr12 td32"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td29"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td30"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td31"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td32"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td33"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td34"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td30"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td35"><P class="p6 ft21">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td24"></TD>
+	<TD class="tr17 td52"><P class="p45 ft39">A</P></TD>
+	<TD class="tr17 td34"><P class="p30 ft40">0.7K</P></TD>
+	<TD class="tr17 td49"><P class="p53 ft40">2K</P></TD>
+	<TD class="tr24 td43"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr17 td46"><P class="p47 ft39">A</P></TD>
+	<TD class="tr17 td26"><P class="p8 ft44">1999</P></TD>
+	<TD class="tr17 td40"><P class="p54 ft40">0.7K</P></TD>
+	<TD class="tr17 td3"><P class="p48 ft39">A</P></TD>
+	<TD class="tr17 td34"><P class="p8 ft40">1999</P></TD>
+	<TD class="tr17 td30"><P class="p51 ft58">cases</P></TD>
+	<TD colspan=3 class="tr17 td53"><P class="p55 ft40">0.7K</P></TD>
+	<TD class="tr17 td42"><P class="p36 ft39">A</P></TD>
+	<TD class="tr17 td26"><P class="p50 ft40">1999</P></TD>
+	<TD class="tr17 td27"><P class="p56 ft40">0.7K</P></TD>
+	<TD class="tr17 td28"><P class="p57 ft40">19M</P></TD>
+	<TD colspan=8 rowspan=2 class="tr18 td54"><P class="p6 ft4"><SPAN class="ft18">separate_rows(</SPAN>data, ..., sep = "[^[:alnum:].]</P></TD>
+</TR>
+<TR>
+	<TD class="tr27 td24"></TD>
+	<TD class="tr23 td52"><P class="p58 ft40">B</P></TD>
+	<TD class="tr23 td34"><P class="p59 ft40">37K</P></TD>
+	<TD colspan=2 class="tr23 td3"><P class="p27 ft40">80K</P></TD>
+	<TD class="tr23 td46"><P class="p60 ft40">B</P></TD>
+	<TD class="tr23 td26"><P class="p50 ft44">1999</P></TD>
+	<TD class="tr23 td40"><P class="p27 ft40">37K</P></TD>
+	<TD class="tr23 td3"><P class="p61 ft40">A</P></TD>
+	<TD class="tr23 td34"><P class="p20 ft40">1999</P></TD>
+	<TD class="tr23 td30"><P class="p27 ft44">pop</P></TD>
+	<TD class="tr23 td27"><P class="p8 ft40">19M</P></TD>
+	<TD class="tr27 td55"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td42"><P class="p62 ft40">A</P></TD>
+	<TD class="tr23 td26"><P class="p50 ft40">2000</P></TD>
+	<TD class="tr23 td27"><P class="p63 ft40">2K</P></TD>
+	<TD class="tr23 td28"><P class="p8 ft40">20M</P></TD>
+</TR>
+<TR>
+	<TD class="tr14 td24"></TD>
+	<TD class="tr14 td52"><P class="p64 ft40">C</P></TD>
+	<TD class="tr14 td34"><P class="p20 ft40">212K</P></TD>
+	<TD colspan=2 class="tr14 td3"><P class="p65 ft40">213K</P></TD>
+	<TD class="tr14 td46"><P class="p66 ft40">C</P></TD>
+	<TD class="tr14 td26"><P class="p8 ft44">1999</P></TD>
+	<TD class="tr14 td40"><P class="p67 ft40">212K</P></TD>
+	<TD class="tr14 td3"><P class="p48 ft39">A</P></TD>
+	<TD class="tr14 td34"><P class="p8 ft40">2000</P></TD>
+	<TD class="tr14 td30"><P class="p51 ft58">cases</P></TD>
+	<TD colspan=3 class="tr14 td53"><P class="p54 ft40">2K</P></TD>
+	<TD class="tr14 td42"><P class="p36 ft40">B</P></TD>
+	<TD class="tr14 td26"><P class="p50 ft40">1999</P></TD>
+	<TD class="tr14 td27"><P class="p51 ft40">37K</P></TD>
+	<TD class="tr14 td28"><P class="p68 ft40">172M</P></TD>
+	<TD colspan=4 class="tr14 td56"><P class="p34 ft4">+", convert = FALSE<SPAN class="ft59">)</SPAN></P></TD>
+	<TD class="tr14 td33"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td35"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr16 td24"></TD>
+	<TD class="tr16 td52"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td34"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td49"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td32"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td46"><P class="p47 ft60">A</P></TD>
+	<TD class="tr16 td26"><P class="p8 ft61">2000</P></TD>
+	<TD class="tr16 td40"><P class="p67 ft62">2K</P></TD>
+	<TD class="tr16 td3"><P class="p48 ft60">A</P></TD>
+	<TD class="tr16 td34"><P class="p8 ft62">2000</P></TD>
+	<TD class="tr16 td30"><P class="p51 ft61">pop</P></TD>
+	<TD colspan=3 class="tr16 td53"><P class="p54 ft62">20M</P></TD>
+	<TD class="tr16 td42"><P class="p36 ft62">B</P></TD>
+	<TD class="tr16 td26"><P class="p50 ft62">2000</P></TD>
+	<TD class="tr16 td27"><P class="p51 ft62">80K</P></TD>
+	<TD class="tr16 td28"><P class="p68 ft62">174M</P></TD>
+	<TD colspan=7 rowspan=2 class="tr25 td57"><P class="p34 ft9">Separate each cell in a column to make</P></TD>
+	<TD class="tr16 td35"><P class="p6 ft24">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr27 td24"></TD>
+	<TD class="tr27 td52"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td49"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td32"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td46"><P class="p47 ft40">B</P></TD>
+	<TD class="tr27 td26"><P class="p8 ft44">2000</P></TD>
+	<TD class="tr27 td40"><P class="p67 ft40">80K</P></TD>
+	<TD class="tr27 td3"><P class="p48 ft40">B</P></TD>
+	<TD class="tr27 td34"><P class="p8 ft40">1999</P></TD>
+	<TD class="tr27 td30"><P class="p51 ft58">cases</P></TD>
+	<TD colspan=3 class="tr27 td53"><P class="p54 ft40">37K</P></TD>
+	<TD class="tr27 td42"><P class="p69 ft40">C</P></TD>
+	<TD class="tr27 td26"><P class="p50 ft40">1999</P></TD>
+	<TD class="tr27 td27"><P class="p51 ft40">212K</P></TD>
+	<TD class="tr27 td28"><P class="p57 ft40">1T</P></TD>
+	<TD class="tr27 td35"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr20 td24"></TD>
+	<TD class="tr20 td52"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td49"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td32"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td46"><P class="p66 ft40">C</P></TD>
+	<TD class="tr20 td26"><P class="p8 ft44">2000</P></TD>
+	<TD class="tr20 td40"><P class="p67 ft40">213K</P></TD>
+	<TD class="tr20 td3"><P class="p48 ft40">B</P></TD>
+	<TD class="tr20 td34"><P class="p8 ft40">1999</P></TD>
+	<TD class="tr20 td30"><P class="p51 ft44">pop</P></TD>
+	<TD colspan=3 class="tr20 td53"><P class="p54 ft40">172M</P></TD>
+	<TD class="tr20 td42"><P class="p69 ft40">C</P></TD>
+	<TD class="tr20 td26"><P class="p50 ft40">2000</P></TD>
+	<TD class="tr20 td27"><P class="p51 ft40">213K</P></TD>
+	<TD class="tr20 td28"><P class="p57 ft40">1T</P></TD>
+	<TD colspan=4 class="tr20 td56"><P class="p34 ft63">several rows.</P></TD>
+	<TD class="tr20 td33"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td35"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td24"></TD>
+	<TD class="tr24 td52"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td34"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td49"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td32"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td46"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td26"><P class="p14 ft64">key</P></TD>
+	<TD class="tr24 td40"><P class="p6 ft65">value</P></TD>
+	<TD class="tr24 td3"><P class="p48 ft48">B</P></TD>
+	<TD class="tr24 td34"><P class="p8 ft48">2000</P></TD>
+	<TD class="tr24 td30"><P class="p51 ft58">cases</P></TD>
+	<TD colspan=3 class="tr24 td53"><P class="p54 ft48">80K</P></TD>
+	<TD class="tr24 td42"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td26"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td27"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td28"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td29"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD colspan=3 rowspan=2 class="tr28 td58"><P class="p27 ft35">table3</P></TD>
+	<TD class="tr24 td33"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td34"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td30"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td35"><P class="p6 ft47">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr19 td24"></TD>
+	<TD class="tr19 td52"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td34"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td49"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td32"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td46"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td26"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td40"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr24 td3"><P class="p48 ft48">B</P></TD>
+	<TD rowspan=2 class="tr24 td34"><P class="p8 ft48">2000</P></TD>
+	<TD rowspan=2 class="tr24 td30"><P class="p51 ft52">pop</P></TD>
+	<TD colspan=3 rowspan=2 class="tr24 td53"><P class="p54 ft48">174M</P></TD>
+	<TD class="tr19 td42"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td26"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td27"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td28"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td29"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td33"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td34"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td30"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td35"><P class="p6 ft36">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr29 td24"></TD>
+	<TD class="tr29 td52"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td34"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td49"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td32"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td46"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td26"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td40"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td42"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td26"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td27"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td28"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td29"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td30"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td31"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td32"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td33"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td34"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td30"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td35"><P class="p6 ft66">&nbsp;</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id1_3">
+<DIV id="id1_3_1">
+<P class="p70 ft9">• Control the default appearance with options:</P>
+<P class="p71 ft68"><SPAN class="ft67">options(</SPAN>tibble.print_max = n, tibble.print_min = m, tibble.width = Inf<SPAN class="ft67">)</SPAN></P>
+<P class="p72 ft9"><SPAN class="ft4">•</SPAN><SPAN class="ft69">View full data set with </SPAN><SPAN class="ft12">View() </SPAN>or <SPAN class="ft12">glimpse()</SPAN></P>
+<P class="p72 ft9"><SPAN class="ft4">•</SPAN><SPAN class="ft69">Revert to data frame with </SPAN><SPAN class="ft12">as.data.frame()</SPAN></P>
+<P class="p73 ft70">CONSTRUCT A TIBBLE IN TWO WAYS</P>
+<TABLE cellpadding=0 cellspacing=0 class="t4">
+<TR>
+	<TD class="tr22 td59"><P class="p6 ft12">tibble(<SPAN class="ft9">…</SPAN>)</P></TD>
+	<TD class="tr22 td60"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr22 td61"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr22 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr2 td53"><P class="p74 ft71">Both</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 rowspan=2 class="tr20 td62"><P class="p34 ft63">Construct by columns.</P></TD>
+	<TD class="tr13 td61"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td29"><P class="p6 ft22">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr26 td61"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td29"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr30 td53"><P class="p74 ft71">make this</P></TD>
+</TR>
+<TR>
+	<TD colspan=4 class="tr24 td63"><P class="p34 ft73"><SPAN class="ft72">tibble</SPAN>(x = 1:3, y = c("a", "b", "c"))</P></TD>
+</TR>
+<TR>
+	<TD class="tr23 td59"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td60"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td61"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td53"><P class="p75 ft71">tibble</P></TD>
+</TR>
+<TR>
+	<TD class="tr6 td59"><P class="p6 ft12">tribble(<SPAN class="ft9">…</SPAN>)</P></TD>
+	<TD class="tr6 td60"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr1 td64"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr1 td65"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr1 td66"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 rowspan=2 class="tr28 td67"><P class="p34 ft9">Construct by rows.</P></TD>
+	<TD colspan=3 class="tr4 td68"><P class="p8 ft74">A tibble: 3 × 2</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td61"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr4 td29"><P class="p76 ft74">x</P></TD>
+	<TD class="tr4 td69"><P class="p77 ft74">y</P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td59"><P class="p34 ft76">tribble<SPAN class="ft75">( ~x,</SPAN></P></TD>
+	<TD class="tr24 td70"><P class="p78 ft77">~y,</P></TD>
+	<TD rowspan=2 class="tr28 td61"><P class="p8 ft78">1</P></TD>
+	<TD colspan=2 class="tr24 td71"><P class="p59 ft79">&lt;int&gt; &lt;chr&gt;</P></TD>
+</TR>
+<TR>
+	<TD rowspan=2 class="tr1 td59"><P class="p79 ft80">1,</P></TD>
+	<TD rowspan=2 class="tr1 td70"><P class="p80 ft56">"a",</P></TD>
+	<TD class="tr19 td29"><P class="p76 ft81">1</P></TD>
+	<TD class="tr19 td69"><P class="p77 ft81">a</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td61"><P class="p8 ft74">2</P></TD>
+	<TD class="tr4 td29"><P class="p76 ft74">2</P></TD>
+	<TD class="tr4 td69"><P class="p77 ft74">b</P></TD>
+</TR>
+<TR>
+	<TD class="tr27 td59"><P class="p79 ft82">2,</P></TD>
+	<TD class="tr27 td70"><P class="p80 ft83">"b",</P></TD>
+	<TD class="tr27 td61"><P class="p8 ft78">3</P></TD>
+	<TD class="tr27 td29"><P class="p76 ft78">3</P></TD>
+	<TD class="tr27 td69"><P class="p77 ft78">c</P></TD>
+</TR>
+<TR>
+	<TD class="tr1 td59"><P class="p79 ft80">3,</P></TD>
+	<TD class="tr1 td70"><P class="p81 ft80">"c")</P></TD>
+	<TD class="tr14 td64"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td65"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td72"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+</TABLE>
+<P class="p82 ft1"><SPAN class="ft12">as_tibble(</SPAN><SPAN class="ft9">x, …</SPAN><SPAN class="ft12">) </SPAN>Convert data frame to tibble.</P>
+<P class="p83 ft68"><SPAN class="ft67">enframe(</SPAN>x, name = "name", value = "value"<SPAN class="ft67">) </SPAN><SPAN class="ft84">Convert named vector to a tibble</SPAN></P>
+<P class="p84 ft1"><SPAN class="ft12">is_tibble(</SPAN><SPAN class="ft9">x</SPAN><SPAN class="ft12">) </SPAN>Test whether x is a tibble.</P>
+</DIV>
+<DIV id="id1_3_2">
+<TABLE cellpadding=0 cellspacing=0 class="t5">
+<TR>
+	<TD class="tr23 td73"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td74"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td19"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td75"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td77"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td78"><P class="p6 ft40">C</P></TD>
+	<TD class="tr23 td34"><P class="p40 ft40">1999</P></TD>
+	<TD class="tr23 td42"><P class="p69 ft58">cases</P></TD>
+	<TD class="tr23 td79"><P class="p35 ft40">212K</P></TD>
+	<TD class="tr23 td80"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td83"><P class="p14 ft38">country</P></TD>
+	<TD class="tr23 td74"><P class="p7 ft38">year</P></TD>
+	<TD class="tr23 td84"><P class="p85 ft38">rate</P></TD>
+	<TD class="tr23 td21"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td82"><P class="p14 ft38">country</P></TD>
+	<TD colspan=2 class="tr23 td34"><P class="p6 ft38">year</P></TD>
+	<TD class="tr23 td34"><P class="p31 ft37">rate</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td73"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td74"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td19"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td75"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td77"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td78"><P class="p6 ft40">C</P></TD>
+	<TD class="tr17 td34"><P class="p40 ft40">1999</P></TD>
+	<TD class="tr17 td42"><P class="p69 ft44">pop</P></TD>
+	<TD class="tr17 td79"><P class="p86 ft40">1T</P></TD>
+	<TD class="tr17 td80"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td83"><P class="p87 ft40">A</P></TD>
+	<TD class="tr17 td74"><P class="p7 ft40">1999</P></TD>
+	<TD colspan=3 class="tr17 td87"><P class="p88 ft43">0.7K<SPAN class="ft41">/</SPAN><SPAN class="ft42">19M</SPAN></P></TD>
+	<TD class="tr17 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td82"><P class="p87 ft40">A</P></TD>
+	<TD colspan=2 class="tr17 td34"><P class="p6 ft40">1999</P></TD>
+	<TD class="tr17 td34"><P class="p31 ft40">0.7K</P></TD>
+</TR>
+<TR>
+	<TD class="tr12 td73"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td74"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td51"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td42"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td19"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td75"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td76"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td51"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td77"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr24 td78"><P class="p6 ft48">C</P></TD>
+	<TD rowspan=2 class="tr24 td34"><P class="p40 ft48">2000</P></TD>
+	<TD rowspan=2 class="tr24 td42"><P class="p69 ft58">cases</P></TD>
+	<TD rowspan=2 class="tr24 td79"><P class="p35 ft48">213K</P></TD>
+	<TD class="tr12 td80"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td81"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td51"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td30"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td82"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td29"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr24 td83"><P class="p87 ft48">A</P></TD>
+	<TD rowspan=2 class="tr24 td74"><P class="p7 ft48">2000</P></TD>
+	<TD rowspan=2 class="tr24 td84"><P class="p89 ft50"><SPAN class="ft51">2K</SPAN><SPAN class="ft49">/</SPAN>20M</P></TD>
+	<TD class="tr12 td21"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr31 td88"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td89"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr12 td85"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr24 td82"><P class="p87 ft48">A</P></TD>
+	<TD colspan=2 rowspan=2 class="tr24 td34"><P class="p6 ft48">1999</P></TD>
+	<TD rowspan=2 class="tr24 td34"><P class="p51 ft52">19M</P></TD>
+</TR>
+<TR>
+	<TD class="tr13 td73"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td74"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td51"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td42"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td19"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td75"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td76"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td51"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td77"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td80"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td81"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td51"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td30"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td82"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td29"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td21"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td85"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td86"><P class="p6 ft22">&nbsp;</P></TD>
+	<TD class="tr13 td85"><P class="p6 ft22">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr20 td73"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td74"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td19"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td75"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td77"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td78"><P class="p6 ft40">C</P></TD>
+	<TD class="tr20 td34"><P class="p40 ft40">2000</P></TD>
+	<TD class="tr20 td42"><P class="p69 ft44">pop</P></TD>
+	<TD class="tr20 td79"><P class="p86 ft40">1T</P></TD>
+	<TD class="tr20 td80"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td83"><P class="p87 ft40">B</P></TD>
+	<TD class="tr20 td74"><P class="p7 ft40">1999</P></TD>
+	<TD colspan=3 class="tr20 td87"><P class="p88 ft42"><SPAN class="ft43">37K</SPAN><SPAN class="ft41">/</SPAN>172M</P></TD>
+	<TD class="tr20 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td82"><P class="p87 ft40">A</P></TD>
+	<TD colspan=2 class="tr20 td34"><P class="p6 ft40">2000</P></TD>
+	<TD class="tr20 td34"><P class="p56 ft40">2K</P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td73"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD colspan=5 rowspan=2 class="tr28 td90"><P class="p69 ft54">gather(table4a, `1999`, `2000`,</P></TD>
+	<TD class="tr24 td76"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td51"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td77"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td78"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td34"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr28 td42"><P class="p36 ft86">key</P></TD>
+	<TD rowspan=2 class="tr28 td79"><P class="p49 ft87">value</P></TD>
+	<TD class="tr24 td80"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td81"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td51"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td30"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td82"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td29"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td83"><P class="p87 ft48">B</P></TD>
+	<TD class="tr24 td74"><P class="p7 ft48">2000</P></TD>
+	<TD colspan=3 class="tr24 td87"><P class="p88 ft50"><SPAN class="ft51">80K</SPAN><SPAN class="ft49">/</SPAN>174M</P></TD>
+	<TD class="tr24 td86"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td85"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td82"><P class="p87 ft48">A</P></TD>
+	<TD colspan=2 class="tr24 td34"><P class="p6 ft48">2000</P></TD>
+	<TD class="tr24 td34"><P class="p51 ft52">20M</P></TD>
+</TR>
+<TR>
+	<TD class="tr19 td73"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td76"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td51"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td77"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td78"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td34"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td80"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td81"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td51"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td30"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td82"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td29"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr24 td83"><P class="p85 ft48">C</P></TD>
+	<TD rowspan=2 class="tr24 td74"><P class="p7 ft48">1999</P></TD>
+	<TD colspan=3 rowspan=2 class="tr24 td87"><P class="p88 ft51">212K<SPAN class="ft49">/</SPAN><SPAN class="ft50">1T</SPAN></P></TD>
+	<TD class="tr19 td86"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td85"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr24 td82"><P class="p87 ft48">B</P></TD>
+	<TD colspan=2 rowspan=2 class="tr24 td34"><P class="p6 ft48">1999</P></TD>
+	<TD rowspan=2 class="tr24 td34"><P class="p56 ft48">37K</P></TD>
+</TR>
+<TR>
+	<TD class="tr29 td73"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD colspan=5 rowspan=2 class="tr6 td90"><P class="p41 ft56">key = "year", value = "cases")</P></TD>
+	<TD class="tr29 td76"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td51"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td77"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td78"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td34"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD colspan=6 rowspan=2 class="tr6 td91"><P class="p6 ft80">spread(table2, type, count)</P></TD>
+	<TD class="tr29 td82"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td29"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td86"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD class="tr29 td85"><P class="p6 ft66">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr20 td73"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td77"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td78"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td83"><P class="p85 ft40">C</P></TD>
+	<TD class="tr20 td74"><P class="p7 ft40">2000</P></TD>
+	<TD colspan=3 class="tr20 td87"><P class="p88 ft43">213K<SPAN class="ft41">/</SPAN><SPAN class="ft42">1T</SPAN></P></TD>
+	<TD class="tr20 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td82"><P class="p87 ft40">B</P></TD>
+	<TD colspan=2 class="tr20 td34"><P class="p6 ft40">1999</P></TD>
+	<TD class="tr20 td34"><P class="p56 ft44">172M</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td73"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td74"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td19"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td75"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td77"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td78"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td80"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td83"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td74"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td84"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td21"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td82"><P class="p87 ft40">B</P></TD>
+	<TD colspan=2 class="tr17 td34"><P class="p6 ft40">2000</P></TD>
+	<TD class="tr17 td34"><P class="p56 ft40">80K</P></TD>
+</TR>
+<TR>
+	<TD class="tr31 td92"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td93"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td94"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td95"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td96"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td97"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td98"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td94"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td99"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td100"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td101"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td95"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td102"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td103"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td104"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td94"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td105"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr31 td106"><P class="p6 ft85">&nbsp;</P></TD>
+	<TD class="tr12 td29"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td83"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td74"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td84"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td21"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td85"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td86"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD class="tr12 td85"><P class="p6 ft21">&nbsp;</P></TD>
+	<TD rowspan=2 class="tr17 td82"><P class="p87 ft40">B</P></TD>
+	<TD colspan=2 rowspan=2 class="tr17 td34"><P class="p6 ft40">2000</P></TD>
+	<TD rowspan=2 class="tr17 td34"><P class="p56 ft44">174M</P></TD>
+</TR>
+<TR>
+	<TD colspan=8 rowspan=3 class="tr8 td107"><P class="p7 ft88">Handle Missing Values</P></TD>
+	<TD class="tr21 td77"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td78"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td34"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td42"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td79"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td80"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td81"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td51"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td30"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td82"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td29"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td83"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td74"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td84"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td21"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td85"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td86"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td85"><P class="p6 ft89">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr23 td77"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td78"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td80"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td83"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td74"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td84"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td21"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td82"><P class="p87 ft40">C</P></TD>
+	<TD colspan=2 class="tr23 td34"><P class="p6 ft40">1999</P></TD>
+	<TD class="tr23 td34"><P class="p56 ft40">212K</P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td77"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td78"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td34"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td42"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td79"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td80"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td81"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td51"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td30"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td82"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td29"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td83"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td74"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td84"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td21"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td85"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td86"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td85"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td82"><P class="p87 ft48">C</P></TD>
+	<TD colspan=2 class="tr24 td34"><P class="p6 ft48">1999</P></TD>
+	<TD class="tr24 td34"><P class="p31 ft52">1T</P></TD>
+</TR>
+<TR>
+	<TD colspan=5 class="tr14 td108"><P class="p28 ft90">drop_na(<SPAN class="ft9">data, ...</SPAN>)</P></TD>
+	<TD colspan=8 class="tr14 td109"><P class="p6 ft9"><SPAN class="ft59">fill(</SPAN>data, ..., .direction = c("down", "up")<SPAN class="ft59">)</SPAN></P></TD>
+	<TD colspan=6 class="tr14 td110"><P class="p6 ft59">replace_na(<SPAN class="ft9">data,</SPAN></P></TD>
+	<TD class="tr14 td83"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td74"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td84"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td21"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td82"><P class="p87 ft40">C</P></TD>
+	<TD colspan=2 class="tr14 td34"><P class="p6 ft40">2000</P></TD>
+	<TD class="tr14 td34"><P class="p56 ft40">213K</P></TD>
+</TR>
+<TR>
+	<TD colspan=5 rowspan=2 class="tr1 td108"><P class="p90 ft9">Drop rows containing</P></TD>
+	<TD colspan=7 rowspan=2 class="tr1 td111"><P class="p34 ft9">Fill in NA’s in … columns with most</P></TD>
+	<TD class="tr23 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=6 rowspan=2 class="tr1 td110"><P class="p91 ft9">replace = list(), ...<SPAN class="ft91">)</SPAN></P></TD>
+	<TD class="tr23 td83"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td74"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td84"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td21"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td82"><P class="p87 ft40">C</P></TD>
+	<TD colspan=2 class="tr23 td34"><P class="p6 ft40">2000</P></TD>
+	<TD class="tr23 td34"><P class="p31 ft44">1T</P></TD>
+</TR>
+<TR>
+	<TD class="tr29 td79"><P class="p6 ft66">&nbsp;</P></TD>
+	<TD colspan=11 rowspan=2 class="tr11 td112"><P class="p87 ft54">separate_rows(table3, rate, sep = "/")</P></TD>
+</TR>
+<TR>
+	<TD colspan=5 class="tr6 td108"><P class="p90 ft9">NA’s in … columns.</P></TD>
+	<TD colspan=4 class="tr6 td113"><P class="p34 ft4">recent <NOBR>non-NA</NOBR> values.</P></TD>
+	<TD class="tr6 td78"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr6 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=6 class="tr6 td110"><P class="p91 ft9">Replace NA’s by column.</P></TD>
+</TR>
+<TR>
+	<TD class="tr23 td73"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td74"><P class="p6 ft35">x</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td19"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td75"><P class="p79 ft35">x</P></TD>
+	<TD class="tr23 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td77"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td78"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td80"><P class="p39 ft35">x</P></TD>
+	<TD class="tr23 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td83"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td74"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td84"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td21"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td114"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td34"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td73"><P class="p92 ft57">x1</P></TD>
+	<TD class="tr17 td74"><P class="p93 ft57">x2</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td42"><P class="p42 ft57">x1</P></TD>
+	<TD class="tr17 td19"><P class="p94 ft57">x2</P></TD>
+	<TD class="tr17 td75"><P class="p95 ft57">x1</P></TD>
+	<TD colspan=2 class="tr17 td80"><P class="p96 ft57">x2</P></TD>
+	<TD class="tr17 td77"><P class="p97 ft57">x1</P></TD>
+	<TD class="tr17 td78"><P class="p51 ft57">x2</P></TD>
+	<TD class="tr17 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td80"><P class="p97 ft57">x1</P></TD>
+	<TD class="tr17 td81"><P class="p51 ft57">x2</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td30"><P class="p85 ft57">x1</P></TD>
+	<TD colspan=2 class="tr17 td115"><P class="p98 ft57">x2</P></TD>
+	<TD colspan=11 rowspan=2 class="tr25 td112"><P class="p6 ft46"><SPAN class="ft12">unite(</SPAN>data, col, ..., sep = "_", remove = TRUE<SPAN class="ft12">)</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td73"><P class="p99 ft92">A</P></TD>
+	<TD class="tr24 td74"><P class="p36 ft92">1</P></TD>
+	<TD class="tr16 td116"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr24 td42"><P class="p100 ft92">A</P></TD>
+	<TD class="tr24 td19"><P class="p101 ft92">1</P></TD>
+	<TD class="tr24 td75"><P class="p102 ft92">A</P></TD>
+	<TD class="tr24 td76"><P class="p35 ft92">1</P></TD>
+	<TD class="tr16 td116"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr24 td77"><P class="p85 ft92">A</P></TD>
+	<TD class="tr24 td78"><P class="p51 ft92">1</P></TD>
+	<TD class="tr24 td34"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td42"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td79"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td80"><P class="p87 ft92">A</P></TD>
+	<TD class="tr24 td81"><P class="p51 ft92">1</P></TD>
+	<TD class="tr16 td116"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr24 td30"><P class="p103 ft92">A</P></TD>
+	<TD class="tr24 td82"><P class="p54 ft92">1</P></TD>
+	<TD class="tr24 td29"><P class="p6 ft47">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD colspan=2 class="tr19 td87"><P class="p99 ft94">B <SPAN class="ft93">NA</SPAN></P></TD>
+	<TD class="tr19 td51"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD colspan=2 class="tr19 td117"><P class="p87 ft94">D 3</P></TD>
+	<TD colspan=2 class="tr19 td118"><P class="p104 ft94">B <SPAN class="ft93">NA</SPAN></P></TD>
+	<TD class="tr19 td51"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD colspan=2 class="tr19 td119"><P class="p85 ft94">B 1</P></TD>
+	<TD class="tr19 td34"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td42"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td79"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD colspan=2 class="tr19 td52"><P class="p87 ft94">B <SPAN class="ft93">NA</SPAN></P></TD>
+	<TD class="tr19 td51"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD colspan=3 class="tr19 td120"><P class="p103 ft94">B 2</P></TD>
+	<TD colspan=11 rowspan=2 class="tr28 td112"><P class="p34 ft9">Collapse cells across several columns to</P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td73"><P class="p99 ft92">C</P></TD>
+	<TD class="tr24 td74"><P class="p105 ft95">NA</P></TD>
+	<TD class="tr24 td51"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td42"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td19"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td75"><P class="p102 ft96">C</P></TD>
+	<TD colspan=2 class="tr24 td80"><P class="p106 ft95">NA</P></TD>
+	<TD class="tr24 td77"><P class="p85 ft92">C</P></TD>
+	<TD class="tr24 td78"><P class="p51 ft92">1</P></TD>
+	<TD class="tr24 td34"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td42"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td79"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td80"><P class="p87 ft92">C</P></TD>
+	<TD class="tr24 td81"><P class="p6 ft95">NA</P></TD>
+	<TD class="tr24 td51"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td30"><P class="p103 ft92">C</P></TD>
+	<TD class="tr24 td82"><P class="p54 ft92">2</P></TD>
+	<TD class="tr24 td29"><P class="p6 ft47">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr27 td73"><P class="p99 ft92">D</P></TD>
+	<TD class="tr27 td74"><P class="p36 ft92">3</P></TD>
+	<TD class="tr27 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td19"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td75"><P class="p102 ft96">D</P></TD>
+	<TD class="tr27 td76"><P class="p35 ft92">3</P></TD>
+	<TD class="tr27 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td77"><P class="p85 ft92">D</P></TD>
+	<TD class="tr27 td78"><P class="p51 ft92">3</P></TD>
+	<TD class="tr27 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td80"><P class="p87 ft92">D</P></TD>
+	<TD class="tr27 td81"><P class="p51 ft92">3</P></TD>
+	<TD class="tr27 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td30"><P class="p103 ft92">D</P></TD>
+	<TD class="tr27 td82"><P class="p54 ft92">3</P></TD>
+	<TD class="tr27 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=5 class="tr27 td121"><P class="p34 ft97">make a single column.</P></TD>
+	<TD class="tr27 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td114"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr27 td34"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr24 td73"><P class="p99 ft92">E</P></TD>
+	<TD class="tr24 td74"><P class="p105 ft95">NA</P></TD>
+	<TD class="tr24 td51"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td42"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td19"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td75"><P class="p102 ft92">E</P></TD>
+	<TD colspan=2 class="tr24 td80"><P class="p106 ft95">NA</P></TD>
+	<TD class="tr24 td77"><P class="p85 ft92">E</P></TD>
+	<TD class="tr24 td78"><P class="p51 ft92">3</P></TD>
+	<TD class="tr24 td34"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td42"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td79"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td80"><P class="p87 ft92">E</P></TD>
+	<TD class="tr24 td81"><P class="p6 ft95">NA</P></TD>
+	<TD class="tr24 td51"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td30"><P class="p103 ft92">E</P></TD>
+	<TD class="tr24 td82"><P class="p54 ft92">2</P></TD>
+	<TD class="tr24 td29"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td83"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD colspan=2 rowspan=2 class="tr6 td122"><P class="p90 ft35">table5</P></TD>
+	<TD class="tr24 td21"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td85"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td86"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td85"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td82"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td114"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td81"><P class="p6 ft47">&nbsp;</P></TD>
+	<TD class="tr24 td34"><P class="p6 ft47">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD colspan=4 rowspan=2 class="tr25 td120"><P class="p99 ft80">drop_na(x, x2)</P></TD>
+	<TD class="tr21 td19"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td75"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD colspan=3 rowspan=2 class="tr25 td122"><P class="p7 ft54">fill(x, x2)</P></TD>
+	<TD class="tr21 td78"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td34"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td42"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td79"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD colspan=6 rowspan=2 class="tr25 td110"><P class="p6 ft54">replace_na(x, list(x2 = 2))</P></TD>
+	<TD class="tr21 td83"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td21"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td85"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td86"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td85"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td82"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td114"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td81"><P class="p6 ft89">&nbsp;</P></TD>
+	<TD class="tr21 td34"><P class="p6 ft89">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr14 td19"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td75"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td78"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td34"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td42"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=2 class="tr14 td123"><P class="p107 ft37">country</P></TD>
+	<TD class="tr14 td84"><P class="p51 ft37">century</P></TD>
+	<TD colspan=2 class="tr14 td124"><P class="p108 ft37">year</P></TD>
+	<TD class="tr14 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr14 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=2 class="tr14 td125"><P class="p85 ft38">country</P></TD>
+	<TD colspan=2 class="tr14 td126"><P class="p65 ft38">year</P></TD>
+</TR>
+<TR>
+	<TD class="tr19 td92"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td93"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td94"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td95"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td96"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td97"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td98"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td94"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td99"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td100"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td101"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td95"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td102"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td103"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td104"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td94"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td105"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr19 td106"><P class="p6 ft36">&nbsp;</P></TD>
+	<TD class="tr26 td29"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD colspan=2 rowspan=2 class="tr24 td123"><P class="p109 ft39">Afghan</P></TD>
+	<TD rowspan=2 class="tr24 td84"><P class="p56 ft48">19</P></TD>
+	<TD rowspan=2 class="tr24 td21"><P class="p77 ft52">99</P></TD>
+	<TD class="tr26 td85"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td86"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD class="tr26 td85"><P class="p6 ft55">&nbsp;</P></TD>
+	<TD colspan=2 rowspan=2 class="tr24 td125"><P class="p87 ft48">Afghan</P></TD>
+	<TD colspan=2 rowspan=2 class="tr24 td126"><P class="p65 ft51">19<SPAN class="ft50">99</SPAN></P></TD>
+</TR>
+<TR>
+	<TD colspan=14 rowspan=3 class="tr32 td127"><P class="p93 ft99"><SPAN class="ft98">Expand Tables</SPAN>- quickly create tables with combinations of values</P></TD>
+	<TD class="tr10 td81"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td51"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td30"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td82"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td29"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td85"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td86"><P class="p6 ft19">&nbsp;</P></TD>
+	<TD class="tr10 td85"><P class="p6 ft19">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr5 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr5 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr5 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr5 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=2 class="tr5 td123"><P class="p109 ft39">Afghan</P></TD>
+	<TD class="tr5 td84"><P class="p56 ft40">20</P></TD>
+	<TD class="tr5 td21"><P class="p77 ft44">00</P></TD>
+	<TD class="tr5 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td89"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr20 td88"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=2 class="tr5 td125"><P class="p87 ft40">Afghan</P></TD>
+	<TD colspan=2 class="tr5 td126"><P class="p65 ft43">20<SPAN class="ft42">00</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr16 td81"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td51"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td30"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td82"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td29"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD colspan=2 class="tr16 td123"><P class="p99 ft62">Brazil</P></TD>
+	<TD class="tr16 td84"><P class="p110 ft62">19</P></TD>
+	<TD class="tr16 td21"><P class="p18 ft61">99</P></TD>
+	<TD class="tr16 td85"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td86"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td85"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD class="tr16 td82"><P class="p90 ft62">Brazil</P></TD>
+	<TD class="tr16 td114"><P class="p6 ft24">&nbsp;</P></TD>
+	<TD colspan=2 class="tr16 td126"><P class="p65 ft102">19<SPAN class="ft100">9</SPAN><SPAN class="ft101">9</SPAN></P></TD>
+</TR>
+<TR>
+	<TD colspan=6 rowspan=2 class="tr18 td128"><P class="p52 ft103"><SPAN class="ft45">complete(</SPAN>data, ..., fill = list()<SPAN class="ft45">)</SPAN></P></TD>
+	<TD class="tr23 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=4 rowspan=2 class="tr18 td129"><P class="p14 ft103"><SPAN class="ft45">expand(</SPAN>data, ...<SPAN class="ft45">)</SPAN></P></TD>
+	<TD class="tr23 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td80"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=2 class="tr23 td123"><P class="p111 ft40">Brazil</P></TD>
+	<TD class="tr23 td84"><P class="p56 ft40">20</P></TD>
+	<TD class="tr23 td21"><P class="p77 ft44">00</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr23 td82"><P class="p90 ft40">Brazil</P></TD>
+	<TD class="tr23 td114"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=2 class="tr23 td126"><P class="p65 ft43">20<SPAN class="ft42">00</SPAN></P></TD>
+</TR>
+<TR>
+	<TD class="tr17 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td79"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td80"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=2 class="tr17 td123"><P class="p112 ft40">China</P></TD>
+	<TD class="tr17 td84"><P class="p56 ft40">19</P></TD>
+	<TD class="tr17 td21"><P class="p77 ft44">99</P></TD>
+	<TD class="tr17 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr17 td82"><P class="p113 ft40">China</P></TD>
+	<TD class="tr17 td114"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=2 class="tr17 td126"><P class="p65 ft43">19<SPAN class="ft42">9</SPAN><SPAN class="ft104">9</SPAN></P></TD>
+</TR>
+<TR>
+	<TD colspan=8 class="tr28 td107"><P class="p87 ft4">Adds to the data missing combinations of the</P></TD>
+	<TD colspan=11 class="tr28 td130"><P class="p114 ft9">Create new tibble with all possible combinations</P></TD>
+	<TD colspan=2 class="tr28 td123"><P class="p112 ft40">China</P></TD>
+	<TD class="tr28 td84"><P class="p56 ft40">20</P></TD>
+	<TD class="tr28 td21"><P class="p77 ft44">00</P></TD>
+	<TD class="tr28 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr28 td86"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr28 td85"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr28 td82"><P class="p113 ft40">China</P></TD>
+	<TD class="tr28 td114"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=2 class="tr28 td126"><P class="p65 ft43">20<SPAN class="ft42">00</SPAN></P></TD>
+</TR>
+<TR>
+	<TD colspan=6 class="tr1 td128"><P class="p87 ft9">values of the variables listed in …</P></TD>
+	<TD class="tr1 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr1 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=9 class="tr1 td131"><P class="p114 ft9">of the values of the variables listed in …</P></TD>
+	<TD class="tr1 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr1 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr1 td83"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=8 class="tr1 td132"><P class="p27 ft80">unite(table5, century, year,</P></TD>
+	<TD class="tr1 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr1 td34"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD colspan=6 class="tr30 td128"><P class="p87 ft80">complete(mtcars, cyl, gear, carb)</P></TD>
+	<TD class="tr30 td76"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr30 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=6 class="tr30 td110"><P class="p114 ft105">expand(mtcars, cyl, gear, carb)</P></TD>
+	<TD class="tr30 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr30 td51"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr30 td30"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr30 td82"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr30 td29"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr30 td83"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD colspan=7 class="tr30 td133"><P class="p36 ft56">col = "year", sep = "")</P></TD>
+	<TD class="tr30 td114"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr30 td81"><P class="p6 ft11">&nbsp;</P></TD>
+	<TD class="tr30 td34"><P class="p6 ft11">&nbsp;</P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="id1_4">
+<P class="p0 ft107">RStudio® is a trademark of RStudio, Inc. • <A href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY SA </A>RStudio • <A href="mailto:info@rstudio.com">info@rstudio.com </A>• <NOBR>844-448-1212</NOBR> • <A href="http://rstudio.com">rstudio.com </A>• Learn more at <A href="http://tidyverse.org"><SPAN class="ft106">tidyverse.org</SPAN></A> • readr 1.1.0 • tibble 1.2.12 • tidyr 0.6.0 • Updated: <NOBR>2019–08</NOBR></P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>
